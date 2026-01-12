@@ -34,7 +34,9 @@ const StatsAndCommitments = () => {
                   <div className="text-4xl md:text-5xl font-bold text-white">
                     <span className="text-red-500">12,000+</span>
                   </div>
-                  <div className="text-xl text-gray-300">Professionals Placed</div>
+                  <div className="text-xl text-gray-300">
+                    Professionals Placed
+                  </div>
                 </div>
               </ScrollReveal>
 
@@ -65,8 +67,14 @@ const StatsAndCommitments = () => {
                 />
                 {/* Add pulsing dots for key locations */}
                 <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
-                <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-red-500 rounded-full animate-ping" style={{animationDelay: "1s"}}></div>
-                <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-red-500 rounded-full animate-ping" style={{animationDelay: "0.5s"}}></div>
+                <div
+                  className="absolute top-1/3 right-1/3 w-2 h-2 bg-red-500 rounded-full animate-ping"
+                  style={{ animationDelay: "1s" }}
+                ></div>
+                <div
+                  className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-red-500 rounded-full animate-ping"
+                  style={{ animationDelay: "0.5s" }}
+                ></div>
               </div>
             </ScrollReveal>
           </div>
@@ -97,7 +105,14 @@ const StatsAndCommitments = () => {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       >
-                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <rect
+                          x="2"
+                          y="7"
+                          width="20"
+                          height="14"
+                          rx="2"
+                          ry="2"
+                        ></rect>
                         <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                       </svg>
                     </div>
@@ -110,7 +125,9 @@ const StatsAndCommitments = () => {
                     duration={700}
                     easing="spring"
                   >
-                    <div className="text-4xl md:text-5xl font-bold text-red-600">3,500+</div>
+                    <div className="text-4xl md:text-5xl font-bold text-red-600">
+                      3,500+
+                    </div>
                   </ScrollReveal>
                   <ScrollReveal
                     animation="slightRight"
@@ -157,7 +174,9 @@ const StatsAndCommitments = () => {
                     duration={700}
                     easing="spring"
                   >
-                    <div className="text-4xl md:text-5xl font-bold text-red-600">500+</div>
+                    <div className="text-4xl md:text-5xl font-bold text-red-600">
+                      500+
+                    </div>
                   </ScrollReveal>
                   <ScrollReveal
                     animation="slightRight"
@@ -203,7 +222,9 @@ const StatsAndCommitments = () => {
                     duration={700}
                     easing="spring"
                   >
-                    <div className="text-4xl md:text-5xl font-bold text-red-600">95%</div>
+                    <div className="text-4xl md:text-5xl font-bold text-red-600">
+                      95%
+                    </div>
                   </ScrollReveal>
                   <ScrollReveal
                     animation="slightRight"
@@ -222,7 +243,7 @@ const StatsAndCommitments = () => {
       </div>
 
       {/* Bottom Section - Commitments */}
-      <div className="mt-20">
+      <div className="mt-20 ">
         <ScrollReveal animation="slightBottom" delay={200} duration={800}>
           <h3 className="text-2xl font-bold text-red-600 border-b border-gray-300 pb-2 mb-8 inline-block">
             Careertronics Commitments
@@ -232,11 +253,15 @@ const StatsAndCommitments = () => {
         <ScrollReveal animation="fadeSlideUp" delay={400} duration={900}>
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Partner with <span className="text-red-600">Careertronic</span> to Accelerate Your Career Growth
+              Partner with <span className="text-red-600">Careertronic</span> to
+              Accelerate Your Career Growth
             </h2>
             <p className="text-lg text-white">
-              We're committed to connecting talented professionals with innovative organizations across the tech landscape. 
-              Our approach emphasizes diversity, professional development, and creating lasting career opportunities that benefit both individuals and organizations.
+              We're committed to connecting talented professionals with
+              innovative organizations across the tech landscape. Our approach
+              emphasizes diversity, professional development, and creating
+              lasting career opportunities that benefit both individuals and
+              organizations.
             </p>
           </div>
         </ScrollReveal>
@@ -262,7 +287,8 @@ const StatsAndCommitments = () => {
                   Career Development & Mentorship
                 </h3>
                 <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
-                  Providing resources and guidance to help professionals advance their careers strategically.
+                  Providing resources and guidance to help professionals advance
+                  their careers strategically.
                 </p>
               </div>
             </Card>
@@ -284,7 +310,8 @@ const StatsAndCommitments = () => {
                   Diversity & Inclusion
                 </h3>
                 <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
-                  Championing diverse talent and creating inclusive workplaces across the tech industry.
+                  Championing diverse talent and creating inclusive workplaces
+                  across the tech industry.
                 </p>
               </div>
             </Card>
@@ -306,7 +333,8 @@ const StatsAndCommitments = () => {
                   Innovative Talent Solutions
                 </h3>
                 <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
-                  Leveraging technology to create better matches between professionals and opportunities.
+                  Leveraging technology to create better matches between
+                  professionals and opportunities.
                 </p>
               </div>
             </Card>

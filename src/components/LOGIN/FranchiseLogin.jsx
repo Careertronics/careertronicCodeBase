@@ -123,7 +123,7 @@ const Form = () => {
           </button>
         </div>
 
-        <select
+        {/* <select
           name="role"
           value={formData.role}
           onChange={handleChange}
@@ -136,7 +136,7 @@ const Form = () => {
           <option value="Candidate">Candidate</option>
           <option value="Admin">Admin</option>
           <option value="Partner">Partner</option>
-        </select>
+        </select> */}
 
         <Link
           href="/forgot-password"
@@ -153,12 +153,12 @@ const Form = () => {
           {isSubmitting ? "Logging in..." : "Login"}
         </button>
 
-        <p className="text-center text-sm">
+        {/* <p className="text-center text-sm">
           Don't have an account?{" "}
           <Link href="/register" className="text-red-500">
             Register
           </Link>
-        </p>
+        </p> */}
       </form>
     </div>
   );

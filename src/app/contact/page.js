@@ -4,81 +4,80 @@ import Head from "next/head";
 import ScrollReveal from "@/components/ScrollReveal";
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-  name: '',
-  email: '',
-  number: '',
-  subject: '',
-  message: ''
-});
+    name: "",
+    email: "",
+    number: "",
+    subject: "",
+    message: "",
+  });
 
-const [submitStatus, setSubmitStatus] = useState(null);
-const [submitting, setSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
 
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  setFormData((prev) => ({
-    ...prev,
-    [name]: value
-  }));
-};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
-const validateForm = () => {
-  return (
-    formData.name.trim() &&
-    formData.email.trim() &&
-    formData.subject.trim() &&
-    formData.message.trim()
-  );
-};
+  const validateForm = () => {
+    return (
+      formData.name.trim() &&
+      formData.email.trim() &&
+      formData.subject.trim() &&
+      formData.message.trim()
+    );
+  };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  if (!validateForm()) return;
+    if (!validateForm()) return;
 
-  setSubmitting(true);
-  setSubmitStatus(null);
+    setSubmitting(true);
+    setSubmitStatus(null);
 
-  try {
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        access_key: "c821188b-ce06-4d31-b732-818ea907ac99", // Ma'am's access key 
-        // access_key: "6cfa41c1-dc52-4fa2-aa2e-3e853d8a68a6", // My access key
-        name: formData.name,
-        email: formData.email,
-        number: formData.number,
-        subject: formData.subject,
-        message: formData.message,
-      }),
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "c821188b-ce06-4d31-b732-818ea907ac99", // Ma'am's access key
+          // access_key: "6cfa41c1-dc52-4fa2-aa2e-3e853d8a68a6", // My access key
+          name: formData.name,
+          email: formData.email,
+          number: formData.number,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
 
-    const result = await response.json();
+      const result = await response.json();
 
       if (result.success) {
-        setSubmitStatus('success');
+        setSubmitStatus("success");
         setFormData({
-          name: '',
-          email: '',
-          number: '',
-          subject: '',
-          message: ''
+          name: "",
+          email: "",
+          number: "",
+          subject: "",
+          message: "",
         });
       } else {
-        setSubmitStatus('error');
+        setSubmitStatus("error");
       }
     } catch (error) {
-      setSubmitStatus('error');
+      setSubmitStatus("error");
     } finally {
       setSubmitting(false);
       setTimeout(() => setSubmitStatus(null), 3000);
     }
   };
-
 
   return (
     <>
@@ -125,10 +124,9 @@ const handleSubmit = async (e) => {
         <div className="relative z-10 container mx-auto px-4 sm:px-6 py-28 md:py-24 max-w-7xl">
           {/* Header */}
           <header className="mb-12 md:mb-16 text-center">
-           
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white">
-                Contact Us
-              </h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white">
+              Contact Us
+            </h1>
             <ScrollReveal
               animation="slideUp"
               duration={800}
@@ -178,98 +176,112 @@ const handleSubmit = async (e) => {
                     to you as soon as possible.
                   </p>
 
-                 <form className="space-y-5 relative" onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <form className="space-y-5 relative" onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label
+                          htmlFor="name"
+                          className="block text-gray-300 mb-2 text-sm"
+                        >
+                          Your Name <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                          placeholder="John Doe"
+                        />
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="email"
+                          className="block text-gray-300 mb-2 text-sm"
+                        >
+                          Email Address <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                          placeholder="your@email.com"
+                        />
+                      </div>
+                    </div>
+
                     <div>
-                      <label htmlFor="name" className="block text-gray-300 mb-2 text-sm">
-                        Your Name <span className="text-red-500">*</span>
+                      <label
+                        htmlFor="number"
+                        className="block text-gray-300 mb-2 text-sm"
+                      >
+                        Phone Number (Optional)
+                      </label>
+                      <input
+                        type="tel"
+                        id="number"
+                        name="number"
+                        value={formData.number}
+                        onChange={handleChange}
+                        className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                        placeholder="1234567890"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="subject"
+                        className="block text-gray-300 mb-2 text-sm"
+                      >
+                        Subject <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
-                        id="name"
-                        name="name"
+                        id="subject"
+                        name="subject"
                         required
-                        value={formData.name}
+                        value={formData.subject}
                         onChange={handleChange}
                         className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                        placeholder="John Doe"
+                        placeholder="How can we help you?"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-gray-300 mb-2 text-sm">
-                        Email Address <span className="text-red-500">*</span>
+                      <label
+                        htmlFor="message"
+                        className="block text-gray-300 mb-2 text-sm"
+                      >
+                        Message <span className="text-red-500">*</span>
                       </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
+                      <textarea
+                        id="message"
+                        name="message"
                         required
-                        value={formData.email}
+                        rows={5}
+                        value={formData.message}
                         onChange={handleChange}
-                        className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                        placeholder="your@email.com"
-                      />
+                        className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none"
+                        placeholder="Please provide details about your inquiry..."
+                      ></textarea>
                     </div>
-                  </div>
 
-                  <div>
-                    <label htmlFor="number" className="block text-gray-300 mb-2 text-sm">
-                      Phone Number (Optional)
-                    </label>
-                    <input
-                      type="tel"
-                      id="number"
-                      name="number"
-                      value={formData.number}
-                      onChange={handleChange}
-                      className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                      placeholder="1234567890"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-gray-300 mb-2 text-sm">
-                      Subject <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      required
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                      placeholder="How can we help you?"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-gray-300 mb-2 text-sm">
-                      Message <span className="text-red-500">*</span>
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none"
-                      placeholder="Please provide details about your inquiry..."
-                    ></textarea>
-                  </div>
-
-                  <div>
-                    <button
-                      type="submit"
-                      className="bg-gradient-to-r from-red-600 to-red-700 text-white font-medium px-8 py-3 rounded-lg relative overflow-hidden"
-                    >
-                      {submitting ? 'Submitting...' : 'Submit'}
-                    </button>
-                  </div>
-                </form>
-
+                    <div>
+                      <button
+                        type="submit"
+                        className="bg-gradient-to-r from-red-600 to-red-700 text-white font-medium px-8 py-3 rounded-lg relative overflow-hidden"
+                      >
+                        {submitting ? "Submitting..." : "Submit"}
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </ScrollReveal>
             </div>
@@ -319,7 +331,7 @@ const handleSubmit = async (e) => {
                           Headquarters (Hyderabad):
                         </p>
                         <p className="text-gray-300">
-                          3rd Floor, KNR SQUARE, opp. The Platina, Gachibowli 
+                          3rd Floor, KNR SQUARE, opp. The Platina, Gachibowli
                           <br />
                           Hyderabad, Telangana 500032
                         </p>
@@ -590,7 +602,7 @@ const handleSubmit = async (e) => {
                 <p className="text-gray-400 mb-6 text-sm">
                   Stay connected for the latest updates!
                 </p>
-                <div className="grid grid-cols-2 gap-4 mt-auto">
+                <div className="grid grid-cols-3 gap-4 ">
                   <a
                     href="https://www.linkedin.com/company/careertronic/posts/?feedView=all"
                     className="h-12 w-full rounded-lg bg-gray-800/50 border border-gray-700 flex items-center justify-center text-white transition-all duration-300 hover:bg-red-600/20 hover:border-red-500/30 hover:shadow-lg hover:shadow-red-900/20"
@@ -604,9 +616,21 @@ const handleSubmit = async (e) => {
                     </svg>
                     LinkedIn
                   </a>
-
-                  <div className="relative inline-block text-left group">
-                    <button className="bg-gray-800/50 h-12 mb-2 w-full text-white px-4 py-2 rounded-lg transition-all duration-300 hover:bg-red-600/20 hover:border-red-500/30 hover:shadow-lg hover:shadow-red-900/20 border border-gray-700 flex items-center justify-center">
+                  <a
+                    href="https://www.instagram.com/careertronicglobal/"
+                    className="h-12 w-full rounded-lg bg-gray-800/50 border border-gray-700 flex items-center justify-center text-white transition-all duration-300 hover:bg-red-600/20 hover:border-red-500/30 hover:shadow-lg hover:shadow-red-900/20"
+                  >
+                    <svg
+                      className="h-5 w-5 mr-2 text-red-400 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                    Instagram
+                  </a>
+                  {/* <div className="relative inline-block text-left group"> */}
+                  {/* <button className="bg-gray-800/50 h-12 mb-2 w-full text-white px-4 py-2 rounded-lg transition-all duration-300 hover:bg-red-600/20 hover:border-red-500/30 hover:shadow-lg hover:shadow-red-900/20 border border-gray-700 flex items-center justify-center">
                     <svg
                       className="h-5 w-5 mr-2 text-red-400 flex-shrink-0"
                       fill="currentColor"
@@ -615,9 +639,9 @@ const handleSubmit = async (e) => {
                       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                     </svg>
                       Instagram
-                    </button>
+                    </button> */}
 
-                    <div className="absolute bg-gray-900/80 h-32 rounded-lg overflow-y-scroll overflow-x-hidden shadow-lg transition-all duration-300 ease-in-out
+                  {/* <div className="absolute bg-gray-900/80 h-32 rounded-lg overflow-y-scroll overflow-x-hidden shadow-lg transition-all duration-300 ease-in-out
                                 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
                                 pointer-events-none group-hover:pointer-events-auto z-10 w-auto"
                                 style={{scrollbarWidth: "thin",
@@ -629,7 +653,7 @@ const handleSubmit = async (e) => {
                       <a href="https://www.instagram.com/careertronic_software/" className="block px-4 py-2 hover:bg-zinc-600 rounded-lg">Careertronis Software</a>
                       <a href="https://www.instagram.com/careertronic_jobs/" className="block px-4 py-2 hover:bg-zinc-600 rounded-lg">Careertronic Jobs</a>
                     </div>
-                  </div>
+                  </div> */}
 
                   <a
                     href="#"
@@ -643,19 +667,6 @@ const handleSubmit = async (e) => {
                       <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                     </svg>
                     Facebook
-                  </a>
-                  <a
-                    href="#"
-                    className="h-12 w-full rounded-lg bg-gray-800/50 border border-gray-700 flex items-center justify-center text-white transition-all duration-300 hover:bg-red-600/20 hover:border-red-500/30 hover:shadow-lg hover:shadow-red-900/20"
-                  >
-                    <svg
-                      className="h-5 w-5 mr-2 text-red-400"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                    </svg>
-                    Twitter
                   </a>
                 </div>
               </div>

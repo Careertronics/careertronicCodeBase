@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
+import Link from "next/link";
 
 export default function BecomeAFranchise() {
   const [activeTab, setActiveTab] = useState(0);
@@ -10,29 +11,30 @@ export default function BecomeAFranchise() {
 
   const faqs = [
     {
-      question: "What makes Careertronic franchise opportunity different?",
+      question: "Is Careertronic a degree-awarding institute?",
+
       answer:
-        "Careertronic offers a unique opportunity with multiple revenue streams across IT training, global education, BPO/KPO services, and industrial automation. Our proven business model and comprehensive support system sets us apart from other franchise opportunities.",
+        "No. Careertronic offers certification-based and industry-aligned programs. It does not award statutory degrees.",
     },
     {
-      question: "How much experience do I need?",
+      question: "Do I need prior experience in IT or training?",
       answer:
-        "While experience in the IT, education, or business sectors is beneficial, we provide comprehensive training and support. We look for motivated entrepreneurs with strong leadership skills and a passion for technology and education.",
+        "No. Careertronic provides complete academic and operational support.",
     },
     {
-      question: "What's the investment required?",
+      question: "What is the minimum space required for a centre?",
       answer:
-        "Investment varies based on location and scale. Our model is designed to minimize upfront costs while maximizing profitability. During our consultation, we'll provide detailed information about the investment requirements.",
+        "Typically, a minimum of 1,500 sq. ft. is recommended, subject to city and centre model.",
     },
     {
-      question: "How long does it take to open after signing the agreement?",
+      question: "Will Careertronic support marketing and admissions?",
       answer:
-        "Most franchisees can launch their operations within 2-3 months after signing the agreement. This includes training, setup, and initial marketing preparations.",
+        "Yes. Central branding, digital marketing frameworks, and campaign support are provided.",
     },
     {
-      question: "What ongoing support can I expect?",
+      question: "Which cities are suitable for a Careertronic franchise?",
       answer:
-        "We provide continuous operational and marketing support, including access to our CRM system, learning management platform, regular business reviews, marketing campaigns, and technical assistance.",
+        "Careertronic centres are suitable for Tier I, Tier II, and Tier III cities across India.",
     },
   ];
 
@@ -62,33 +64,19 @@ export default function BecomeAFranchise() {
   const steps = [
     {
       img: "/initial.jpg",
-      title: "Initial Consultation",
-      description:
-        "Schedule a discussion to understand our franchise model and opportunities.",
+      title: "Existing training institutes upgrading their brand",
     },
     {
       img: "/eval.jpg",
-      title: "Application & Evaluation",
-      description:
-        "Submit your application and business plan for our team to review.",
+      title: "Professionals passionate about skill development",
     },
     {
       img: "/franch.jpg",
-      title: "Franchise Agreement",
-      description:
-        "Once approved, review and sign the franchise agreement to begin your journey.",
+      title: "Investors seeking scalable education businesses",
     },
     {
       img: "/training.jpg",
-      title: "Training & Setup",
-      description:
-        "Complete comprehensive training and prepare your location for launch.",
-    },
-    {
-      img: "/go.jpg",
-      title: "Grand Opening",
-      description:
-        "Launch your Careertronic franchise with our marketing and operational support.",
+      title: "No prior training delivery experience is mandatory",
     },
   ];
 
@@ -101,14 +89,19 @@ export default function BecomeAFranchise() {
           content="Join the Careertronic family and unlock your entrepreneurial potential with our proven franchise opportunity in IT training, global education, and business outsourcing services."
         />
       </Head>
-
       {/* Hero Section - Dark Background */}
-      <section className="relative h-96 overflow-hidden bg-black">
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+      <section className="relative min-h-[70vh] md:min-h-[85vh] overflow-hidden">
+        {/* Background image */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/api/placeholder/1920/500')" }}
-        ></div>
+          className="absolute inset-0 bg-cover bg-center "
+          style={{ backgroundImage: "url(/franchise/hero.png)" }}
+        />
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/65"></div>
+
+        {/* Subtle brand gradient on top */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3b0f2a]/40 via-transparent to-black/70"></div>
         <div className="relative flex flex-col items-center justify-center h-full text-center px-4 z-10">
           <ScrollReveal
             animation="slideRight"
@@ -118,8 +111,11 @@ export default function BecomeAFranchise() {
             index={0}
             stagger={150}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Franchisee Opportunity with Careertronic
+            <h1 className="text-5xl md:text-6xl font-bold text-white mt-16 mb-6">
+              FRANCHISE WITH
+            </h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-white  p-6 mb-6">
+              Careertronic Skill & Technology Centre
             </h1>
           </ScrollReveal>
           <ScrollReveal
@@ -131,7 +127,7 @@ export default function BecomeAFranchise() {
             stagger={150}
           >
             <p className="text-xl text-white max-w-2xl">
-              Unlock Your Future with a Careertronic Franchise
+              Research-Driven. Industry-Aligned.
             </p>
           </ScrollReveal>
           <ScrollReveal
@@ -142,52 +138,116 @@ export default function BecomeAFranchise() {
             index={2}
             stagger={150}
           >
-            <button className="mt-8 px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full shadow-lg">
+            {/* <button className="mt-8 px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full shadow-lg">
               Apply Now
-            </button>
+            </button> */}
           </ScrollReveal>
         </div>
       </section>
-
-      {/* Introduction Section - White Background */}
-      <section className="py-16 px-4 max-w-6xl mx-auto bg-white">
-        <div className="text-center mb-12">
+      {/* Introduction Section */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
           <ScrollReveal
-            animation="slideRight"
-            duration={1000}
+            animation="slideUp"
+            duration={900}
             easing="spring"
             delay={100}
             index={0}
-            stagger={150}
           >
-            <h2 className="text-3xl font-bold text-red-600 mb-4">
-              Are You Ready To Take The Next Step In Your Entrepreneurial
-              Journey?
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+              Build a profitable and future-proof
+              <span className="text-red-700 mt-2"> Education Business</span>
             </h2>
           </ScrollReveal>
+
           <ScrollReveal
-            animation="slideLeft"
-            duration={1000}
+            animation="fade"
+            duration={900}
             easing="spring"
             delay={250}
             index={1}
-            stagger={150}
           >
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-              At Careertronic Global Services Pvt. Ltd. (CGSPL), we offer a
-              unique franchise opportunity that allows you to tap into the
-              growing demand for high-quality IT training, industrial
-              automation, global education, and business outsourcing services.
-              Join us and become part of a global network that empowers
-              businesses and individuals with innovative solutions and
-              world-class services.
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Careertronic Skill & Technology Centre — a next-generation
+              technology training ecosystem backed by strong curriculum,
+              centralized systems, and continuous academic support.
             </p>
           </ScrollReveal>
         </div>
       </section>
+      {/* About Section */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* LEFT: CONTENT */}
+            <div>
+              <ScrollReveal
+                animation="slideRight"
+                duration={900}
+                easing="spring"
+                delay={100}
+                index={0}
+              >
+                <h3 className="text-sm font-semibold text-red-700 tracking-widest mb-3 uppercase">
+                  About the Brand
+                </h3>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Careertronic Global Services Pvt. Ltd.
+                </h2>
+              </ScrollReveal>
 
+              <ScrollReveal
+                animation="slideLeft"
+                duration={900}
+                easing="spring"
+                delay={250}
+                index={1}
+              >
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Careertronic Skill & Technology Centre is a premium technology
+                  training and skill development initiative of Careertronic
+                  Global Services (P) Ltd. The brand focuses on advanced and
+                  emerging technologies, employability-driven programs, and
+                  industry-aligned learning delivery.
+                  <br />
+                  <br />
+                  Our centres operate within a research-backed academic
+                  framework, ensuring curriculum relevance, consistency in
+                  delivery, and long-term sustainability for franchise partners.
+                </p>
+              </ScrollReveal>
+            </div>
+
+            {/* RIGHT: BIG LOGO */}
+            <div className="flex justify-center md:justify-end">
+              <ScrollReveal
+                animation="zoomIn"
+                duration={900}
+                easing="spring"
+                delay={300}
+                index={2}
+              >
+                <div className="relative">
+                  <img
+                    src="/logo/logo.png"
+                    alt="Careertronic Logo"
+                    className="w-64 md:w-80 opacity-90"
+                  />
+
+                  <div className="absolute inset-0 bg-red-700/10 blur-3xl rounded-full -z-10"></div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Why Choose Us Section - Black Background */}
-      <section className="py-16 px-4 bg-black">
+      <section
+        className="py-16 px-4 bg-gradient-to-b
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000]"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <ScrollReveal
@@ -198,8 +258,8 @@ export default function BecomeAFranchise() {
               index={0}
               stagger={150}
             >
-              <h2 className="text-4xl font-bold text-red-500 mb-4">
-                Why Choose Careertronic Global Services?
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Why Choose Careertronic Franchise?
               </h2>
             </ScrollReveal>
             <ScrollReveal
@@ -211,8 +271,9 @@ export default function BecomeAFranchise() {
               stagger={150}
             >
               <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Partner with a proven business model that offers exceptional
-                support and diverse revenue streams
+                Careertronic is not a conventional IT training institute. It is
+                a structured technology education ecosystem designed for scale,
+                quality, and profitability.
               </p>
             </ScrollReveal>
           </div>
@@ -227,31 +288,32 @@ export default function BecomeAFranchise() {
               },
               {
                 emoji: "🎓",
-                title: "Comprehensive Support",
+                title: "Research-driven and industry-aligned curriculum",
                 description:
-                  "We provide extensive onboarding, ongoing operational reviews, marketing campaigns, and access to our advanced online learning platform, CRM system, and e-commerce tools.",
+                  "Careertronic follows a research-driven, industry-aligned curriculum approach that evolves with technology and workforce needs.",
               },
               {
                 emoji: "🌐",
-                title: "Strong Brand Recognition",
+                title: "Centralized ERP, LMS, and Franchise Command Centre",
                 description:
-                  "Leverage a globally recognized brand with a trusted name in IT services and global education sectors. Our reputation for excellence helps you build credibility and attract customers faster.",
-              },
-              {
-                emoji: "💰",
-                title: "Diverse Revenue Streams",
-                description:
-                  "Tap into multiple revenue sources including training fees, BPO/KPO services, global education services, and industrial automation training programs.",
+                  "Careertronic operates a centralized ERP, LMS, and Franchise Command Centre to ensure standardized operations, academic consistency, and real-time oversight across all centres.",
               },
               {
                 emoji: "📈",
-                title: "Scalability & Growth",
+                title: "Premium positioning in the skill development market",
                 description:
-                  "Our franchise model is designed for rapid scalability. Start small or expand quickly with the flexibility to grow at your own pace while minimizing upfront investment.",
+                  "Careertronic operates in the premium segment of the skill development market, driven by quality, credibility, and learner outcomes.",
+              },
+              {
+                emoji: "🕰️",
+                title:
+                  "Continuous academic, operational, and marketing support",
+                description:
+                  "Careertronic operates in the premium segment of the skill development market, driven by quality, credibility, and learner outcomes.",
               },
               {
                 emoji: "📱",
-                title: "Marketing Support",
+                title: "Strong brand credibility with industry-backed outcomes",
                 description:
                   "Leverage CGSPL's brand presence through digital marketing campaigns, promotional materials, and corporate tie-ups to attract customers and grow quickly.",
               },
@@ -277,9 +339,8 @@ export default function BecomeAFranchise() {
           </div>
         </div>
       </section>
-
-      {/* Revenue Streams Section - White Background */}
-      <section className="py-16 bg-white">
+      {/* Revenue Streams Section - White Background  bg-white */}
+      {/* <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <ScrollReveal
             animation="slideBottom"
@@ -289,12 +350,42 @@ export default function BecomeAFranchise() {
             index={0}
             stagger={150}
           >
-            <h2 className="text-4xl font-bold text-red-600 mb-16 text-center">
-              Multiple Revenue Opportunities
+            <h2 className="text-4xl font-bold text-red-700 mb-6 text-center">
+              PROGRAMS OFFERED
             </h2>
+            <p className="text-xl font-bold text-red-700  text-center mb-10">
+              Careertronic Skill and Technology Centres deliver high-demand
+              programs in
+            </p>
           </ScrollReveal>
+          <div className="flex flex-wrap gap-4">
+            {[
+              "Artificial Intelligence & Machine Learning",
+              "Data Science & Data Analytics",
+              "Full Stack Development",
+              "Cloud Computing & DevOps",
+              "Cyber Security & Ethical Hacking",
+              "Industrial Automation & Industry 4.0",
+              "Emerging Technology Certification Programs",
+            ].map((item, index) => (
+              <ScrollReveal
+                key={index}
+                animation="slideUp"
+                duration={700}
+                easing="spring"
+                delay={index * 80}
+                index={index}
+              >
+                <div className="px-5 py-3 border rounded-full">
+                  <span className="text-sm font-medium text-red-700">
+                    {item}
+                  </span>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
                 id: "IT",
@@ -379,12 +470,258 @@ export default function BecomeAFranchise() {
                 </div>
               </ScrollReveal>
             ))}
+          </div> */}
+      {/* </div> */}
+      {/* </section> */} */
+      <section className="py-20 px-6 ">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center text-red-700 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Programs Offered
+            </h2>
+            <p className="text-lg  text-black max-w-3xl mx-auto">
+              Careertronic Skill & Technology Centres deliver high-demand
+              programs aligned with emerging technologies and industry
+              requirements.
+            </p>
+          </div>
+
+          {/* Program Cards Container */}
+          <div
+            className="bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] rounded-2xl p-8 shadow-sm"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                "Artificial Intelligence & Machine Learning",
+                "Data Science & Data Analytics",
+                "Full Stack Development",
+                "Cloud Computing & DevOps",
+                "Cyber Security & Ethical Hacking",
+                "Industrial Automation & Industry 4.0",
+                "Emerging Technology Certification Programs",
+              ].map((program, index) => (
+                <div
+                  key={index}
+                  className="bg-white text-black border rounded-xl px-5 py-4 hover:shadow-md transition"
+                >
+                  <p className="font-medium">{program}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Footer line */}
+          <p className="mt-10 text-center text-lg max-w-4xl mx-auto text-red-700">
+            All programs are designed with a strong focus on practical exposure,
+            career outcomes, and industry readiness.
+          </p>
+        </div>
+      </section>
+      <div className="max-w-6xl mx-auto my-12 relative">
+        <div className="h-[2px] bg-gradient-to-r from-transparent via-[#7F1D1D] to-transparent"></div>
+        <div className="absolute inset-0 blur-xl bg-[#7F1D1D]/30"></div>
+      </div>
+      <section className="py-16 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-6">
+              Research-Driven Learning Approach
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Careertronic Skill & Technology Centres function under a
+              structured research and academic framework that ensures long-term
+              academic and market relevance.
+            </p>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl border">
+            <ul className="space-y-3 text-lg text-gray-700">
+              <li>• Continuous curriculum upgradation</li>
+              <li>• Alignment with real-world industry use cases</li>
+              <li>• Strong academic credibility</li>
+              <li>• Long-term relevance beyond short-term trends</li>
+            </ul>
+          </div>
+        </div>
+
+        <p className="mt-10 text-center text-lg text-gray-700 max-w-4xl mx-auto">
+          This approach enables franchise partners to attract serious learners
+          and command premium course pricing.
+        </p>
+      </section>
+      <div className="max-w-6xl mx-auto my-12 relative">
+        <div className="h-[2px] bg-gradient-to-r from-transparent via-[#7F1D1D] to-transparent"></div>
+        <div className="absolute inset-0 blur-xl bg-[#7F1D1D]/30"></div>
+      </div>
+      {/* End-to-End Franchise Support */}
+      <section
+        className="py-20 px-6 bg-gradient-to-b
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000]"
+      >
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              End-to-End Franchise Support
+            </h2>
+            <p className="text-lg text-white max-w-3xl mx-auto">
+              Careertronic provides comprehensive support across every stage of
+              the franchise lifecycle — from setup to growth and long-term
+              operations.
+            </p>
+          </div>
+
+          {/* Support Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Pre-Launch Support */}
+            <div className="border border-gray-200 rounded-2xl p-8  bg-gray-900">
+              <h3 className="text-xl font-semibold text-red-400 mb-4">
+                Pre-Launch Support
+              </h3>
+              <ul className="space-y-2 text-lg text-white">
+                <li>• Centre location and readiness guidance</li>
+                <li>• Infrastructure and lab setup specifications</li>
+                <li>• Faculty onboarding assistance</li>
+                <li>• Pre-launch marketing support</li>
+              </ul>
+            </div>
+
+            {/* Operational Support */}
+            <div className="bg-gray-900 border border-gray-200 rounded-2xl p-8">
+              <h3 className="text-xl font-semibold text-red-400 mb-4">
+                Operational Support
+              </h3>
+              <ul className="space-y-2 text-lg text-white">
+                <li>• Centralized ERP and LMS access</li>
+                <li>• Academic delivery frameworks</li>
+                <li>• Standard Operating Procedures (SOPs)</li>
+                <li>• Ongoing curriculum and content support</li>
+              </ul>
+            </div>
+
+            {/* Marketing & Growth Support */}
+            <div className="bg-gray-900 border border-gray-200 rounded-2xl p-8">
+              <h3 className="text-xl font-semibold text-red-400 mb-4">
+                Marketing & Growth Support
+              </h3>
+              <ul className="space-y-2 text-lg text-white">
+                <li>• Central branding support</li>
+                <li>• Digital marketing frameworks</li>
+                <li>• Lead generation guidance</li>
+                <li>• Campaign creatives and communication templates</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
+      {/* Technology-Powered Operations */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="max-w-4xl mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-4">
+              Technology-Powered Operations
+            </h2>
+            <p className="text-lg text-black leading-relaxed">
+              Each Careertronic Skill & Technology Centre is enabled through an
+              integrated ERP, LMS, and Franchise Command Centre to ensure
+              operational efficiency, academic consistency, and centralized
+              governance.
+            </p>
+          </div>
 
-      {/* Apply for Franchise Section */}
-      <div className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          {/* Content */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            {/* Left: Capabilities */}
+            <div className="bg-gray-50 rounded-2xl p-8">
+              <ul className="space-y-3 text-lg text-black">
+                <li>• Student lifecycle management</li>
+                <li>• Admissions and fee tracking</li>
+                <li>• Academic delivery and assessments</li>
+                <li>• Central reporting and analytics</li>
+                <li>• Operational transparency and governance</li>
+              </ul>
+            </div>
+
+            {/* Right: System Highlight */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-8">
+              <h3 className="text-xl font-semibold text-red-700 mb-4">
+                Integrated Digital Backbone
+              </h3>
+              <p className="text-lg text-black leading-relaxed">
+                The centralized ERP, LMS, and Command Centre provide real-time
+                visibility into academic performance, operational metrics, and
+                compliance across all centres — enabling data-driven decisions
+                and scalable growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="max-w-6xl mx-auto my-12 relative">
+        <div className="h-[2px] bg-gradient-to-r from-transparent via-[#7F1D1D] to-transparent"></div>
+        <div className="absolute inset-0 blur-xl bg-[#7F1D1D]/30"></div>
+      </div>
+      {/* Investment & Returns */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="max-w-4xl mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-4">
+              Investment & Returns
+            </h2>
+            <p className="text-lg text-black leading-relaxed">
+              Careertronic follows a transparent investment structure designed
+              for long-term profitability and sustainable centre growth.
+            </p>
+          </div>
+
+          {/* Content */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            {/* Left: Investment Structure */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-8">
+              <h3 className="text-xl font-semibold text-red-700 mb-4">
+                Investment Structure
+              </h3>
+              <ul className="space-y-3 text-lg text-black">
+                <li>• Clearly defined franchise fee</li>
+                <li>• Reasonable infrastructure and setup costs</li>
+                <li>• Multiple revenue streams across programs</li>
+                <li>• Centralized support to optimize centre performance</li>
+              </ul>
+            </div>
+
+            {/* Right: ROI Note */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-8">
+              <h3 className="text-xl font-semibold text-red-700 mb-4">
+                Returns & Performance
+              </h3>
+              <p className="text-lg text-black leading-relaxed">
+                Detailed financial projections, break-even timelines, and ROI
+                models are shared during the franchise evaluation process to
+                ensure complete clarity and informed decision-making.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="max-w-6xl mx-auto my-12 relative">
+        <div className="h-[2px] bg-gradient-to-r from-transparent via-[#7F1D1D] to-transparent"></div>
+        <div className="absolute inset-0 blur-xl bg-[#7F1D1D]/30"></div>
+      </div>
+      {/* Apply for Franchise Section  bg-white */}
+      <div
+        className="w-full  py-16 px-4 sm:px-6 lg:px-8  mx-auto bg-gradient-to-b
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000]"
+      >
         <div className="text-center mb-12">
           <ScrollReveal
             animation="slideRight"
@@ -394,8 +731,8 @@ export default function BecomeAFranchise() {
             index={0}
             stagger={150}
           >
-            <h2 className="text-3xl font-bold mb-3 text-red-600">
-              Apply for a Franchise
+            <h2 className="text-3xl font-bold mb-3 text-white">
+              Who can apply for a Franchise?
             </h2>
           </ScrollReveal>
           <ScrollReveal
@@ -406,9 +743,9 @@ export default function BecomeAFranchise() {
             index={1}
             stagger={150}
           >
-            <p className="max-w-sm sm:max-w-2xl mx-auto text-gray-700">
-              Interested in partnering with us? Here's how you can become a part
-              of our franchise network.
+            <p className="max-w-sm sm:max-w-2xl mx-auto text-white">
+              This opportunity is ideal for: Entrepreneurs entering the
+              education sector
             </p>
           </ScrollReveal>
         </div>
@@ -426,10 +763,10 @@ export default function BecomeAFranchise() {
             >
               <div className="flex flex-col items-center text-center max-w-xs">
                 <Image src={step.img} width={80} height={80} alt={step.title} />
-                <h3 className="text-xl font-semibold text-red-500 mt-4">
+                <h3 className="text-xl font-semibold text-white mt-4">
                   {step.title}
                 </h3>
-                <p className="text-gray-700 mt-2">{step.description}</p>
+                <p className="text-white mt-3">{step.description}</p>
               </div>
             </ScrollReveal>
           ))}
@@ -444,15 +781,63 @@ export default function BecomeAFranchise() {
             index={0}
             stagger={150}
           >
-             {/* <Button>
+            {/* <Button>
               Apply Now
             </Button> */}
           </ScrollReveal>
         </div>
       </div>
+      {/* FAQs Section */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-red-700 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-red-700 max-w-3xl mx-auto">
+              Answers to common questions about the Careertronic franchise
+              opportunity.
+            </p>
+          </div>
 
+          {/* FAQ List */}
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-white border border-gray-200 rounded-xl overflow-hidden"
+              >
+                <button
+                  className="w-full flex justify-between items-center px-6 py-5 text-left"
+                  onClick={() =>
+                    setActiveTab(activeTab === index ? null : index)
+                  }
+                >
+                  <span className="text-lg font-medium text-black">
+                    {faq.question}
+                  </span>
+                  <span className="text-2xl text-black">
+                    {activeTab === index ? "−" : "+"}
+                  </span>
+                </button>
+
+                {activeTab === index && (
+                  <div className="px-6 pb-6 text-lg text-black leading-relaxed">
+                    {faq.answer}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <div className="max-w-6xl mx-auto my-12 relative">
+        <div className="h-[2px] bg-gradient-to-r from-transparent via-[#7F1D1D] to-transparent"></div>
+        <div className="absolute inset-0 blur-xl bg-[#7F1D1D]/30"></div>
+      </div>
       {/* Why Now Is the Right Time Section */}
-      <section className="bg-black text-white py-20 px-8">
+      {/* <section className="bg-white text-red-600 py-20 px-8">
         <div className="max-w-7xl mx-auto text-center">
           <ScrollReveal
             animation="slideRight"
@@ -462,7 +847,7 @@ export default function BecomeAFranchise() {
             index={0}
             stagger={150}
           >
-            <h2 className="text-5xl font-bold text-red-500 uppercase">
+            <h2 className="text-5xl font-bold text-red-600 uppercase">
               Why Now Is the Right Time to Invest
             </h2>
           </ScrollReveal>
@@ -474,7 +859,7 @@ export default function BecomeAFranchise() {
             index={1}
             stagger={150}
           >
-            <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="mt-6 text-xl text-black max-w-3xl mx-auto">
               The global demand for skilled professionals in IT, industrial
               automation, and education services is rising sharply. As
               businesses seek digital-first solutions, CGSPL's services are more
@@ -483,10 +868,14 @@ export default function BecomeAFranchise() {
             </p>
           </ScrollReveal>
         </div>
-      </section>
-
+      </section> */}
       {/* Join Us Section */}
-      <section className="bg-white text-black py-20 px-8 text-center">
+      <section
+        className="bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] text-white py-20 px-8 text-center"
+      >
         <ScrollReveal
           animation="slideleft"
           duration={1000}
@@ -495,7 +884,7 @@ export default function BecomeAFranchise() {
           index={0}
           stagger={150}
         >
-          <h2 className="text-5xl font-bold text-red-500 uppercase">
+          <h2 className="text-5xl font-bold text-white uppercase">
             Join the CGSPL Family Today!
           </h2>
         </ScrollReveal>
@@ -507,7 +896,7 @@ export default function BecomeAFranchise() {
           index={1}
           stagger={150}
         >
-          <p className="mt-6 text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="mt-6 text-xl text-white max-w-3xl mx-auto">
             Start your entrepreneurial journey with CGSPL and be part of a
             global network reshaping the future of education, technology, and
             outsourcing.
@@ -522,8 +911,13 @@ export default function BecomeAFranchise() {
           stagger={150}
         >
           <div className="mt-8 flex justify-center gap-6">
-            <button className="px-8 py-4 text-lg bg-red-500 text-white rounded-xl hover:bg-red-700">
-              Inquire Now
+            <button>
+              <Link
+                className="px-8 py-4 text-lg bg-red-500 text-white rounded-xl hover:bg-red-700"
+                href="/franchisecontact"
+              >
+                Enquire Now
+              </Link>
             </button>
             <button className="px-8 py-4 text-lg border-2 border-red-500 text-red-500 rounded-xl hover:bg-red-500 hover:text-white">
               Download Franchise Brochure

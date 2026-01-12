@@ -7,7 +7,7 @@ const BusinessServiceCard = ({
   iconSrc,
   backgroundColor = "bg-black",
   borderColor = "border-white",
-  textColor = "t  ext-white",
+  textColor = "text-white",
 }) => {
   return (
     <div
@@ -33,11 +33,11 @@ const BusinessServiceCard = ({
       </div>
       {/* Title - Responsive text sizes */}
       <ScrollReveal animation="slideUp" duration={500} delay={0}>
-      <h3
-        className={`text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold ${textColor} mb-1 sm:mb-2`}
-      >
-        {title}
-      </h3>
+        <h3
+          className={`text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold ${textColor} mb-1 sm:mb-2`}
+        >
+          {title}
+        </h3>
       </ScrollReveal>
       {/* Description - Responsive text sizes */}
       <p className="text-gray-400 text-xs sm:text-sm md:text-base lg:text-lg leading-snug">

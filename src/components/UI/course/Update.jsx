@@ -80,7 +80,7 @@ export default function Home() {
       rating: 5,
       category: "Cybersecurity",
       image: "/Course/ethical.jpg",
-      enrollUrl: "/courses/CYBER-SECURITY", 
+      enrollUrl: "/courses/CYBER-SECURITY",
     },
     {
       id: 5,
@@ -88,7 +88,7 @@ export default function Home() {
       rating: 5,
       category: "Cloud",
       image: "/Course/cloud.png",
-      enrollUrl: "/courses/CLOUD-COMPUTING-&-AWS", 
+      enrollUrl: "/courses/CLOUD-COMPUTING-&-AWS",
     },
     {
       id: 6,
@@ -96,7 +96,7 @@ export default function Home() {
       rating: 5,
       category: "Networking",
       image: "/Course/aws.jpg",
-      enrollUrl: "/courses/AWS-DEVOPS", 
+      enrollUrl: "/courses/AWS-DEVOPS",
     },
     {
       id: 7,
@@ -104,15 +104,15 @@ export default function Home() {
       rating: 5,
       category: "Automation",
       image: "/Course/automation.jpg",
-      enrollUrl: "/courses/INDUSTRIAL-AUTOMATION", 
+      enrollUrl: "/courses/INDUSTRIAL-AUTOMATION",
     },
     {
       id: 8,
       title: "Data Analytics",
       rating: 5,
-      category: "Security",
-      image: "/Course/ethical.jpg",
-      enrollUrl: "/courses/DATA-ANALYTICS", 
+      category: "Data Analysis",
+      image: "/Course/dataAnalyst.png",
+      enrollUrl: "/courses/DATA-ANALYTICS",
     },
   ];
 

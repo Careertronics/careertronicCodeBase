@@ -5,9 +5,10 @@ import Image from "next/image";
 import Button from "@/components/UI/button";
 import StatsAndCommitments from "@/components/About/StatsAndCommitments";
 import BlueNWhite from "@/components/About/BlueNWhite";
-import WhyChooseInnovetix from "@/components/About/WhyChoosecareertronic";
+import WhyChooseCareerTronic from "@/components/About/WhyChooseCareertronic";
 // import ScrollReveal from "@/components/ScrollReveal";
 import ScrollReveal from "@/components/ScrollReveal";
+import MindsBehind from "@/components/About/MindsBehind";
 // import { Card } from "@/components/ui/card";
 function page() {
   const missionTitle = "Our Mission";
@@ -26,7 +27,7 @@ function page() {
     "Our goal is to create lasting impact through our cutting-edge solutions, expert-led training, and global education opportunities, shaping the future of work and learning for generations to come.",
   ];
 
-  const visionImage = "/about/vision.svg";
+  const visionImage = "/about/vision.png";
   const valuesTitle = "Our Values";
   const valuesPoints = [
     "Innovation: We stay ahead of industry trends by embracing emerging technologies and delivering forward-thinking solutions that meet both current and future needs.",
@@ -36,13 +37,17 @@ function page() {
     "Collaboration: We believe in the power of teamwork, working closely with clients and partners to build inclusive, enduring partnerships based on shared vision.",
   ];
 
-  const valuesImage = "/about/values.svg"; // Update this with the actual image path
+  const valuesImage = "/about/values.png"; // Update this with the actual image path
 
   const whoWeAreTitle = "Who We Are";
   const whoWeArePoints = [
     "Careertronics is a global leader in providing advisory, technology, and implementation solutions. We partner with clients to drive transformation across industries, helping them navigate challenges, optimize operations, and accelerate growth.",
     "Our team of experts brings unmatched industry knowledge, combined with cutting-edge technology, to deliver actionable insights and impactful results.",
   ];
+
+  const whoWeAreImage = "/about/whoweare.png"; // Update this with the actual image path
+
+  const OurHistoryImage = "/about/ourhistory.png";
   const OurHistoryTitle = "Our History";
   const OurHistoryPoints = [
     "Founded with a vision to drive positive change in the business world, Careertronics into a trusted partner for organizations worldwide. Over the years, we have built a legacy of success, helping clients across industries embrace innovation, transform operations, and achieve lasting value. Our rich history reflects our commitment to excellence and our passion for shaping a brighter future.",
@@ -51,7 +56,12 @@ function page() {
   return (
     <>
       {/* sec 1 */}
-      <div className="bg-gradient-to-b from-[#040404] to-[#201F37] overflow-hidden">
+      <div
+        className="bg-gradient-to-b
+from-[#000000]
+via-[#3b0f2a]
+to-[#0e0e11] overflow-hidden"
+      >
         <div className="px-10 md:max-w-5xl lg:max-w-6xl mx-auto flex flex-col pb-12 sm:pb-20 pt-32">
           <div className="flex gap-10 items-center">
             <div
@@ -184,22 +194,24 @@ function page() {
         missionNumber={3}
         visionTitle={whoWeAreTitle}
         visionPoints={whoWeArePoints}
-        visionImage={visionImage}
+        visionImage={whoWeAreImage}
         visionNumber={4}
       />
       <BlueNWhite
         missionTitle={OurHistoryTitle}
         missionPoints={OurHistoryPoints}
         missionNumber={5}
-        missionImage={valuesImage}
+        missionImage={OurHistoryImage}
         visionHidden={1}
         visionTitle={whoWeAreTitle}
         visionPoints={whoWeArePoints}
+        visionImage={visionImage}
         visionNumber={4}
         noPoints={1}
       />
-
-      <div className="bg-black text-white py-10 px-4 text-center">
+      <WhyChooseCareerTronic />
+      {/* {Below code is replaced by mindsbehind react component} */}
+      {/* <div className="bg-white text-black py-10 px-4 text-center">
         <h2 className="text-3xl font-bold inline-block relative pb-2">
           The Minds Behind <span className="text-red-500">CAREERTRONIC</span>{" "}
           TEAM
@@ -213,9 +225,9 @@ function page() {
           services. We collaborate, innovate, and grow, ensuring cutting-edge
           solutions tailored to your needs. With a commitment to continuous
           learning, we stay ahead of industry trends to drive your success.
-        </p>
+        </p> */}
 
-        <div className="mt-6 flex justify-center w-[70vw]  h-[30vw] mx-auto mb-20">
+      {/* <div className="mt-6 flex justify-center w-[70vw]  h-[30vw] mx-auto mb-20">
           <Image
             src="/ourteam/leader.jpeg"
             alt="Gallery"
@@ -223,18 +235,16 @@ function page() {
             height={400}
             className="w-full rounded-lg shadow-lg object-cover"
           />
-        </div>
+        </div> */}
 
-        <div className="mt-6">
+      {/* <div className="mt-6">
           <Link href={"/ourteam"}>
             <button className="bg-red-500 text-white px-6 py-2 rounded-full text-lg font-semibold">
-              Show All
+              Meet Our Team
             </button>
           </Link>
         </div>
-      </div>
-
-      <WhyChooseInnovetix />
+      </div> */}
     </>
   );
 }
