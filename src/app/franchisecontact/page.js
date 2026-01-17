@@ -629,17 +629,17 @@ export default function FranchiseContactPage() {
             easing="ease-in-out"
             delay={100}
           >
-            <div className="bg-gray-900/40 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-gray-800 shadow-xl relative overflow-hidden mt-8">
+            <div className="bg-gray-900/40 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-gray-800 shadow-xl relative overflow-hidden mt-8 text-center">
               {/* Subtle background glow */}
-              <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-red-600/10 filter blur-xl"></div>
+              <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-red-600/10 filter blur-xl text-center"></div>
 
-              <h3 className="text-2xl font-semibold mb-6 relative">
-                Why Choose Us?
+              <h3 className="text-2xl font-semibold mb-6 relative text-center">
+                LEGAL DISCLAIMER
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/50">
                   <div className="flex items-start">
-                    <span className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mr-3">
+                    {/* <span className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mr-3">
                       <svg
                         className="h-5 w-5 text-white"
                         viewBox="0 0 20 20"
@@ -650,22 +650,20 @@ export default function FranchiseContactPage() {
                           d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
                           clipRule="evenodd"
                         />
-                      </svg>
-                    </span>
+                      </svg> */}
+                    {/* </span> */}
                     <div>
                       <span className="font-medium text-white">
-                        Global Presence
+                        Careertronic Skill & Technology Centre is a division of
+                        Careertronic Global Services (P) Ltd.
                       </span>
-                      <p className="text-gray-300 text-sm mt-1">
-                        Support across multiple regions
-                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/50">
-                  <div className="flex items-start">
-                    <span className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mr-3">
+                  <div className="flex items-center justify-center">
+                    {/* <span className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mr-3">
                       <svg
                         className="h-5 w-5 text-white"
                         viewBox="0 0 20 20"
@@ -677,21 +675,19 @@ export default function FranchiseContactPage() {
                           clipRule="evenodd"
                         />
                       </svg>
-                    </span>
+                    </span> */}
                     <div>
                       <span className="font-medium text-white">
-                        Fast Performance
+                        All programs are certification-based and
+                        industry-aligned.
                       </span>
-                      <p className="text-gray-300 text-sm mt-1">
-                        Optimized for speed and efficiency
-                      </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/50">
-                  <div className="flex items-start">
-                    <span className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mr-3">
+                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/50 text-center">
+                  <div className="flex items-center justify-center text-center">
+                    {/* <span className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mr-3">
                       <svg
                         className="h-5 w-5 text-white"
                         viewBox="0 0 20 20"
@@ -704,18 +700,18 @@ export default function FranchiseContactPage() {
                         />
                       </svg>
                     </span>
-                    <div>
-                      <span className="font-medium text-white">
-                        24/7 Support
-                      </span>
-                      <p className="text-gray-300 text-sm mt-1">
+                    <div> */}
+                    <span className="font-medium text-white ">
+                      No statutory degrees are awarded.
+                    </span>
+                    {/* <p className="text-gray-300 text-sm mt-1">
                         Always available to help you
                       </p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 
-                <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/50">
+                {/* <div className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/50">
                   <div className="flex items-start">
                     <span className="flex-shrink-0 h-10 w-10 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mr-3">
                       <svg
@@ -738,8 +734,8 @@ export default function FranchiseContactPage() {
                         Enterprise-grade security
                       </p>
                     </div>
-                  </div>
-                </div>
+                  </div> */}
+                {/* </div> */}
               </div>
             </div>
           </ScrollReveal>
