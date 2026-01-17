@@ -6,7 +6,12 @@ import Link from "next/link";
 import ScrollReveal from "../ScrollReveal";
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div
+      className="min-h-screen bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] text-white overflow-x-hidden"
+    >
       <Head>
         <title>Business Excellence Gateway</title>
         <meta
@@ -84,10 +89,10 @@ export default function Home() {
                   index={0}
                   stagger={150}
                 >
-                  <Link href={'/contact'}>
-                  <button className="bg-red-600 hover:bg-red-700 text-white px-4 sm:px-6 xl:px-8 py-2 xl:py-3 rounded-full transition duration-300 text-sm sm:text-base xl:text-lg">
-                    Get Started
-                  </button>
+                  <Link href={"/contact"}>
+                    <button className="bg-red-600 hover:bg-red-700 text-white px-4 sm:px-6 xl:px-8 py-2 xl:py-3 rounded-full transition duration-300 text-sm sm:text-base xl:text-lg">
+                      Get Started
+                    </button>
                   </Link>
                 </ScrollReveal>
                 <ScrollReveal
@@ -97,10 +102,10 @@ export default function Home() {
                   index={0}
                   stagger={150}
                 >
-                  <Link href={'/services'}>
-                  <button className="border border-white hover:bg-white hover:text-black text-white px-4 sm:px-6 xl:px-8 py-2 xl:py-3 rounded-full transition duration-300 text-sm sm:text-base xl:text-lg">
-                    Our Services
-                  </button>
+                  <Link href={"/services"}>
+                    <button className="border border-white hover:bg-white hover:text-black text-white px-4 sm:px-6 xl:px-8 py-2 xl:py-3 rounded-full transition duration-300 text-sm sm:text-base xl:text-lg">
+                      Our Services
+                    </button>
                   </Link>
                 </ScrollReveal>
               </div>
@@ -259,7 +264,12 @@ export default function Home() {
           </div>
         </section>
         {/* Trusted Section */}
-        <section className="w-full bg-gradient-to-r from-red-900 to-black py-6 sm:py-8 lg:py-10 xl:py-12">
+        <section
+          className="w-full bg-gradient-to-r 
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] py-6 sm:py-8 lg:py-10 xl:py-12"
+        >
           <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-8xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-12">
             {/* Left Side - Text */}
             <ScrollReveal

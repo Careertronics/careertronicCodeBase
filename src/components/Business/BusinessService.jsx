@@ -53,13 +53,13 @@ const BusinessService = () => {
       iconSrc: "/Business/Invest.png",
       borderColor: "border-white-100",
     },
-    {
-      title: "Financial Modeling & Risk Management",
-      description:
-        "Robust financial models, sensitivity analysis, scenario planning, risk assessment, and mitigation strategies.",
-      iconSrc: "/Business/Finance.png",
-      borderColor: "border-white-100",
-    },
+    // {
+    //   title: "Financial Modeling & Risk Management",
+    //   description:
+    //     "Robust financial models, sensitivity analysis, scenario planning, risk assessment, and mitigation strategies.",
+    //   iconSrc: "/Business/Finance.png",
+    //   borderColor: "border-white-100",
+    // },
   ];
 
   // Section 3: Business Process Optimization
@@ -196,9 +196,10 @@ const BusinessService = () => {
       {/* Section 1 */}
       <div className="mb-8 px-5">
         <div
-          className="bg-gradient-to-br from-[#7F1D1D]  
-via-[#3A0D0D]
-to-[#160404] pb-6 rounded-lg shadow-lg border border-gray-700"
+          className=" bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
             <ScrollReveal animation="slideUp" duration={800} delay={200}>
@@ -235,9 +236,10 @@ to-[#160404] pb-6 rounded-lg shadow-lg border border-gray-700"
       {/* Section 2 */}
       <div className="mb-8 px-5">
         <div
-          className="bg-gradient-to-b from-[#7F1D1D]  
-via-[#3A0D0D]
-to-[#160404]  pb-6 rounded-lg shadow-lg border border-gray-700"
+          className="bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
             <ScrollReveal animation="slideUp" duration={800} delay={200}>
@@ -273,9 +275,10 @@ to-[#160404]  pb-6 rounded-lg shadow-lg border border-gray-700"
       {/* Section 3 */}
       <div className="mb-8 px-5">
         <div
-          className="bg-gradient-to-b from-[#7F1D1D]  
-via-[#3A0D0D]
-to-[#160404] pb-6 rounded-lg shadow-lg border border-gray-700"
+          className=" bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
             <ScrollReveal animation="slideUp" duration={800} delay={200}>
@@ -310,9 +313,10 @@ to-[#160404] pb-6 rounded-lg shadow-lg border border-gray-700"
       {/* Section 4 - Franchising & Expansion Strategies */}
       <div className="mb-8 px-5">
         <div
-          className="bg-gradient-to-b from-[#7F1D1D]  
-via-[#3A0D0D]
-to-[#160404] pb-6 rounded-lg shadow-lg border border-gray-700"
+          className="bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
             <ScrollReveal animation="slideUp" duration={800} delay={200}>
@@ -348,9 +352,10 @@ to-[#160404] pb-6 rounded-lg shadow-lg border border-gray-700"
       {/* Section 5 - IPO & Market Listing Support */}
       <div className="mb-8 px-5">
         <div
-          className="bg-gradient-to-b from-[#7F1D1D]  
-via-[#3A0D0D]
-to-[#160404] pb-6 rounded-lg shadow-lg border border-gray-700"
+          className="bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
             <ScrollReveal animation="slideUp" duration={800} delay={200}>
@@ -384,9 +389,10 @@ to-[#160404] pb-6 rounded-lg shadow-lg border border-gray-700"
       {/* Section 6 - B2B Collaborations & Strategic Partnerships */}
       <div className="mb-8 px-5">
         <div
-          className="bg-gradient-to-b from-[#7F1D1D]  
-via-[#3A0D0D]
-to-[#160404] pb-6 rounded-lg shadow-lg border border-gray-700"
+          className="bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
             <ScrollReveal animation="slideUp" duration={800} delay={200}>
@@ -422,9 +428,10 @@ to-[#160404] pb-6 rounded-lg shadow-lg border border-gray-700"
       {/* Section 7 - HR Strategy & Talent Management */}
       <div className="mb-8 px-5">
         <div
-          className="bg-gradient-to-b from-[#7F1D1D]  
-via-[#3A0D0D]
-to-[#160404] pb-6 rounded-lg shadow-lg border border-gray-700"
+          className="bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
             <ScrollReveal animation="slideUp" duration={800} delay={200}>
