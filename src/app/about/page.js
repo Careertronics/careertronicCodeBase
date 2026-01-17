@@ -5,7 +5,7 @@ import Image from "next/image";
 import Button from "@/components/UI/button";
 import StatsAndCommitments from "@/components/About/StatsAndCommitments";
 import BlueNWhite from "@/components/About/BlueNWhite";
-import WhyChooseCareerTronic from "@/components/About/WhyChooseCareertronic";
+import WhyChooseCareerTronic from "@/components/About/WhyChooseCareerTronic";
 // import ScrollReveal from "@/components/ScrollReveal";
 import ScrollReveal from "@/components/ScrollReveal";
 import MindsBehind from "@/components/About/MindsBehind";
