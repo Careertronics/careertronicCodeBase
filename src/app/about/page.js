@@ -5,10 +5,11 @@ import Image from "next/image";
 import Button from "@/components/UI/button";
 import StatsAndCommitments from "@/components/About/StatsAndCommitments";
 import BlueNWhite from "@/components/About/BlueNWhite";
-import WhyChooseCareerTronic from "@/components/About/WhyChooseCareerTronic";
+
 // import ScrollReveal from "@/components/ScrollReveal";
 import ScrollReveal from "@/components/ScrollReveal";
 import MindsBehind from "@/components/About/MindsBehind";
+import WhyChooseCareerTronic from "@/components/About/WhyChooseCareertronic";
 // import { Card } from "@/components/ui/card";
 function page() {
   const missionTitle = "Our Mission";
@@ -83,7 +84,7 @@ to-[#0e0e11] overflow-hidden"
 
               <ScrollReveal animation="slightRight" duration={800} delay={400}>
                 <h3 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-                  We're Your Digital Technological Partners
+                  We are Your Digital Technological Partners
                 </h3>
               </ScrollReveal>
 
