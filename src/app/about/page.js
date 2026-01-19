@@ -9,7 +9,8 @@ import BlueNWhite from "@/components/About/BlueNWhite";
 // import ScrollReveal from "@/components/ScrollReveal";
 import ScrollReveal from "@/components/ScrollReveal";
 import MindsBehind from "@/components/About/MindsBehind";
-import WhyChooseCareerTronic from "@/components/About/WhyChooseCareertronic";
+import WhyChooseCareertronic from "@/components/About/WhyChooseCareertronic";
+
 // import { Card } from "@/components/ui/card";
 function page() {
   const missionTitle = "Our Mission";
@@ -210,7 +211,7 @@ to-[#0e0e11] overflow-hidden"
         visionNumber={4}
         noPoints={1}
       />
-      <WhyChooseCareerTronic />
+      <WhyChooseCareertronic />
       {/* {Below code is replaced by mindsbehind react component} */}
       {/* <div className="bg-white text-black py-10 px-4 text-center">
         <h2 className="text-3xl font-bold inline-block relative pb-2">
