@@ -40,8 +40,8 @@ const Navbar = () => {
     { title: "Become a Franchise", link: "/Franchise" },
     { title: "Business Consulting", link: "/consulting" },
     { title: "Contact Us", link: "/contact" },
-    { title: "Our Blogs", link: "/blog" },
-    { title: "Careers", link: "/careers" },
+    // { title: "Our Blogs", link: "/blog" },
+    // { title: "Careers", link: "/careers" },
   ];
   return (
     <nav
