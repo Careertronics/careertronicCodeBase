@@ -9,7 +9,7 @@ import BlueNWhite from "@/components/About/BlueNWhite";
 // import ScrollReveal from "@/components/ScrollReveal";
 import ScrollReveal from "@/components/ScrollReveal";
 import MindsBehind from "@/components/About/MindsBehind";
-import WhyChooseCareertronic from "@/components/About/WhyChooseCareertronic";
+import WhyChoosecareertronic from "@/components/About/WhyChoosecareertronic";
 
 // import { Card } from "@/components/ui/card";
 function page() {
@@ -211,7 +211,7 @@ to-[#0e0e11] overflow-hidden"
         visionNumber={4}
         noPoints={1}
       />
-      <WhyChooseCareertronic />
+      <WhyChoosecareertronic />
       {/* {Below code is replaced by mindsbehind react component} */}
       {/* <div className="bg-white text-black py-10 px-4 text-center">
         <h2 className="text-3xl font-bold inline-block relative pb-2">

@@ -5,7 +5,7 @@ import Link from "next/link";
 import ScrollReveal from "../ScrollReveal";
 import MindsBehind from "./MindsBehind";
 
-const WhyChooseCareertronic = ({ bottomSection = true, paddBot = true }) => {
+const WhyChoosecareertronic = ({ bottomSection = true, paddBot = true }) => {
   const stats = [
     {
       title: "EXPERTS",
@@ -344,4 +344,4 @@ to-[#000000]
   );
 };
 
-export default WhyChooseCareertronic;
+export default WhyChoosecareertronic;
