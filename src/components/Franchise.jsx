@@ -63,19 +63,19 @@ export default function BecomeAFranchise() {
 
   const steps = [
     {
-      img: "/franchise/institute.png",
+      img: "/franchise/institute-1.PNG",
       title: "Existing training institutes upgrading their brand",
     },
     {
-      img: "/franchise/Professional.png",
+      img: "/franchise/Professional.PNG",
       title: "Professionals passionate about skill development",
     },
     {
-      img: "/franchise/investor.png",
+      img: "/franchise/investor.PNG",
       title: "Investors seeking scalable education businesses",
     },
     {
-      img: "/franchise/Eval.png",
+      img: "/franchise/Eval.PNG",
       title: "No prior training delivery experience is mandatory",
     },
   ];
@@ -334,7 +334,7 @@ to-[#000000]"
                 index={index}
                 stagger={150}
               >
-                <div className="bg-gray-900 p-8 rounded-xl shadow-lg h-full flex flex-col">
+                <div className="bg-black p-8 rounded-xl shadow-lg h-full flex flex-col">
                   <div className="text-4xl mb-4">{item.emoji}</div>
                   <h3 className="text-2xl font-bold text-red-400 mb-3">
                     {item.title}
@@ -589,7 +589,7 @@ to-[#000000]"
           {/* Support Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Pre-Launch Support */}
-            <div className="border border-gray-200 rounded-2xl p-8  bg-gray-900">
+            <div className="border border-gray-200 rounded-2xl p-8  bg-black">
               <h3 className="text-xl font-semibold text-red-400 mb-4">
                 Pre-Launch Support
               </h3>
@@ -602,7 +602,7 @@ to-[#000000]"
             </div>
 
             {/* Operational Support */}
-            <div className="bg-gray-900 border border-gray-200 rounded-2xl p-8">
+            <div className="bg-black border border-gray-200 rounded-2xl p-8">
               <h3 className="text-xl font-semibold text-red-400 mb-4">
                 Operational Support
               </h3>
@@ -615,7 +615,7 @@ to-[#000000]"
             </div>
 
             {/* Marketing & Growth Support */}
-            <div className="bg-gray-900 border border-gray-200 rounded-2xl p-8">
+            <div className="bg-black border border-gray-200 rounded-2xl p-8">
               <h3 className="text-xl font-semibold text-red-400 mb-4">
                 Marketing & Growth Support
               </h3>
@@ -919,20 +919,20 @@ to-[#000000] text-white py-20 px-8 text-center"
           index={2}
           stagger={150}
         >
-          <div className="mt-8 flex justify-center gap-6">
-            <button>
-              <Link
-                className="px-8 py-4 text-lg bg-red-500 text-white rounded-xl hover:bg-red-700"
-                href="/franchisecontact"
-              >
-                Enquire Now
-              </Link>
-            </button>
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full px-4">
+            <Link
+              href="/franchisecontact"
+              className="w-full sm:w-auto text-center px-6 py-4 text-base sm:text-lg bg-red-500 text-white rounded-xl hover:bg-red-700 transition"
+            >
+              Enquire Now
+            </Link>
 
-            <a href="/brochure/franchise.pdf" download>
-              <button className="px-8 py-4 text-lg border-2 border-red-500 text-red-500 rounded-xl hover:bg-red-500 hover:text-white">
-                Download Franchise Brochure
-              </button>
+            <a
+              href="/brochure/franchise.pdf"
+              download
+              className="w-full sm:w-auto text-center px-6 py-4 text-base sm:text-lg border-2 border-red-500 text-red-500 rounded-xl hover:bg-red-500 hover:text-white transition"
+            >
+              Download Franchise Brochure
             </a>
           </div>
         </ScrollReveal>
