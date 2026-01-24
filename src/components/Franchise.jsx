@@ -63,19 +63,19 @@ export default function BecomeAFranchise() {
 
   const steps = [
     {
-      img: "/franchise/institute-1.PNG",
+      img: "/franchise/institute-1.png",
       title: "Existing training institutes upgrading their brand",
     },
     {
-      img: "/franchise/Professional.PNG",
+      img: "/franchise/Professional.png",
       title: "Professionals passionate about skill development",
     },
     {
-      img: "/franchise/investor.PNG",
+      img: "/franchise/investor.png",
       title: "Investors seeking scalable education businesses",
     },
     {
-      img: "/franchise/Eval.PNG",
+      img: "/franchise/Eval.png",
       title: "No prior training delivery experience is mandatory",
     },
   ];
@@ -288,38 +288,38 @@ to-[#000000]"
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                emoji: "🏆",
+                // emoji: "🏆",
                 title: "Proven Business Model",
                 description:
                   "CGSPL has developed a strong and scalable business model across IT training, global education, BPO/KPO outsourcing, and industrial automation, providing our franchise partners with the tools and resources to thrive.",
               },
               {
-                emoji: "🎓",
+                //emoji: "🎓",
                 title: "Research-driven and industry-aligned curriculum",
                 description:
                   "Careertronic follows a research-driven, industry-aligned curriculum approach that evolves with technology and workforce needs.",
               },
               {
-                emoji: "🌐",
+                //emoji: "🌐",
                 title: "Centralized ERP, LMS, and Franchise Command Centre",
                 description:
                   "Careertronic operates a centralized ERP, LMS, and Franchise Command Centre to ensure standardized operations, academic consistency, and real-time oversight across all centres.",
               },
               {
-                emoji: "📈",
+                //emoji: "📈",
                 title: "Premium positioning in the skill development market",
                 description:
                   "Careertronic operates in the premium segment of the skill development market, driven by quality, credibility, and learner outcomes.",
               },
               {
-                emoji: "🕰️",
+                //emoji: "🕰️",
                 title:
                   "Continuous academic, operational, and marketing support",
                 description:
                   "Careertronic operates in the premium segment of the skill development market, driven by quality, credibility, and learner outcomes.",
               },
               {
-                emoji: "📱",
+                //emoji: "📱",
                 title: "Strong brand credibility with industry-backed outcomes",
                 description:
                   "Leverage CGSPL's brand presence through digital marketing campaigns, promotional materials, and corporate tie-ups to attract customers and grow quickly.",
