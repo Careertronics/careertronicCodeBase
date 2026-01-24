@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import Link from "next/link";
-
+import StickyFranchiseButtons from "@/components/StickyFranchiseButtons";
 export default function BecomeAFranchise() {
   const [activeTab, setActiveTab] = useState(0);
   const [activeStep, setActiveStep] = useState(0);
@@ -63,19 +63,19 @@ export default function BecomeAFranchise() {
 
   const steps = [
     {
-      img: "/initial.jpg",
+      img: "/franchise/institute.png",
       title: "Existing training institutes upgrading their brand",
     },
     {
-      img: "/eval.jpg",
+      img: "/franchise/Professional.png",
       title: "Professionals passionate about skill development",
     },
     {
-      img: "/franch.jpg",
+      img: "/franchise/investor.png",
       title: "Investors seeking scalable education businesses",
     },
     {
-      img: "/training.jpg",
+      img: "/franchise/Eval.png",
       title: "No prior training delivery experience is mandatory",
     },
   ];
@@ -89,8 +89,9 @@ export default function BecomeAFranchise() {
           content="Join the Careertronic family and unlock your entrepreneurial potential with our proven franchise opportunity in IT training, global education, and business outsourcing services."
         />
       </Head>
+      <StickyFranchiseButtons />
       {/* Hero Section - Dark Background */}
-      <section className="relative min-h-[70vh] md:min-h-[85vh] overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden flex items-center justify-center pt-24">
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center "
@@ -98,10 +99,16 @@ export default function BecomeAFranchise() {
         />
 
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/65"></div>
+        {/* <div className="absolute inset-0 bg-black/65"></div> */}
 
         {/* Subtle brand gradient on top */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3b0f2a]/40 via-transparent to-black/70"></div>
+        <div
+          className="absolute inset-0 bg-gradient-to-b
+    from-black
+    via-[#3b0f2a]/60
+    
+    to-black/70"
+        ></div>
         <div className="relative flex flex-col items-center justify-center h-full text-center px-4 z-10">
           <ScrollReveal
             animation="slideRight"
@@ -111,7 +118,7 @@ export default function BecomeAFranchise() {
             index={0}
             stagger={150}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mt-16 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-5">
               FRANCHISE WITH
             </h1>
             <h1 className="text-5xl md:text-6xl font-bold text-white  p-6 mb-6">
@@ -502,7 +509,9 @@ to-[#000000] rounded-2xl p-8 shadow-sm"
                 "Cloud Computing & DevOps",
                 "Cyber Security & Ethical Hacking",
                 "Industrial Automation & Industry 4.0",
-                "Emerging Technology Certification Programs",
+                "Emerging Technologies Programs",
+                "Web3 & Blockchain",
+                "Financial Intelligence",
               ].map((program, index) => (
                 <div
                   key={index}
@@ -919,9 +928,12 @@ to-[#000000] text-white py-20 px-8 text-center"
                 Enquire Now
               </Link>
             </button>
-            <button className="px-8 py-4 text-lg border-2 border-red-500 text-red-500 rounded-xl hover:bg-red-500 hover:text-white">
-              Download Franchise Brochure
-            </button>
+
+            <a href="/brochure/franchise.pdf" download>
+              <button className="px-8 py-4 text-lg border-2 border-red-500 text-red-500 rounded-xl hover:bg-red-500 hover:text-white">
+                Download Franchise Brochure
+              </button>
+            </a>
           </div>
         </ScrollReveal>
       </section>

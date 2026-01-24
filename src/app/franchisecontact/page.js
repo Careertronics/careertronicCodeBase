@@ -189,9 +189,8 @@ export default function FranchiseContactPage() {
                     Get In Touch
                   </h3>
                   <p className="text-gray-300 mb-6 relative">
-                    If you have any questions or need assistance, please fill
-                    out the form below, and a member of our team will get back
-                    to you as soon as possible.
+                    Please fill out the form below, and a member of our team
+                    will get back to you as soon as possible.
                   </p>
 
                   <form className="space-y-5 relative" onSubmit={handleSubmit}>
@@ -445,16 +444,16 @@ export default function FranchiseContactPage() {
                         />
                       </svg>
                     </div>
-                    <p className="font-medium text-white mb-3">Email:</p>
-                    <p className="text-gray-300 mb-1">
-                      <br />
+                    <div className="flex flex-col">
+                      <p className="font-medium text-white ">Email:</p>
                       <a
                         href="mailto:info@careertonicglobal.com"
                         className="text-red-400 hover:text-red-300"
                       >
                         franchise@careertronics.in
                       </a>
-                    </p>
+                      {/* </p> */}
+                    </div>
                   </div>
                   <h3 className="text-2xl font-semibold mt-4 mb-4 relative">
                     Our Office

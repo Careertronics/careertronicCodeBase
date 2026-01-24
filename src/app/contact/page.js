@@ -171,9 +171,8 @@ export default function ContactPage() {
                     Get In Touch
                   </h3>
                   <p className="text-gray-300 mb-6 relative">
-                    If you have any questions or need assistance, please fill
-                    out the form below, and a member of our team will get back
-                    to you as soon as possible.
+                    Please fill out the form below, and a member of our team
+                    will get back to you as soon as possible.
                   </p>
 
                   <form className="space-y-5 relative" onSubmit={handleSubmit}>

@@ -113,7 +113,7 @@ const Navbar = () => {
                     href={"/Login"}
                     className="block px-2.5 py-2 text-sm hover:bg-red-100 hover:text-red-700 rounded-b-lg"
                   >
-                    Job Login
+                    JobPortal Login
                   </Link>
                   <Link
                     href={"/Flogin"}
