@@ -31,7 +31,7 @@ const Login = () => {
 };
 
 const Welcome = () => (
-  <div className="w-full md:w-3/5 h-64 md:h-screen flex items-center justify-center  bg-cover bg-center bg-[url('/login/ima_new.png')] my-[10vh]">
+  <div className="w-full md:w-3/5 h-64 md:h-screen flex items-center justify-center  bg-cover bg-center bg-[url('/login/FranchiseLogin.png')] my-[10vh]">
     <div className="w-full h-full bg-black/70 flex items-center justify-center">
       <h1 className="text-white text-3xl md:text-5xl font-semibold text-center">
         Welcome To <br /> <span className="text-red-700">Careertronic</span>
@@ -64,7 +64,7 @@ const Form = () => {
     try {
       const { data } = await axios.post(
         "http://localhost:4000/api/v1/user/login",
-        formData
+        formData,
       );
       notify("success", data.message || "Login successful");
       setTimeout(() => router.push("/dashboard"), 2000);

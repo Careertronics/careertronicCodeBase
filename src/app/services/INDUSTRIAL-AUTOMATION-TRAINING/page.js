@@ -1,7 +1,16 @@
-'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { ArrowRight, Cpu, Shield, Settings, Laptop, Zap, Users, BarChart } from 'lucide-react';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Cpu,
+  Shield,
+  Settings,
+  Laptop,
+  Zap,
+  Users,
+  BarChart,
+} from "lucide-react";
 
 const IndustrialAutomationPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,24 +19,24 @@ const IndustrialAutomationPage = () => {
   const servicesRef = useRef(null);
   const processRef = useRef(null);
   const whyUsRef = useRef(null);
-  
+
   // Track scroll position for parallax effects
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
   useEffect(() => {
     setIsVisible(true);
-    
+
     // Animate services sequentially with a more dynamic effect
     const timer = setTimeout(() => {
       const interval = setInterval(() => {
-        setActiveIndex(prev => {
+        setActiveIndex((prev) => {
           if (prev === null) return 0;
           if (prev >= 5) {
             clearInterval(interval);
@@ -36,10 +45,10 @@ const IndustrialAutomationPage = () => {
           return prev + 1;
         });
       }, 150); // Slightly faster for more dynamic feel
-      
+
       return () => clearInterval(interval);
     }, 300); // Start animations sooner
-    
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -47,25 +56,25 @@ const IndustrialAutomationPage = () => {
   useEffect(() => {
     const options = {
       root: null,
-      rootMargin: '0px',
+      rootMargin: "0px",
       threshold: 0.2,
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
+          entry.target.classList.add("animate-in");
         }
       });
     }, options);
 
-    const sections = document.querySelectorAll('.observe-section');
-    sections.forEach(section => {
+    const sections = document.querySelectorAll(".observe-section");
+    sections.forEach((section) => {
       observer.observe(section);
     });
 
     return () => {
-      sections.forEach(section => {
+      sections.forEach((section) => {
         observer.unobserve(section);
       });
     };
@@ -74,34 +83,40 @@ const IndustrialAutomationPage = () => {
   const services = [
     {
       title: "PLC Programming",
-      description: "Hands-on training with industry-standard PLCs including Allen-Bradley, Siemens, and Mitsubishi controllers.",
-      icon: <Cpu className="h-10 w-10 text-red-500" />
+      description:
+        "Hands-on training with industry-standard PLCs including Allen-Bradley, Siemens, and Mitsubishi controllers.",
+      icon: <Cpu className="h-10 w-10 text-red-500" />,
     },
     {
       title: "SCADA Systems",
-      description: "Learn to design, implement and manage supervisory control and data acquisition systems for industrial processes.",
-      icon: <Shield className="h-10 w-10 text-red-500" />
+      description:
+        "Learn to design, implement and manage supervisory control and data acquisition systems for industrial processes.",
+      icon: <Shield className="h-10 w-10 text-red-500" />,
     },
     {
       title: "HMI Development",
-      description: "Master the creation of intuitive human-machine interfaces for optimal operator interaction and control.",
-      icon: <Laptop className="h-10 w-10 text-red-500" />
+      description:
+        "Master the creation of intuitive human-machine interfaces for optimal operator interaction and control.",
+      icon: <Laptop className="h-10 w-10 text-red-500" />,
     },
     {
       title: "Industrial Networking",
-      description: "Comprehensive training on industrial protocols including Modbus, Profibus, EtherNet/IP, and more.",
-      icon: <Zap className="h-10 w-10 text-red-500" />
+      description:
+        "Comprehensive training on industrial protocols including Modbus, Profibus, EtherNet/IP, and more.",
+      icon: <Zap className="h-10 w-10 text-red-500" />,
     },
     {
       title: "Robotics Integration",
-      description: "Learn to program and integrate industrial robots into automated manufacturing cells and production lines.",
-      icon: <Settings className="h-10 w-10 text-red-500" />
+      description:
+        "Learn to program and integrate industrial robots into automated manufacturing cells and production lines.",
+      icon: <Settings className="h-10 w-10 text-red-500" />,
     },
     {
       title: "Industrial IoT",
-      description: "Implementation of IIoT solutions for predictive maintenance, real-time monitoring, and data analytics.",
-      icon: <BarChart className="h-10 w-10 text-red-500" />
-    }
+      description:
+        "Implementation of IIoT solutions for predictive maintenance, real-time monitoring, and data analytics.",
+      icon: <BarChart className="h-10 w-10 text-red-500" />,
+    },
   ];
 
   const processSteps = [
@@ -110,7 +125,7 @@ const IndustrialAutomationPage = () => {
     "Hands-On Practice",
     "Real-World Projects",
     "Certification Prep",
-    "Industry Placement"
+    "Industry Placement",
   ];
 
   // Function to generate gradient animation
@@ -127,28 +142,28 @@ const IndustrialAutomationPage = () => {
       <div className="fixed inset-0 z-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full">
           {[...Array(10)].map((_, i) => (
-            <div 
-              key={i} 
-              className="absolute h-px bg-gradient-to-r from-red-500 to-transparent" 
+            <div
+              key={i}
+              className="absolute h-px bg-gradient-to-r from-red-500 to-transparent"
               style={{
-                top: `${i * 10}%`, 
-                width: '100%',
+                top: `${i * 10}%`,
+                width: "100%",
                 transform: `translateX(${Math.sin(scrollY / 1000 + i) * 5}%)`,
                 opacity: 0.3 + Math.sin(scrollY / 1000 + i) * 0.3,
-                transition: 'transform 0.5s ease-out'
+                transition: "transform 0.5s ease-out",
               }}
             />
           ))}
           {[...Array(10)].map((_, i) => (
-            <div 
-              key={i} 
-              className="absolute w-px bg-gradient-to-b from-gray-500 to-transparent" 
+            <div
+              key={i}
+              className="absolute w-px bg-gradient-to-b from-gray-500 to-transparent"
               style={{
-                left: `${i * 10}%`, 
-                height: '100%',
+                left: `${i * 10}%`,
+                height: "100%",
                 transform: `translateY(${Math.cos(scrollY / 1000 + i) * 5}%)`,
                 opacity: 0.3 + Math.cos(scrollY / 1000 + i) * 0.3,
-                transition: 'transform 0.5s ease-out'
+                transition: "transform 0.5s ease-out",
               }}
             />
           ))}
@@ -159,49 +174,84 @@ const IndustrialAutomationPage = () => {
       <div className="bg-gradient-to-r from-black to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 opacity-10"></div>
-         
+
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-transparent"></div>
           <div className="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-l from-gray-500 to-transparent"></div>
         </div>
         <div className="container mx-auto flex justify-center px-4 py-32 relative z-10">
-          <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+          <div
+            className={`transform transition-all duration-1000 delay-300 ${
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-20 opacity-0"
+            }`}
+          >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 animate-text-gradient">
               Industrial Automation Training
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-2xl text-gray-300 transform transition-all duration-1000 delay-500" 
-               style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}>
-              Master cutting-edge automation technologies and launch your career in smart manufacturing.
+            <p
+              className="text-xl md:text-2xl mb-8 max-w-2xl text-gray-300 transform transition-all duration-1000 delay-500"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateY(0)" : "translateY(20px)",
+              }}
+            >
+              Master cutting-edge automation technologies and launch your career
+              in smart manufacturing.
             </p>
-            <button className="bg-red-700 text-white font-semibold px-8 py-4 rounded-lg flex items-center group transition-all duration-300 transform hover:scale-105 hover:bg-red-800 relative overflow-hidden">
-              <span className="relative z-10 flex items-center">
-                Explore Programs 
-                <ArrowRight className="ml-2 h-5 w-5 transform transition-transform duration-500 group-hover:translate-x-2" />
-              </span>
-              <span className="absolute inset-0 bg-gradient-to-r from-red-800 to-red-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-            </button>
+            <a href="/contact">
+              {" "}
+              <button className="bg-red-700 text-white font-semibold px-8 py-4 rounded-lg flex items-center group transition-all duration-300 transform hover:scale-105 hover:bg-red-800 relative overflow-hidden">
+                <span className="relative z-10 flex items-center">
+                  Get Started
+                  <ArrowRight className="ml-2 h-5 w-5 transform transition-transform duration-500 group-hover:translate-x-2" />
+                </span>
+                <span className="absolute inset-0 bg-gradient-to-r from-red-800 to-red-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+              </button>
+            </a>
           </div>
         </div>
       </div>
 
       {/* Services Section with staggered animations */}
-      <div ref={servicesRef} className="container mx-auto px-4 py-24 observe-section">
+      <div
+        ref={servicesRef}
+        className="container mx-auto px-4 py-24 observe-section"
+      >
         <div className="text-center mb-16">
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4 relative inline-block ${isVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 animate-gradient-x">Our Training Programs</span>
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-red-400 transform scale-x-0 transition-transform duration-1000 delay-500 origin-left" style={{ transform: isVisible ? 'scaleX(1)' : 'scaleX(0)' }}></span>
+          <h2
+            className={`text-3xl md:text-4xl font-bold mb-4 relative inline-block ${
+              isVisible ? "opacity-100" : "opacity-0"
+            } transition-opacity duration-1000`}
+          >
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 animate-gradient-x">
+              Our Training Programs
+            </span>
+            <span
+              className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-red-400 transform scale-x-0 transition-transform duration-1000 delay-500 origin-left"
+              style={{ transform: isVisible ? "scaleX(1)" : "scaleX(0)" }}
+            ></span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto transform transition-all duration-1000 delay-700"
-             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}>
-            Comprehensive industrial automation training solutions designed for the modern manufacturing environment.
+          <p
+            className="text-lg text-gray-400 max-w-3xl mx-auto transform transition-all duration-1000 delay-700"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? "translateY(0)" : "translateY(20px)",
+            }}
+          >
+            Comprehensive industrial automation training solutions designed for
+            the modern manufacturing environment.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`bg-gray-900 p-8 rounded-lg transform transition-all duration-700 hover:bg-gray-800 border border-gray-800 hover:border-red-500 group relative overflow-hidden ${
-                activeIndex !== null && index <= activeIndex ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                activeIndex !== null && index <= activeIndex
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
@@ -216,7 +266,9 @@ const IndustrialAutomationPage = () => {
                 {service.title}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-500"></span>
               </h3>
-              <p className="text-gray-400 transition-all duration-300 group-hover:text-gray-300">{service.description}</p>
+              <p className="text-gray-400 transition-all duration-300 group-hover:text-gray-300">
+                {service.description}
+              </p>
               <div className="absolute bottom-0 right-0 h-16 w-16 bg-gradient-to-tl from-red-500 to-transparent rounded-tl-full opacity-0 group-hover:opacity-10 transform translate-y-full group-hover:translate-y-0 transition-all duration-700"></div>
             </div>
           ))}
@@ -224,29 +276,40 @@ const IndustrialAutomationPage = () => {
       </div>
 
       {/* Training Process Section with connected animation */}
-      <div ref={processRef} className="bg-gray-900 py-24 relative overflow-hidden observe-section">
+      <div
+        ref={processRef}
+        className="bg-gray-900 py-24 relative overflow-hidden observe-section"
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
-        
+
         {/* Animated background effect */}
         <div className="absolute inset-0 z-0">
-          <div 
+          <div
             className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900/10 via-transparent to-transparent"
             style={{
-              transform: `translate(${Math.sin(scrollY / 1000) * 10}%, ${Math.cos(scrollY / 1000) * 10}%)`,
-              transition: 'transform 1s ease-out'
+              transform: `translate(${Math.sin(scrollY / 1000) * 10}%, ${
+                Math.cos(scrollY / 1000) * 10
+              }%)`,
+              transition: "transform 1s ease-out",
             }}
           ></div>
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16 transform transition-all duration-1000" 
-               style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}>
+          <div
+            className="text-center mb-16 transform transition-all duration-1000"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? "translateY(0)" : "translateY(20px)",
+            }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 animate-gradient-x">
               Our Training Approach
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              A practical methodology ensuring you develop real-world industrial automation skills.
+              A practical methodology ensuring you develop real-world industrial
+              automation skills.
             </p>
           </div>
 
@@ -255,12 +318,14 @@ const IndustrialAutomationPage = () => {
             <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-gray-900/50 via-gray-500/50 to-gray-900/50 transform -translate-y-1/2 z-0">
               <div className="absolute top-0 left-0 right-0 h-full bg-red-500/40 animate-pulse"></div>
             </div>
-            
+
             {processSteps.map((step, index) => (
-              <div key={index} className="group w-full md:w-auto relative z-10" style={{ transitionDelay: `${index * 150}ms` }}>
-                <div 
-                  className="relative bg-black bg-opacity-50 backdrop-blur-sm rounded-lg p-6 md:mx-1 h-full flex flex-col items-center justify-center text-center border-t border-gray-800 group-hover:border-red-500 transition-all duration-500 group-hover:bg-black group-hover:bg-opacity-70 transform group-hover:-translate-y-3"
-                >
+              <div
+                key={index}
+                className="group w-full md:w-auto relative z-10"
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
+                <div className="relative bg-black bg-opacity-50 backdrop-blur-sm rounded-lg p-6 md:mx-1 h-full flex flex-col items-center justify-center text-center border-t border-gray-800 group-hover:border-red-500 transition-all duration-500 group-hover:bg-black group-hover:bg-opacity-70 transform group-hover:-translate-y-3">
                   <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
                     <div className="bg-gradient-to-br from-red-700 to-red-900 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-lg group-hover:shadow-red-500/20 relative overflow-hidden">
                       {index + 1}
@@ -268,7 +333,9 @@ const IndustrialAutomationPage = () => {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <span className="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">{step}</span>
+                    <span className="font-medium text-gray-300 group-hover:text-white transition-colors duration-300">
+                      {step}
+                    </span>
                   </div>
                   <div className="absolute inset-0 border border-transparent group-hover:border-red-500/30 rounded-lg transform scale-105 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
                 </div>
@@ -284,12 +351,23 @@ const IndustrialAutomationPage = () => {
       </div>
 
       {/* Why Choose Us Section with animated reveals */}
-      <div ref={whyUsRef} className="container mx-auto px-4 py-24 observe-section">
-        <div className="text-center mb-16 transform transition-all duration-1000" 
-             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 animate-gradient-x">Why Choose Our Training</h2>
+      <div
+        ref={whyUsRef}
+        className="container mx-auto px-4 py-24 observe-section"
+      >
+        <div
+          className="text-center mb-16 transform transition-all duration-1000"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(20px)",
+          }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 animate-gradient-x">
+            Why Choose Our Training
+          </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            We deliver excellence through real industrial equipment, practical projects, and industry connections.
+            We deliver excellence through real industrial equipment, practical
+            projects, and industry connections.
           </p>
         </div>
 
@@ -301,9 +379,18 @@ const IndustrialAutomationPage = () => {
               <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-gray-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
             </h3>
             <ul className="space-y-4 text-gray-300">
-              {["Training on actual industrial equipment and systems", "Instructors with manufacturing industry experience", "Curriculum developed with input from automation leaders"].map((item, i) => (
-                <li key={i} className="flex items-start transform transition-all duration-500 hover:translate-x-2 relative pl-6">
-                  <span className="absolute left-0 top-0 text-red-500 font-bold transition-all duration-300 group-hover:text-red-400">✓</span>
+              {[
+                "Training on actual industrial equipment and systems",
+                "Instructors with manufacturing industry experience",
+                "Curriculum developed with input from automation leaders",
+              ].map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start transform transition-all duration-500 hover:translate-x-2 relative pl-6"
+                >
+                  <span className="absolute left-0 top-0 text-red-500 font-bold transition-all duration-300 group-hover:text-red-400">
+                    ✓
+                  </span>
                   <span className="relative">
                     {item}
                     <span className="absolute -bottom-1 left-0 w-0 h-px bg-red-500/30 group-hover:w-full transition-all duration-700 delay-100"></span>
@@ -312,7 +399,7 @@ const IndustrialAutomationPage = () => {
               ))}
             </ul>
           </div>
-          
+
           <div className="bg-gray-900 p-8 rounded-lg transition-all duration-500 hover:bg-gray-800 border border-gray-800 hover:border-red-500 group relative overflow-hidden transform hover:-translate-y-2">
             <div className="absolute inset-0 bg-gradient-to-bl from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <h3 className="text-xl font-semibold mb-4 text-white relative pb-2 inline-block">
@@ -320,9 +407,18 @@ const IndustrialAutomationPage = () => {
               <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-gray-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
             </h3>
             <ul className="space-y-4 text-gray-300">
-              {["Direct industry connections for job placement", "Portfolio of real automation projects", "Ongoing support after program completion"].map((item, i) => (
-                <li key={i} className="flex items-start transform transition-all duration-500 hover:translate-x-2 relative pl-6">
-                  <span className="absolute left-0 top-0 text-red-500 font-bold transition-all duration-300 group-hover:text-red-400">✓</span>
+              {[
+                "Direct industry connections for job placement",
+                "Portfolio of real automation projects",
+                "Ongoing support after program completion",
+              ].map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start transform transition-all duration-500 hover:translate-x-2 relative pl-6"
+                >
+                  <span className="absolute left-0 top-0 text-red-500 font-bold transition-all duration-300 group-hover:text-red-400">
+                    ✓
+                  </span>
                   <span className="relative">
                     {item}
                     <span className="absolute -bottom-1 left-0 w-0 h-px bg-red-500/30 group-hover:w-full transition-all duration-700 delay-100"></span>
@@ -338,10 +434,10 @@ const IndustrialAutomationPage = () => {
       <div className="py-24 relative overflow-hidden observe-section">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black opacity-50"></div>
-          
+
           {/* Dynamic floating orbs */}
           {[...Array(3)].map((_, i) => (
-            <div 
+            <div
               key={i}
               className="absolute rounded-full bg-gradient-to-br from-gray-500 to-gray-800 blur-3xl"
               style={{
@@ -350,15 +446,17 @@ const IndustrialAutomationPage = () => {
                 top: `${20 + i * 20}%`,
                 left: `${20 + i * 25}%`,
                 opacity: 0.05 + i * 0.02,
-                transform: `translate(${Math.sin(scrollY / 1000 + i) * 50}px, ${Math.cos(scrollY / 1000 + i) * 50}px)`,
-                transition: 'transform 3s ease-out'
+                transform: `translate(${Math.sin(scrollY / 1000 + i) * 50}px, ${
+                  Math.cos(scrollY / 1000 + i) * 50
+                }px)`,
+                transition: "transform 3s ease-out",
               }}
             />
           ))}
-          
+
           {/* Additional floating elements on the right side */}
           {[...Array(3)].map((_, i) => (
-            <div 
+            <div
               key={i}
               className="absolute rounded-full bg-gradient-to-br from-red-700 to-red-900 blur-3xl"
               style={{
@@ -367,37 +465,47 @@ const IndustrialAutomationPage = () => {
                 top: `${50 - i * 15}%`,
                 right: `${15 + i * 10}%`,
                 opacity: 0.03 + i * 0.01,
-                transform: `translate(${Math.cos(scrollY / 1000 + i) * 40}px, ${Math.sin(scrollY / 1000 + i) * 40}px)`,
-                transition: 'transform 3s ease-out'
+                transform: `translate(${Math.cos(scrollY / 1000 + i) * 40}px, ${
+                  Math.sin(scrollY / 1000 + i) * 40
+                }px)`,
+                transition: "transform 3s ease-out",
               }}
             />
           ))}
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 animate-gradient-x">Ready to Transform Your Career?</h2>
-          <p className="text-xl mb-10 max-w-2xl mx-auto text-gray-300 transform transition-all duration-1000" 
-             style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)' }}>
-            Join our industrial automation training program and become part of the future of smart manufacturing.
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 animate-gradient-x">
+            Ready to Transform Your Career?
+          </h2>
+          <p
+            className="text-xl mb-10 max-w-2xl mx-auto text-gray-300 transform transition-all duration-1000"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? "translateY(0)" : "translateY(20px)",
+            }}
+          >
+            Join our industrial automation training program and become part of
+            the future of smart manufacturing.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Link href={'/contact'}>
-            <button className="bg-gradient-to-r from-red-700 to-red-800 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-500 transform hover:scale-105 hover:shadow-lg hover:shadow-red-600/20 relative overflow-hidden group">
-              <span className="relative z-10 flex items-center justify-center">
-                Enrollment Information
-                <span className="absolute inset-0 bg-white rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left opacity-10"></span>
-              </span>
-              <span className="absolute -inset-px bg-gradient-to-r from-red-600 to-red-700 rounded-lg opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"></span>
-            </button>
-          </Link>
-          <Link href={'https://wa.me/message/2AZNGYPJ2BTYO1'}>
-            <button className="bg-transparent border-2 border-gray-500 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-500 transform hover:scale-105 hover:border-red-400 hover:bg-black hover:bg-opacity-50 group relative overflow-hidden">
-              <span className="relative z-10 flex items-center justify-center">
-                Request Program Guide
-                <span className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-transparent rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></span>
-              </span>
-              <span className="absolute -inset-px bg-gradient-to-r from-red-500 to-transparent rounded-lg opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-500"></span>
-            </button>
-          </Link>
+            <Link href={"/contact"}>
+              <button className="bg-gradient-to-r from-red-700 to-red-800 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-500 transform hover:scale-105 hover:shadow-lg hover:shadow-red-600/20 relative overflow-hidden group">
+                <span className="relative z-10 flex items-center justify-center">
+                  Enrollment Information
+                  <span className="absolute inset-0 bg-white rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left opacity-10"></span>
+                </span>
+                <span className="absolute -inset-px bg-gradient-to-r from-red-600 to-red-700 rounded-lg opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"></span>
+              </button>
+            </Link>
+            <Link href={"https://wa.me/message/2AZNGYPJ2BTYO1"}>
+              <button className="bg-transparent border-2 border-gray-500 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-500 transform hover:scale-105 hover:border-red-400 hover:bg-black hover:bg-opacity-50 group relative overflow-hidden">
+                <span className="relative z-10 flex items-center justify-center">
+                  Request Program Guide
+                  <span className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-transparent rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></span>
+                </span>
+                <span className="absolute -inset-px bg-gradient-to-r from-red-500 to-transparent rounded-lg opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-500"></span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -405,57 +513,61 @@ const IndustrialAutomationPage = () => {
       {/* Add CSS Animations */}
       <style jsx global>{`
         @keyframes float {
-          0%, 100% {
+          0%,
+          100% {
             transform: translateY(0);
           }
           50% {
             transform: translateY(-15px);
           }
         }
-        
+
         @keyframes pulse {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 0.2;
           }
           50% {
             opacity: 0.8;
           }
         }
-        
+
         @keyframes gradient-shift {
-          0%, 100% {
+          0%,
+          100% {
             background-position: 0% 50%;
           }
           50% {
             background-position: 100% 50%;
           }
         }
-        
+
         @keyframes animate-gradient-x {
-          0%, 100% {
+          0%,
+          100% {
             background-position: 0% 50%;
           }
           50% {
             background-position: 100% 50%;
           }
         }
-        
+
         .animate-gradient-x {
           background-size: 200% 200%;
           animation: animate-gradient-x 3s ease infinite;
         }
-        
+
         .animate-text-gradient {
           background-size: 200% auto;
           animation: animate-gradient-x 4s ease infinite;
         }
-        
+
         .observe-section {
           opacity: 0;
           transform: translateY(20px);
           transition: opacity 1s ease, transform 1s ease;
         }
-        
+
         .observe-section.animate-in {
           opacity: 1;
           transform: translateY(0);

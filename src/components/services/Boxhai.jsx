@@ -115,7 +115,7 @@ const head = () => {
             >
               <Servicesboxes
                 title="SOFTWARE DEVELOPMENT & EXPORT SERVICES"
-                bgUrl="/services/image%2021.png"
+                bgUrl="/services/services.png"
                 shifturl="/services/SOFTWARE-DEVELOPMENT-&-EXPORT-SERVICES"
               />
             </ScrollReveal>

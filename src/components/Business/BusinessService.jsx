@@ -202,7 +202,7 @@ via-[#3b0f2a]
 to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">1</span>
                 <div>
@@ -242,7 +242,7 @@ via-[#3b0f2a]
 to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">2</span>
                 <div>
@@ -281,7 +281,7 @@ via-[#3b0f2a]
 to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">3</span>
                 <div>
@@ -319,7 +319,7 @@ via-[#3b0f2a]
 to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">4</span>
                 <div>
@@ -358,7 +358,7 @@ via-[#3b0f2a]
 to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">5</span>
                 <div>
@@ -395,7 +395,7 @@ via-[#3b0f2a]
 to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">6</span>
                 <div>
@@ -434,7 +434,7 @@ via-[#3b0f2a]
 to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
         >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">7</span>
                 <div>

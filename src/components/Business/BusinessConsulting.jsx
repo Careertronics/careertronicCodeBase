@@ -7,10 +7,10 @@ import ScrollReveal from "../ScrollReveal";
 export default function Home() {
   return (
     <div
-      className="min-h-screen bg-gradient-to-br
-from-[#0e0e11]
+      className="min-h-screen bg-gradient-to-b
+from-[#000000]
 via-[#3b0f2a]
-to-[#000000] text-white overflow-x-hidden"
+to-[#0e0e11] text-white overflow-x-hidden"
     >
       <Head>
         <title>Business Excellence Gateway</title>

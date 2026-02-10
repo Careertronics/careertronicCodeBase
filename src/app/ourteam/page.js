@@ -542,7 +542,7 @@ to-[#0e0e11] z-10"
             >
               <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-neutral-700 to-neutral-900 p-1">
                 <img
-                  src="/ourteam/Frame 341.png"
+                  src="/ourteam/himanshiMaam.jpeg"
                   alt="Portrait of company founder"
                   className="w-full rounded-2xl"
                 />
