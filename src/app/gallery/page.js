@@ -3,7 +3,7 @@ import path from "path";
 import GalleryClient from "./GalleryClient";
 
 export default function GalleryPage() {
-  const galleryPath = path.join(process.cwd(), "public/gallery");
+  const galleryPath = path.join(process.cwd(), "public/Gallery");
   const files = fs.readdirSync(galleryPath);
 
   const images = files.filter((file) =>
