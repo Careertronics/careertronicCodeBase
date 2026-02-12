@@ -1022,21 +1022,21 @@ const ServicesList = () => {
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
                     <img
-                      src="/Gallery/GalleryImg1.JPG"
+                      src="/Gallery/GalleryImg1.jpg"
                       alt="Gallery image 1"
                       className="w-full h-20 md:h-24 object-cover rounded"
                     />
                   </div>
                   <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
                     <img
-                      src="/Gallery/GalleryImg2.JPG"
+                      src="/Gallery/GalleryImg2.jpg"
                       alt="Gallery image 2"
                       className="w-full h-20 md:h-24 object-cover rounded"
                     />
                   </div>
                   <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
                     <img
-                      src="/Gallery/GalleryImg3.JPG"
+                      src="/Gallery/GalleryImg3.jpg"
                       alt="Gallery image 3"
                       className="w-full h-20 md:h-24 object-cover rounded"
                     />
