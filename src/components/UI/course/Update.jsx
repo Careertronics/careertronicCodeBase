@@ -44,7 +44,7 @@ export default function Home() {
 
   const prevSlide = () => {
     setCurrentSlide(
-      (prev) => (prev - 1 + carouselImages.length) % carouselImages.length
+      (prev) => (prev - 1 + carouselImages.length) % carouselImages.length,
     );
   };
 
@@ -126,13 +126,6 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
         <style jsx global>{`
-          body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            color: white;
-            margin-right: 20px;
-          }
           * {
             box-sizing: border-box;
           }
@@ -149,7 +142,13 @@ export default function Home() {
       </Head>
 
       {/* Hero Section with Carousel */}
-      <section className="py-20 relative z-20">
+      <section
+        className="pt-32 pb-20 -mt-14 relative bg-gradient-to-b
+from-[#000000]  
+  via-[#1a0a14]
+  via-[#3b0f2a]
+  to-[#0e0e11] z-20"
+      >
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
           <div className="space-y-6">
             <div className="text-sm bg-gray-800 text-gray-300 px-3 py-1 rounded-full inline-block">
