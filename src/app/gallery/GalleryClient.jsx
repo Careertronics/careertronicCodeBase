@@ -17,7 +17,7 @@ export default function GalleryClient({ images }) {
             onClick={() => setSelectedImg(img)}
           >
             <Image
-              src={`/gallery/${img}`}
+              src={`/Gallery/${img}`}
               alt={`Gallery ${index}`}
               width={500}
               height={400}
