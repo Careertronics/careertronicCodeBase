@@ -7,8 +7,8 @@ export default function GalleryPage() {
   const files = fs.readdirSync(galleryPath);
 
   const images = files.filter((file) =>
-    [".jpg", ".jpeg", ".png", ".webp"].includes(
-      path.extname(file).toLowerCase(),
+    [".jpg", ".jpeg", ".png", ".webp", ".JPG", ".JPEG", ".PNG"].includes(
+      path.extname(file),
     ),
   );
 

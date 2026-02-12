@@ -35,7 +35,7 @@ export default function GalleryClient({ images }) {
         >
           <div className="relative max-w-5xl w-full p-4">
             <Image
-              src={`/gallery/${selectedImg}`}
+              src={`/Gallery/${selectedImg}`}
               alt="Full Image"
               width={1200}
               height={800}
