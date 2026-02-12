@@ -265,7 +265,7 @@ const ServicesList = () => {
   // Main carousel images
   const mainImages = [
     {
-      src: "/Gallery/GalleryImg1.JPG",
+      src: "/Gallery/GalleryImg1.jpg",
       alt: "Featured gallery image 1",
     },
     {
