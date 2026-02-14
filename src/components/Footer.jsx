@@ -62,13 +62,29 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold mb-2">Company</h3>
               <ul className="text-gray-400 space-y-1 ">
-                <li className="hover:text-red-500">About</li>
-                <li className="hover:text-red-500">Contact</li>
-                <li className="hover:text-red-500">Services</li>
-                <li className="hover:text-red-500">Business consulting</li>
+                <li>
+                  <Link href="/about" className="hover:text-red-500">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-red-500">
+                    Contact
+                  </Link>
+                </li>
+                <li className="hover:text-red-500">
+                  <Link href="/services" className="hover:text-red-500">
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/consulting" className="hover:text-red-500">
+                    Business consulting
+                  </Link>
+                </li>
               </ul>
             </div>
-          
+
             <div>
               <h3 className="font-semibold mb-2">Legal</h3>
               <ul className="text-gray-400 space-y-1">
@@ -97,10 +113,29 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold mb-2">Quick Links</h3>
               <ul className="text-gray-400 space-y-1">
-                <li className="hover:text-red-500">Software training</li>
-                <li className="hover:text-red-500">Industrial training</li>
-                <li className="hover:text-red-500">
-                  Custom Software development
+                <li>
+                  <Link
+                    href="/services/IT-TRAINING-&-CERTIFICATION "
+                    className="hover:text-red-500"
+                  >
+                    Software training
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/CORPORATE-&-INDUSTRIAL-TRAINING "
+                    className="hover:text-red-500"
+                  >
+                    Industrial training
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/SOFTWARE-DEVELOPMENT-&-EXPORT-SERVICES "
+                    className="hover:text-red-500"
+                  >
+                    Custom Software development
+                  </Link>
                 </li>
                 <li>
                   <Link href="/Franchise" className="hover:text-red-500">
@@ -115,7 +150,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:justify-between items-center mt-6">
           {/* Social Media */}
           <div className="flex space-x-4">
-            <a href="https://www.linkedin.com/company/careertronic/posts/?feedView=all                                   " className="text-gray-400 hover:text-white">
+            <a
+              href="https://www.linkedin.com/company/careertronic/posts/?feedView=all                                   "
+              className="text-gray-400 hover:text-white"
+            >
               <FaLinkedinIn size={20} />
             </a>
             <a href="#" className="text-gray-400 hover:text-white">
@@ -124,7 +162,10 @@ const Footer = () => {
             <a href="#" className="text-gray-400 hover:text-white">
               <FaFacebookF size={20} />
             </a>
-            <a href="https://www.instagram.com/careertronic_edu/" className="text-gray-400 hover:text-white">
+            <a
+              href="https://www.instagram.com/careertronic_edu/"
+              className="text-gray-400 hover:text-white"
+            >
               <FaInstagram size={20} />
             </a>
             <a href="#" className="text-gray-400 hover:text-white">
@@ -139,9 +180,13 @@ const Footer = () => {
                 placeholder="Your email address"
                 className="p-2 text-black rounded-l-md outline-none"
               />
-              <button className="bg-red-500 text-white px-4 rounded-r-md">
-                Subscribe
-              </button>
+
+              <a
+                className="bg-red-500 text-white py-2 px-3 rounded-r-md"
+                href="/contact"
+              >
+                <button>Subscribe</button>
+              </a>
             </form>
             <p className="text-gray-400 text-sm mt-2">
               * We will send you weekly updates for better tool management.

@@ -67,9 +67,14 @@ const page = () => {
   return (
     <div className="main-container h-auto w-full bg-black overflow-hidden ">
       <div className="relative h-10 z-1 bg-black"></div>
-      <div className="relative hero-bg h-auto bg-black text-white">
+      <div className="relative hero-bg h-auto bg-white text-white">
         {/* Background with gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent z-10" />
+        <div
+          className="absolute inset-0 bg-gradient-to-b
+from-[#000000]
+via-[#3b0f2a]
+to-[#0e0e11] z-10"
+        />
         {/* Main content container */}
         <div className="relative z-10 container mx-auto lg:pl-28 py-5 pl-8 flex flex-col lg:pr-0 pr-8  md:flex-row items-center justify-between gap-12 mb-6">
           {/* Text content section */}
@@ -111,18 +116,18 @@ const page = () => {
             </div>
             <div className="space-y-5 flex relative z-10 justify-between w-[60vw] lg:gap-0 gap-5">
               {/* Decorative line */}
-              <div className="absolute top-0 left-0">
+              {/* <div className="absolute top-0 left-0">
                 <div className="container mx-auto w-full">
                   <div className="w-[75vw] h-1 bg-yellow-600" />
                 </div>
-              </div>
-              <p className="sm:text-lg lg:w-[30%] text-sm text-gray-300">
-                Careertronic Globle Pvt Ltd
+              </div> */}
+              {/* <p className="sm:text-lg lg:w-[30%] text-sm text-gray-300">
+                Careertronic Global Services Pvt Ltd
               </p>
               <p className="sm:text-xl lg:w-[40%] text-md text-gray-200">
                 Meet the talented individuals who drive the company's remarkable
                 achievements!
-              </p>
+              </p> */}
             </div>
           </div>
           {/* Image section */}
@@ -164,37 +169,99 @@ const page = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-14 py-10 md:py-16">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
-            
             {/* Left Column - Content */}
             <div className="space-y-8">
               {/* Section Title */}
-              <ScrollReveal animation="slideRight" duration={1000} delay={100}>
+              {/* <ScrollReveal animation="slideRight" duration={1000} delay={100}>
                 <div>
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                    <span className="text-white">OUR</span>{' '}
+                    <span className="text-white">OUR</span>{" "}
                     <br className="hidden md:block" />
                     <span className="text-red-500">TEAM</span>
                   </h2>
                 </div>
-              </ScrollReveal>
+              </ScrollReveal> */}
 
               {/* Content Paragraphs */}
               <div className="space-y-6 text-gray-300 leading-relaxed">
-                <ScrollReveal animation="slightRight" duration={800} delay={300}>
+                <ScrollReveal
+                  animation="slightRight"
+                  duration={800}
+                  delay={300}
+                >
                   <p className="text-base md:text-lg">
-                    At <span className="text-white font-semibold">Careertronic Global Services</span>, our greatest asset is our <span className="text-white font-semibold">exceptional team</span> of passionate, skilled, and experienced professionals, each dedicated to delivering <span className="text-white font-semibold">innovative solutions</span> that drive your success.
+                    At{" "}
+                    <span className="text-white font-semibold">
+                      Careertronic Global Services
+                    </span>
+                    , our greatest asset is our{" "}
+                    <span className="text-white font-semibold">
+                      exceptional team
+                    </span>{" "}
+                    of passionate, skilled, and experienced professionals, each
+                    dedicated to delivering{" "}
+                    <span className="text-white font-semibold">
+                      innovative solutions
+                    </span>{" "}
+                    that drive your success.
                   </p>
                 </ScrollReveal>
-                
-                <ScrollReveal animation="slightRight" duration={800} delay={500}>
+
+                <ScrollReveal
+                  animation="slightRight"
+                  duration={800}
+                  delay={500}
+                >
                   <p className="text-base md:text-lg">
-                    From <span className="text-white font-semibold">software developers</span> and <span className="text-white font-semibold">IT trainers</span> to <span className="text-white font-semibold">business consultants</span> and <span className="text-white font-semibold">global education advisors</span>, we have a diverse group of experts across every area of our service offerings, ensuring that you receive the highest level of <span className="text-white font-semibold">expertise</span>, <span className="text-white font-semibold">care</span>, and <span className="text-white font-semibold">support</span>.
+                    From{" "}
+                    <span className="text-white font-semibold">
+                      software developers
+                    </span>{" "}
+                    and{" "}
+                    <span className="text-white font-semibold">
+                      IT trainers
+                    </span>{" "}
+                    to{" "}
+                    <span className="text-white font-semibold">
+                      business consultants
+                    </span>{" "}
+                    and{" "}
+                    <span className="text-white font-semibold">
+                      global education advisors
+                    </span>
+                    , we have a diverse group of experts across every area of
+                    our service offerings, ensuring that you receive the highest
+                    level of{" "}
+                    <span className="text-white font-semibold">expertise</span>,{" "}
+                    <span className="text-white font-semibold">care</span>, and{" "}
+                    <span className="text-white font-semibold">support</span>.
                   </p>
                 </ScrollReveal>
-                
-                <ScrollReveal animation="slightRight" duration={800} delay={700}>
+
+                <ScrollReveal
+                  animation="slightRight"
+                  duration={800}
+                  delay={700}
+                >
                   <p className="text-base md:text-lg">
-                    Our team thrives on <span className="text-white font-semibold">collaboration</span>, constantly sharing insights, ideas, and best practices to create solutions that are <span className="text-white font-semibold">customized</span> to your unique needs. We are committed to fostering a <span className="text-white font-semibold">culture of continuous learning</span> and <span className="text-white font-semibold">growth</span>, staying ahead of industry trends to deliver the most <span className="text-white font-semibold">relevant</span>, <span className="text-white font-semibold">cutting-edge services</span> to our clients.
+                    Our team thrives on{" "}
+                    <span className="text-white font-semibold">
+                      collaboration
+                    </span>
+                    , constantly sharing insights, ideas, and best practices to
+                    create solutions that are{" "}
+                    <span className="text-white font-semibold">customized</span>{" "}
+                    to your unique needs. We are committed to fostering a{" "}
+                    <span className="text-white font-semibold">
+                      culture of continuous learning
+                    </span>{" "}
+                    and <span className="text-white font-semibold">growth</span>
+                    , staying ahead of industry trends to deliver the most{" "}
+                    <span className="text-white font-semibold">relevant</span>,{" "}
+                    <span className="text-white font-semibold">
+                      cutting-edge services
+                    </span>{" "}
+                    to our clients.
                   </p>
                 </ScrollReveal>
               </div>
@@ -216,57 +283,97 @@ const page = () => {
                   {/* Team representation visual */}
                   <div className="space-y-6">
                     {/* Header */}
-                    <ScrollReveal animation="fadeSlideDown" duration={800} delay={600}>
-                      <div className="text-center">
-                        <h3 className="text-2xl font-bold text-white mb-2">Our Diverse Expertise</h3>
-                        <p className="text-gray-400">Professionals across multiple domains</p>
+                    <ScrollReveal
+                      animation="fadeSlideDown"
+                      duration={800}
+                      delay={600}
+                    >
+                      <div className="text-center ">
+                        <h3 className="text-2xl font-bold text-white  mb-2 opacity-100 mt-5">
+                          Our Diverse Expertise
+                        </h3>
+                        <p className="text-gray-400 opacity-100">
+                          Professionals across multiple domains
+                        </p>
                       </div>
                     </ScrollReveal>
-                    
+
                     {/* Team roles grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <ScrollReveal animation="slightBottomLeft" duration={600} delay={800}>
+                      <ScrollReveal
+                        animation="slightBottomLeft"
+                        duration={600}
+                        delay={800}
+                      >
                         <div className="bg-gray-800 rounded-lg p-4 border border-gray-600 hover:border-red-500 transition-colors">
                           <div className="w-8 h-8 bg-red-500 rounded-full mb-3 flex items-center justify-center">
                             <span className="text-xs font-bold">💻</span>
                           </div>
-                          <h4 className="text-white font-semibold text-sm mb-1">Software Developers</h4>
-                          <p className="text-gray-400 text-xs">Building innovative solutions</p>
+                          <h4 className="text-white font-semibold text-sm mb-1">
+                            Software Developers
+                          </h4>
+                          <p className="text-gray-400 text-xs">
+                            Building innovative solutions
+                          </p>
                         </div>
                       </ScrollReveal>
-                      
-                      <ScrollReveal animation="slightBottomRight" duration={600} delay={900}>
+
+                      <ScrollReveal
+                        animation="slightBottomRight"
+                        duration={600}
+                        delay={900}
+                      >
                         <div className="bg-gray-800 rounded-lg p-4 border border-gray-600 hover:border-red-500 transition-colors">
                           <div className="w-8 h-8 bg-blue-500 rounded-full mb-3 flex items-center justify-center">
                             <span className="text-xs font-bold">🎓</span>
                           </div>
-                          <h4 className="text-white font-semibold text-sm mb-1">IT Trainers</h4>
-                          <p className="text-gray-400 text-xs">Empowering through education</p>
+                          <h4 className="text-white font-semibold text-sm mb-1">
+                            IT Trainers
+                          </h4>
+                          <p className="text-gray-400 text-xs">
+                            Empowering through education
+                          </p>
                         </div>
                       </ScrollReveal>
-                      
-                      <ScrollReveal animation="slightBottomLeft" duration={600} delay={1000}>
+
+                      <ScrollReveal
+                        animation="slightBottomLeft"
+                        duration={600}
+                        delay={1000}
+                      >
                         <div className="bg-gray-800 rounded-lg p-4 border border-gray-600 hover:border-red-500 transition-colors">
                           <div className="w-8 h-8 bg-green-500 rounded-full mb-3 flex items-center justify-center">
                             <span className="text-xs font-bold">📊</span>
                           </div>
-                          <h4 className="text-white font-semibold text-sm mb-1">Business Consultants</h4>
-                          <p className="text-gray-400 text-xs">Strategic guidance</p>
+                          <h4 className="text-white font-semibold text-sm mb-1">
+                            Business Consultants
+                          </h4>
+                          <p className="text-gray-400 text-xs">
+                            Strategic guidance
+                          </p>
                         </div>
                       </ScrollReveal>
-                      
-                      <ScrollReveal animation="slightBottomRight" duration={600} delay={1100}>
+
+                      <ScrollReveal
+                        animation="slightBottomRight"
+                        duration={600}
+                        delay={1100}
+                      >
                         <div className="bg-gray-800 rounded-lg p-4 border border-gray-600 hover:border-red-500 transition-colors">
                           <div className="w-8 h-8 bg-purple-500 rounded-full mb-3 flex items-center justify-center">
                             <span className="text-xs font-bold">🌍</span>
                           </div>
-                          <h4 className="text-white font-semibold text-sm mb-1">Education Advisors</h4>
-                          <p className="text-gray-400 text-xs">Global opportunities</p>
+                          <h4 className="text-white font-semibold text-sm mb-1">
+                            Education Advisors
+                          </h4>
+                          <p className="text-gray-400 text-xs">
+                            Global opportunities
+                          </p>
                         </div>
                       </ScrollReveal>
                     </div>
                   </div>
-                  
+
                   {/* Decorative elements */}
                   <ScrollReveal animation="spinIn" duration={1000} delay={1200}>
                     <div className="absolute -top-4 -right-4 w-8 h-8 bg-red-500 rounded-full opacity-20"></div>
@@ -276,7 +383,7 @@ const page = () => {
                   </ScrollReveal>
                 </div>
               </ScrollReveal>
-              
+
               {/* Background accent */}
               <div className="absolute -inset-4 bg-gradient-to-br from-red-500/10 to-yellow-500/10 rounded-3xl -z-10"></div>
             </div>
@@ -351,7 +458,7 @@ const page = () => {
                 stagger={150}
               >
                 <p className="text-lg text-gray-300">
-                  Experience: <span className="font-semibold">5yr+</span>
+                  Experience: <span className="font-semibold">13yr+</span>
                 </p>
               </ScrollReveal>
             </div>
@@ -392,12 +499,23 @@ const page = () => {
               stagger={150}
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                The driving force behind the vision, the Founder leads with
-                innovation and a passion for technology. With a strong focus on
-                digital transformation and problem-solving, they established the
-                company to bridge the gap between business needs and modern IT
-                solutions. Their leadership ensures continuous growth in IT
-                services, training, and global career opportunities.
+                Himanshi Bhagwani is an experienced professional EdTech and
+                Global IT professional with extensive expertise across
+                skill-based education, technology-driven learning models, and IT
+                project execution. She has led end-to-end initiatives spanning
+                academic planning, program structuring, institutional
+                partnerships, and AI- and IT-enabled project planning and
+                delivery. Her expertise covers professional training, workforce
+                readiness programs, and scalable EdTech and IT service models
+                across emerging technology domains. With extensive involvement
+                in AI, Data Science, Full Stack, Cloud, and Cybersecurity
+                projects, she actively bridges academic strategy with real-world
+                technology execution. She works closely with leadership teams
+                and stakeholders to plan, execute, and scale IT and AI projects
+                aligned with business objectives. She contributes to building
+                sustainable technology ecosystems, premium positioning, and
+                future-ready talent and solution pipelines across domestic and
+                global markets.
               </p>
             </ScrollReveal>
             <div className="pt-4">
@@ -409,7 +527,7 @@ const page = () => {
                 stagger={150}
               >
                 <p className="text-lg text-gray-300">
-                  Experience: <span className="font-semibold">5yr+</span>
+                  Experience: <span className="font-semibold">10yr+</span>
                 </p>
               </ScrollReveal>
             </div>
@@ -424,7 +542,7 @@ const page = () => {
             >
               <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-neutral-700 to-neutral-900 p-1">
                 <img
-                  src="/ourteam/Frame 341.png"
+                  src="/ourteam/himanshiMaam.jpeg"
                   alt="Portrait of company founder"
                   className="w-full rounded-2xl"
                 />
@@ -434,7 +552,7 @@ const page = () => {
         </div>
       </div>
 
-      {/* Third executive section - AI Expert */}
+      {/* Third executive section - Executive Director */}
       <div className="h-auto bg-[#161616] text-white p-8 mt-20">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
           {/* Image Container */}
@@ -447,7 +565,7 @@ const page = () => {
             >
               <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-neutral-700 to-neutral-900 p-1">
                 <img
-                  src="/ourteam/Frame 341.png"
+                  src="/ourteam/vijaysir.jpeg"
                   alt="Portrait of AI Expert"
                   className="w-full rounded-2xl"
                 />
@@ -463,7 +581,9 @@ const page = () => {
               delay={50}
               stagger={150}
             >
-              <h2 className="text-5xl font-bold text-white">AI-Expert</h2>
+              <h2 className="text-5xl font-bold text-white">
+                Executive Director
+              </h2>
             </ScrollReveal>
             <ScrollReveal
               animation="fadeSlideLeft"
@@ -473,7 +593,7 @@ const page = () => {
               stagger={150}
             >
               <h3 className="text-3xl font-medium text-white">
-                Miss. Namrata Choubey
+                Mr. Vijaysaradhi K{" "}
               </h3>
             </ScrollReveal>
             <ScrollReveal
@@ -484,11 +604,20 @@ const page = () => {
               stagger={150}
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                A technical visionary with extensive experience in building
-                scalable systems, our CTO leads the company's technological
-                innovation. With expertise in emerging technologies and software
-                architecture, they ensure that our solutions remain cutting-edge
-                while addressing complex business challenges for our clients.
+                Vijayasaradhi K is a seasoned professional with extensive
+                experience in franchise development, skill-based education,
+                edtech, and technology-driven business models. He has led
+                end-to-end initiatives across franchise documentation,
+                operations, financial modelling, SOP design, and large-scale
+                market expansion across K12, professional training segments,
+                Overseas Education, Healthcare, Wellness & Spa, and Matrimony.
+                With deep expertise in AI-enabled platforms and IT SaaS
+                architecture development, including ERP and LMS systems, he
+                bridges academic strategy with scalable, technology-led
+                execution. He works closely with leadership teams to build
+                sustainable franchise ecosystems, premium positioning, and
+                future-ready learning solutions across Tier I, II, and III
+                markets.
               </p>
             </ScrollReveal>
             <div className="pt-4">
@@ -500,7 +629,7 @@ const page = () => {
                 stagger={150}
               >
                 <p className="text-lg text-gray-300">
-                  Experience: <span className="font-semibold">7yr+</span>
+                  Experience: <span className="font-semibold">27yr+</span>
                 </p>
               </ScrollReveal>
             </div>
@@ -508,28 +637,96 @@ const page = () => {
         </div>
       </div>
 
-      <div className="h-auto bg-[#161616] text-white p-8 mt-20">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          {/* Content Container */}
-          <div className="w-full md:w-1/2 space-y-6">
-          {/* Image Container */}
-              <div className="w-full md:w-1/2">
-                <ScrollReveal
-                  animation="slideRight"
-                  duration={800}
-                  easing="spring"
-                  delay={50}
-                >
-                  <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-neutral-700 to-neutral-900 p-1">
-                    <img
-                      src="/ourteam/Frame 341.png"
-                      alt="Portrait of company founder"
-                      className="w-full rounded-2xl"
-                    />
-                  </div>
-                </ScrollReveal>
-              </div>
+      {/* <div className="h-auto bg-[#161616] text-white p-8 mt-20">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12"> */}
+      {/* Content Container */}
+      {/* <div className="w-full md:w-1/2 space-y-6"> */}
+      {/* Image Container */}
+      {/* <div className="w-full md:w-1/2"> */}
+      {/* <ScrollReveal
+                animation="slideRight"
+                duration={800}
+                easing="spring"
+                delay={50}
+              >
+                <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-neutral-700 to-neutral-900 p-1"> */}
+      {/* <img
+                    src="/ourteam/Frame 341.png"
+                    alt="Portrait of company founder"
+                    className="w-full rounded-2xl"
+                  />
+                </div> */}
+      {/* </ScrollReveal>
+            </div> */}
+      {/* <ScrollReveal
+              animation="slideLeft"
+              duration={800}
+              easing="spring"
+              delay={50}
+              stagger={150}
+            > */}
+      {/* <h2 className="text-3xl font-bold text-white">Founder & CEO</h2>
+            </ScrollReveal>
             <ScrollReveal
+              animation="slideLeft"
+              duration={800}
+              easing="spring"
+              delay={0}
+              stagger={150}
+            >
+              <h3 className="text-2xl font-medium text-white">
+                Miss. Himanshi Bhagwani
+              </h3> */}
+      {/* </ScrollReveal>
+            <ScrollReveal
+              animation="slideLeft"
+              duration={800}
+              easing="spring"
+              delay={100}
+              stagger={150}
+            > */}
+      {/* <p className="text-base text-gray-300 leading-relaxed">
+                The driving force behind the vision, the Founder leads with
+                innovation and a passion for technology. With a strong focus on
+                digital transformation and problem-solving, they established the
+                company to bridge the gap between business needs and modern IT
+                solutions. Their leadership ensures continuous growth in IT
+                services, training, and global career opportunities.
+              </p>
+            </ScrollReveal> */}
+      {/* <div className="pt-4">
+              <ScrollReveal
+                animation="slideLeft"
+                duration={800}
+                easing="spring"
+                delay={200}
+                stagger={150}
+              >
+                <p className="text-lg text-gray-300">
+                  Experience: <span className="font-semibold">5yr+</span>
+                </p> */}
+      {/* </ScrollReveal> */}
+      {/* </div>
+          </div> */}
+      {/* <div className="w-full md:w-1/2 space-y-6"> */}
+      {/* Image Container */}
+      {/* <div className="w-full md:w-1/2">
+              <ScrollReveal
+                animation="slideRight"
+                duration={800}
+                easing="spring"
+                delay={50}
+              >
+                <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-neutral-700 to-neutral-900 p-1">
+                  <img
+                    src="/ourteam/Frame 341.png"
+                    alt="Portrait of company founder"
+                    className="w-full rounded-2xl"
+                  />
+                </div>
+              </ScrollReveal>
+            </div> */}
+      {/* <ScrollReveal
               animation="slideLeft"
               duration={800}
               easing="spring"
@@ -548,8 +745,8 @@ const page = () => {
               <h3 className="text-2xl font-medium text-white">
                 Miss. Himanshi Bhagwani
               </h3>
-            </ScrollReveal>
-            <ScrollReveal
+            </ScrollReveal> */}
+      {/* <ScrollReveal
               animation="slideLeft"
               duration={800}
               easing="spring"
@@ -579,82 +776,14 @@ const page = () => {
               </ScrollReveal>
             </div>
           </div>
-          <div className="w-full md:w-1/2 space-y-6">
-          {/* Image Container */}
-          <div className="w-full md:w-1/2">
-            <ScrollReveal
-              animation="slideRight"
-              duration={800}
-              easing="spring"
-              delay={50}
-            >
-              <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-neutral-700 to-neutral-900 p-1">
-                <img
-                  src="/ourteam/Frame 341.png"
-                  alt="Portrait of company founder"
-                  className="w-full rounded-2xl"
-                />
-              </div>
-            </ScrollReveal>
-          </div>
-            <ScrollReveal
-              animation="slideLeft"
-              duration={800}
-              easing="spring"
-              delay={50}
-              stagger={150}
-            >
-              <h2 className="text-3xl font-bold text-white">Founder & CEO</h2>
-            </ScrollReveal>
-            <ScrollReveal
-              animation="slideLeft"
-              duration={800}
-              easing="spring"
-              delay={0}
-              stagger={150}
-            >
-              <h3 className="text-2xl font-medium text-white">
-                Miss. Himanshi Bhagwani
-              </h3>
-            </ScrollReveal>
-            <ScrollReveal
-              animation="slideLeft"
-              duration={800}
-              easing="spring"
-              delay={100}
-              stagger={150}
-              >
-              <p className="text-base text-gray-300 leading-relaxed">
-                The driving force behind the vision, the Founder leads with
-                innovation and a passion for technology. With a strong focus on
-                digital transformation and problem-solving, they established the
-                company to bridge the gap between business needs and modern IT
-                solutions. Their leadership ensures continuous growth in IT
-                services, training, and global career opportunities.
-              </p>
-            </ScrollReveal>
-            <div className="pt-4">
-              <ScrollReveal
-                animation="slideLeft"
-                duration={800}
-                easing="spring"
-                delay={200}
-                stagger={150}
-              >
-                <p className="text-lg text-gray-300">
-                  Experience: <span className="font-semibold">5yr+</span>
-                </p>
-              </ScrollReveal>
-            </div>
-          </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       {/* Team members grid */}
-      <div className="min-h-screen bg-[#161616] py-20 px-4 mt-20">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Title */}
-          <ScrollReveal
+      {/* <div className="min-h-screen bg-[#161616] py-20 px-4 mt-20"> */}
+      {/* <div className="max-w-7xl mx-auto">
+          /* Section Title */}
+      {/* <ScrollReveal
             animation="slideUp"
             duration={800}
             easing="spring"
@@ -663,9 +792,9 @@ const page = () => {
             <h2 className="text-5xl font-bold text-white text-center mb-16">
               MEET OUR TEAM
             </h2>
-          </ScrollReveal>
-          {/* Team Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          </ScrollReveal> */}
+      {/* Team Grid */}
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <ScrollReveal
                 key={index}
@@ -683,9 +812,8 @@ const page = () => {
                 />
               </ScrollReveal>
             ))}
-          </div>
-        </div>
-      </div>
+          </div> */}
+      {/* </div> */}
     </div>
   );
 };

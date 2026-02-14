@@ -3,15 +3,15 @@ import Button from "../UI/button";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "../ScrollReveal";
+import MindsBehind from "./MindsBehind";
 
-const WhyChooseCareerTronics = ({ bottomSection = true, paddBot = true }) => {
+const WhyChoosecareertronic = ({ bottomSection = true, paddBot = true }) => {
   const stats = [
     {
       title: "EXPERTS",
       count: "300+",
       description: "Career Advisors",
       profiles: [
-        
         "https://randomuser.me/api/portraits/men/32.jpg",
         "https://randomuser.me/api/portraits/men/75.jpg",
         "https://randomuser.me/api/portraits/women/65.jpg",
@@ -84,14 +84,21 @@ const WhyChooseCareerTronics = ({ bottomSection = true, paddBot = true }) => {
   return (
     <div className="w-full bg-white">
       {/* Why Choose CareerTronics Section */}
-      <div className={`${paddBot ? "py-16" : "pt-16"} px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto`}>
+      <div
+        className={`${
+          paddBot ? "py-16" : "pt-16"
+        } px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto`}
+      >
         <ScrollReveal animation="fadeSlideDown" duration={1100} easing="spring">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-3 text-red-600">Why Choose Careertronic?</h2>
+            <h2 className="text-3xl font-bold mb-3 text-red-600">
+              Why Choose Careertronic?
+            </h2>
             <p className="max-w-sm sm:max-w-2xl mx-auto text-gray-700">
-              With a deep passion for transforming careers and a strong track record in
-              delivering cutting-edge career solutions, we have successfully worked
-              with individuals and businesses across diverse industries.
+              With a deep passion for transforming careers and a strong track
+              record in delivering cutting-edge career solutions, we have
+              successfully worked with individuals and businesses across diverse
+              industries.
             </p>
           </div>
         </ScrollReveal>
@@ -101,21 +108,45 @@ const WhyChooseCareerTronics = ({ bottomSection = true, paddBot = true }) => {
           {/* Wavy dotted line - only visible on sm and above */}
           <div className="hidden sm:block absolute w-full top-0 pointer-events-none">
             <ScrollReveal animation="fadeIn" duration={2000} delay={500}>
-              <img src="/about/wave.svg" alt="Wavy line" className="opacity-70" />
+              <img
+                src="/about/wave.svg"
+                alt="Wavy line"
+                className="opacity-70"
+              />
             </ScrollReveal>
           </div>
 
           {/* Container for features */}
           <div className="flex flex-col sm:flex-wrap sm:justify-between sm:items-center sm:gap-y-24 sm:relative sm:z-10 sm:h-48">
             {features.map((feature, index) => (
-              <div 
+              <div
                 key={index}
                 className={`flex flex-col items-center mb-8 sm:mb-0 sm:absolute sm:w-1/5 sm:px-4
-                  ${index === 0 ? "sm:left-0 sm:-top-[30px] md:-top-8 xl:-top-8" : ""}
-                  ${index === 1 ? "sm:left-[20%] sm:top-[15px] md:top-[20px] lg:top-10 xl:top-20" : ""}
-                  ${index === 2 ? "sm:left-[40%] sm:top-0 md:top-[5px] lg:top-[20px] xl:top-8" : ""}
-                  ${index === 3 ? "sm:left-[60%] sm:top-[47px] md:top-[58px] lg:top-24 xl:top-[8.6rem]" : ""}
-                  ${index === 4 ? "sm:left-[80%] sm:top-[43px] md:top-[60px] lg:top-[5.4rem] xl:top-32" : ""}
+                  ${
+                    index === 0
+                      ? "sm:left-0 sm:-top-[30px] md:-top-8 xl:-top-8"
+                      : ""
+                  }
+                  ${
+                    index === 1
+                      ? "sm:left-[20%] sm:top-[15px] md:top-[20px] lg:top-10 xl:top-20"
+                      : ""
+                  }
+                  ${
+                    index === 2
+                      ? "sm:left-[40%] sm:top-0 md:top-[5px] lg:top-[20px] xl:top-8"
+                      : ""
+                  }
+                  ${
+                    index === 3
+                      ? "sm:left-[60%] sm:top-[47px] md:top-[58px] lg:top-24 xl:top-[8.6rem]"
+                      : ""
+                  }
+                  ${
+                    index === 4
+                      ? "sm:left-[80%] sm:top-[43px] md:top-[60px] lg:top-[5.4rem] xl:top-32"
+                      : ""
+                  }
                 `}
               >
                 <ScrollReveal
@@ -140,7 +171,11 @@ const WhyChooseCareerTronics = ({ bottomSection = true, paddBot = true }) => {
                       />
                     </ScrollReveal>
                     {index === 4 && (
-                      <ScrollReveal animation="fadeIn" duration={800} delay={2400}>
+                      <ScrollReveal
+                        animation="fadeIn"
+                        duration={800}
+                        delay={2400}
+                      >
                         <Image
                           src="/about/toggle.svg"
                           width={20}
@@ -152,7 +187,11 @@ const WhyChooseCareerTronics = ({ bottomSection = true, paddBot = true }) => {
                     )}
                   </div>
                 </ScrollReveal>
-                <ScrollReveal animation="fadeIn" duration={800} delay={1600 + index * 200}>
+                <ScrollReveal
+                  animation="fadeIn"
+                  duration={800}
+                  delay={1600 + index * 200}
+                >
                   <h3 className="text-red-500 font-semibold text-xl text-center">
                     {feature.title}
                   </h3>
@@ -171,7 +210,11 @@ const WhyChooseCareerTronics = ({ bottomSection = true, paddBot = true }) => {
         </ScrollReveal>
 
         {/* Stats Cards */}
-        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 ${bottomSection ? 'block' : 'hidden'}`}>
+        <div
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 ${
+            bottomSection ? "block" : "hidden"
+          }`}
+        >
           {stats.map((stat, index) => (
             <ScrollReveal
               key={index}
@@ -180,7 +223,12 @@ const WhyChooseCareerTronics = ({ bottomSection = true, paddBot = true }) => {
               delay={800 + index * 200}
               easing="spring"
             >
-              <div className="bg-black text-white p-8 rounded-md shadow-md border border-red-800/20">
+              <div
+                className="bg-gradient-to-br
+from-[#1A1A1A]
+to-[#5a123a]
+text-white p-8 rounded-md shadow-md border border-red-800/20"
+              >
                 <ScrollReveal
                   animation="slightDown"
                   duration={800}
@@ -242,9 +290,28 @@ const WhyChooseCareerTronics = ({ bottomSection = true, paddBot = true }) => {
           ))}
         </div>
       </div>
+      <div
+        class="
+  w-full h-px
+  bg-gradient-to-r
+  from-transparent
+  via-[#A01863]
+  to-transparent
+  shadow-[0_0_12px_#A01863]
+"
+      ></div>
 
+      <MindsBehind />
       {/* CTA Section */}
-      <div className={`bg-black text-white py-16 px-4 text-center ${bottomSection ? 'block' : 'hidden'}`}>
+      <div
+        className={` text-white py-16 px-4 
+          bg-gradient-to-b
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000]
+
+          text-center ${bottomSection ? "block" : "hidden"}`}
+      >
         <ScrollReveal animation="slightDown" duration={900} delay={500}>
           <h2 className="text-3xl mb-2 font-light text-gray-200">
             Building Career Success Together
@@ -266,10 +333,10 @@ const WhyChooseCareerTronics = ({ bottomSection = true, paddBot = true }) => {
           delay={900}
           easing="bouncy"
         >
-          <Link href={'/contact'}>
-          <Button className="bg-red-600 text-white hover:bg-red-700 px-8 py-3 rounded-md shadow-lg font-semibold">
-            Get Started
-          </Button>
+          <Link href={"/contact"}>
+            <Button className="bg-red-600 text-white hover:bg-red-700 px-8 py-3 rounded-md shadow-lg font-semibold">
+              Get Started
+            </Button>
           </Link>
         </ScrollReveal>
       </div>
@@ -277,4 +344,4 @@ const WhyChooseCareerTronics = ({ bottomSection = true, paddBot = true }) => {
   );
 };
 
-export default WhyChooseCareerTronics;
+export default WhyChoosecareertronic;

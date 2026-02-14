@@ -31,8 +31,7 @@ const Login = () => {
 };
 
 const Welcome = () => (
-  
-  <div className="w-full md:w-3/5 h-64 md:h-screen flex items-center justify-center  bg-cover bg-center bg-[url('/login/ima.png')] my-[10vh]">
+  <div className="w-full md:w-3/5 h-64 md:h-screen flex items-center justify-center  bg-cover bg-center bg-[url('/login/ima_new.png')] my-[10vh]">
     <div className="w-full h-full bg-black/70 flex items-center justify-center">
       <h1 className="text-white text-3xl md:text-5xl font-semibold text-center">
         Welcome To <br /> <span className="text-red-700">Careertronic</span>
@@ -42,12 +41,17 @@ const Welcome = () => (
 );
 
 const Form = () => {
-  const [formData, setFormData] = useState({ email: "", password: "", role: "" });
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    role: "",
+  });
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
 
-  const handleChange = ({ target: { name, value } }) => setFormData({ ...formData, [name]: value });
+  const handleChange = ({ target: { name, value } }) =>
+    setFormData({ ...formData, [name]: value });
 
   const notify = (type, message) => toast[type](message);
 
@@ -58,7 +62,10 @@ const Form = () => {
     }
     setIsSubmitting(true);
     try {
-      const { data } = await axios.post("http://localhost:4000/api/v1/user/login", formData);
+      const { data } = await axios.post(
+        "http://localhost:4000/api/v1/user/login",
+        formData
+      );
       notify("success", data.message || "Login successful");
       setTimeout(() => router.push("/dashboard"), 2000);
     } catch (err) {
@@ -70,8 +77,11 @@ const Form = () => {
 
   return (
     <div className="w-full md:w-2/5 flex items-center justify-center p-6 bg-black">
-      <form onSubmit={handleLogin} className="w-full max-w-md space-y-4 text-white">
-      <p className="text-4xl font-semibold tracking-tight relative flex items-center pl-8 text-[#E60000] before:absolute before:content-[''] before:h-4 before:w-4 before:rounded-full before:left-0 before:bg-red-600 after:absolute after:content-[''] after:h-4 after:w-4 after:rounded-full after:left-0 after:bg-red-600 after:animate-ping">
+      <form
+        onSubmit={handleLogin}
+        className="w-full max-w-md space-y-4 text-white"
+      >
+        <p className="text-4xl font-semibold tracking-tight relative flex items-center pl-8 text-[#E60000] before:absolute before:content-[''] before:h-4 before:w-4 before:rounded-full before:left-0 before:bg-red-600 after:absolute after:content-[''] after:h-4 after:w-4 after:rounded-full after:left-0 after:bg-red-600 after:animate-ping">
           Login
         </p>
 
@@ -120,13 +130,18 @@ const Form = () => {
           className="w-full p-3 bg-black border border-red-600 rounded-lg"
           required
         >
-          <option value="" disabled>Select Role</option>
+          <option value="" disabled>
+            Select Role
+          </option>
           <option value="Candidate">Candidate</option>
           <option value="Admin">Admin</option>
           <option value="Partner">Partner</option>
         </select>
 
-        <Link href="/forgot-password" className="block text-sm text-red-500 text-right">
+        <Link
+          href="/forgot-password"
+          className="block text-sm text-red-500 text-right"
+        >
           Forgot Password?
         </Link>
 
@@ -139,8 +154,10 @@ const Form = () => {
         </button>
 
         <p className="text-center text-sm">
-          Don't have an account?{' '}
-          <Link href="/register" className="text-red-500">Register</Link>
+          Don't have an account?{" "}
+          <Link href="/register" className="text-red-500">
+            Register
+          </Link>
         </p>
       </form>
     </div>

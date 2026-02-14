@@ -11,7 +11,8 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
       if (scrollTop > lastScrollTop) {
         setIsVisible(false);
       } else {
@@ -36,16 +37,18 @@ const Navbar = () => {
     { title: "About Us", link: "/about" },
     { title: "Services", link: "/services" },
     { title: "Courses", link: "/courses" },
-    { title: "Become a Partner", link: "/partner" },
+    { title: "Become a Franchise", link: "/Franchise" },
     { title: "Business Consulting", link: "/consulting" },
     { title: "Contact Us", link: "/contact" },
+    // { title: "Our Blogs", link: "/blog" },
+    // { title: "Careers", link: "/careers" },
   ];
   return (
     <nav
       className={`w-full bg-black/45 mb-4 bg-opacity-90 fixed top-0 left-0 transition-all duration-300 backdrop-blur-lg ease-in-out z-50 ${
         isVisible
-  ? "opacity-100 pointer-events-auto transition-opacity duration-500 ease-in-out"
-  : "opacity-0 transition-opacity duration-500 ease-in-out delay-200 pointer-events-none"
+          ? "opacity-100 pointer-events-auto transition-opacity duration-500 ease-in-out"
+          : "opacity-0 transition-opacity duration-500 ease-in-out delay-200 pointer-events-none"
       }`}
     >
       <div className="w-full px-2 md:px-4">
@@ -79,7 +82,7 @@ const Navbar = () => {
           {/* Right section */}
           <div className="flex items-center gap-2 md:gap-4">
             {/* Search button */}
-            <SearchModal />
+            {/* <SearchModal /> */}
             {/* Login button */}
             <div className="relative inline-block text-left">
               <button
@@ -102,15 +105,21 @@ const Navbar = () => {
                 <div className="absolute right-0 sm:left-0 mt-2 w-28 sm:w-full bg-white text-black rounded-lg shadow-md z-20">
                   <Link
                     href="https://courses.careertronic.com/"
-                    className="block px-4 py-2 text-sm hover:bg-red-100 hover:text-red-700 rounded-t-lg"
+                    className="block px-2.5 py-2 text-sm hover:bg-red-100 hover:text-red-700 rounded-t-lg"
                   >
                     Course Login
                   </Link>
                   <Link
                     href={"/Login"}
-                    className="block px-4 py-2 text-sm hover:bg-red-100 hover:text-red-700 rounded-b-lg"
+                    className="block px-2.5 py-2 text-sm hover:bg-red-100 hover:text-red-700 rounded-b-lg"
                   >
-                    Job Login
+                    JobPortal Login
+                  </Link>
+                  <Link
+                    href={"/Flogin"}
+                    className="block px-2.5 py-2 text-sm hover:bg-red-100 hover:text-red-700 rounded-b-lg"
+                  >
+                    Franchise Login
                   </Link>
                 </div>
               )}
@@ -128,11 +137,13 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div
           className={`fixed inset-x-0 top-20 bg-black border-b border-gray-200 lg:hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+            isMenuOpen
+              ? "opacity-100 visible"
+              : "opacity-0 invisible pointer-events-none"
           }`}
           style={{
             maxHeight: isMenuOpen ? "calc(100vh - 5rem)" : "0",
-            overflow: "hidden"
+            overflow: "hidden",
           }}
         >
           <div className="px-4 py-2 space-y-1 mt-2 mb-4">

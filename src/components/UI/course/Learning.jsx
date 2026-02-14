@@ -310,7 +310,7 @@ const LearningPlatform = () => {
               certificates.
             </p>
             <Link
-              href="#"
+              href="/contact"
               className="inline-block px-6 py-3  text-white font-bold rounded-full hover:from-red-600 hover:to-red-400 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-"
             >
               Enroll Now
@@ -353,7 +353,7 @@ const LearningPlatform = () => {
                   {/* Hover reveal button */}
                   <div className="mt-4 overflow-hidden h-0 group-hover:h-10 transition-all duration-300">
                     <Link
-                      href="#"
+                      href="/contact"
                       className="inline-flex items-center text-red-500 hover:text-red-400"
                     >
                       Learn more
@@ -392,28 +392,23 @@ const LearningPlatform = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {supportOptions.map((option) => (
-              <Link
-                href={'/contact'}
-                key={option.id}
-                >
-              <div
-                className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden shadow-lg hover:shadow-red-900/20"
-              >
-                {/* Red glow effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-b from-red-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <Link href={"/contact"} key={option.id}>
+                <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden shadow-lg hover:shadow-red-900/20">
+                  {/* Red glow effect on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-red-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                <div className="text-red-500 mb-3 flex justify-center group-hover:text-red-400 transition-colors duration-300 transform group-hover:scale-110">
-                  {option.icon}
-                </div>
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-red-400 transition-colors duration-300">
-                  {option.title}
-                </h3>
-                <p className="text-gray-400 text-sm">{option.description}</p>
+                  <div className="text-red-500 mb-3 flex justify-center group-hover:text-red-400 transition-colors duration-300 transform group-hover:scale-110">
+                    {option.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-red-400 transition-colors duration-300">
+                    {option.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">{option.description}</p>
                   <p className="inline-block mt-4 text-red-500 hover:text-red-400 text-sm font-medium group-hover:underline">
-                  Contact Us
+                    Contact Us
                   </p>
-              </div>
-            </Link>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

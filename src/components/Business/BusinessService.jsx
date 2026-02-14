@@ -53,13 +53,13 @@ const BusinessService = () => {
       iconSrc: "/Business/Invest.png",
       borderColor: "border-white-100",
     },
-    {
-      title: "Financial Modeling & Risk Management",
-      description:
-        "Robust financial models, sensitivity analysis, scenario planning, risk assessment, and mitigation strategies.",
-      iconSrc: "/Business/Finance.png",
-      borderColor: "border-white-100",
-    },
+    // {
+    //   title: "Financial Modeling & Risk Management",
+    //   description:
+    //     "Robust financial models, sensitivity analysis, scenario planning, risk assessment, and mitigation strategies.",
+    //   iconSrc: "/Business/Finance.png",
+    //   borderColor: "border-white-100",
+    // },
   ];
 
   // Section 3: Business Process Optimization
@@ -195,9 +195,14 @@ const BusinessService = () => {
 
       {/* Section 1 */}
       <div className="mb-8 px-5">
-        <div className="bg-gradient-to-b from-[#001F29] via-[#003D40] to-[#012B2D] pb-6 rounded-lg shadow-lg border border-gray-700">
+        <div
+          className=" bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
+        >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">1</span>
                 <div>
@@ -227,12 +232,17 @@ const BusinessService = () => {
           </div>
         </div>
       </div>
-
+      {/* {gradient shade changed - from-[#001F29] via-[#003D40] to-[#012B2D]} */}
       {/* Section 2 */}
       <div className="mb-8 px-5">
-        <div className="bg-gradient-to-b from-[#001F29] via-[#003D40] to-[#012B2D] pb-6 rounded-lg shadow-lg border border-gray-700">
+        <div
+          className="bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
+        >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">2</span>
                 <div>
@@ -264,9 +274,14 @@ const BusinessService = () => {
 
       {/* Section 3 */}
       <div className="mb-8 px-5">
-        <div className="bg-gradient-to-b from-[#001F29] via-[#003D40] to-[#012B2D] pb-6 rounded-lg shadow-lg border border-gray-700">
+        <div
+          className=" bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
+        >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">3</span>
                 <div>
@@ -297,9 +312,14 @@ const BusinessService = () => {
       </div>
       {/* Section 4 - Franchising & Expansion Strategies */}
       <div className="mb-8 px-5">
-        <div className="bg-gradient-to-b from-[#001F29] via-[#003D40] to-[#012B2D] pb-6 rounded-lg shadow-lg border border-gray-700">
+        <div
+          className="bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
+        >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">4</span>
                 <div>
@@ -331,9 +351,14 @@ const BusinessService = () => {
 
       {/* Section 5 - IPO & Market Listing Support */}
       <div className="mb-8 px-5">
-        <div className="bg-gradient-to-b from-[#001F29] via-[#003D40] to-[#012B2D] pb-6 rounded-lg shadow-lg border border-gray-700">
+        <div
+          className="bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
+        >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">5</span>
                 <div>
@@ -363,9 +388,14 @@ const BusinessService = () => {
       </div>
       {/* Section 6 - B2B Collaborations & Strategic Partnerships */}
       <div className="mb-8 px-5">
-        <div className="bg-gradient-to-b from-[#001F29] via-[#003D40] to-[#012B2D] pb-6 rounded-lg shadow-lg border border-gray-700">
+        <div
+          className="bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
+        >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">6</span>
                 <div>
@@ -397,9 +427,14 @@ const BusinessService = () => {
 
       {/* Section 7 - HR Strategy & Talent Management */}
       <div className="mb-8 px-5">
-        <div className="bg-gradient-to-b from-[#001F29] via-[#003D40] to-[#012B2D] pb-6 rounded-lg shadow-lg border border-gray-700">
+        <div
+          className="bg-gradient-to-br
+from-[#0e0e11]
+via-[#3b0f2a]
+to-[#000000] pb-6 rounded-lg shadow-lg border border-gray-700"
+        >
           <div className="bg-black p-6 rounded-t-lg w-full flex flex-col justify-center">
-            <ScrollReveal animation="slideUp" duration={800} delay={200}>
+            <ScrollReveal animation="slideRight" duration={800} delay={200}>
               <div className="flex items-start">
                 <span className="text-5xl font-bold text-red-600 mr-4">7</span>
                 <div>

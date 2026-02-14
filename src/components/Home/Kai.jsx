@@ -18,7 +18,7 @@ const ServicesList = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? slides.length - 1 : prevSlide - 1
+      prevSlide === 0 ? slides.length - 1 : prevSlide - 1,
     );
   };
 
@@ -110,7 +110,7 @@ const ServicesList = () => {
           const scrollProgress = scrollPos - (startPosition - 500);
           // Ensure we don't exceed the maximum height
           setScrollHeight(
-            Math.min(Math.max(0, scrollProgress), maxAllowedHeight)
+            Math.min(Math.max(0, scrollProgress), maxAllowedHeight),
           );
         } else {
           setScrollHeight(0);
@@ -152,7 +152,7 @@ const ServicesList = () => {
             // Ensure we don't exceed the maximum height
             const currentHeight = Math.min(
               initialHeight + (targetHeight - initialHeight) * easing(progress),
-              targetHeight
+              targetHeight,
             );
             setScrollHeight(currentHeight);
             if (progress < 1) {
@@ -171,26 +171,24 @@ const ServicesList = () => {
       {
         threshold: 0.1,
         rootMargin: "0px 0px 0px 0px",
-      }
+      },
     );
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
     return () => observer.disconnect();
   }, []);
- 
-    // Counter logic for stats section
-    const [count1, setCount1] = useState(0);
-    const [count2, setCount2] = useState(0);
-    const [topCount, setTopCount] = useState(0);
-    const target1 = 1000;
-    const target2 = 80000;
-    const targetTop = 3;
-    const statsRef = useRef(null);
-    const [isStatsVisible, setIsStatsVisible] = useState(false);
-  
 
-  
+  // Counter logic for stats section
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+  const [topCount, setTopCount] = useState(0);
+  const target1 = 1000;
+  const target2 = 80000;
+  const targetTop = 3;
+  const statsRef = useRef(null);
+  const [isStatsVisible, setIsStatsVisible] = useState(false);
+
   // Add Intersection Observer for the stats section
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -207,13 +205,13 @@ const ServicesList = () => {
       {
         threshold: 0.2,
         rootMargin: "0px",
-      }
+      },
     );
-    
+
     if (statsRef.current) {
       observer.observe(statsRef.current);
     }
-    
+
     return () => {
       if (statsRef.current) {
         observer.unobserve(statsRef.current);
@@ -224,7 +222,7 @@ const ServicesList = () => {
   // Modified counter animation that only runs when stats section is visible
   useEffect(() => {
     if (!isStatsVisible) return;
-    
+
     const animateCount = (setCount, target) => {
       let start = 0;
       const duration = 2000; // Duration in milliseconds
@@ -238,7 +236,7 @@ const ServicesList = () => {
         }
         setCount(start);
       }, stepTime);
-      
+
       return counter;
     };
 
@@ -264,31 +262,48 @@ const ServicesList = () => {
     if (ref.current) ref.current.pause();
   };
 
-
-    // Main carousel images
+  // Main carousel images
   const mainImages = [
     {
-      src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
-      alt: "Featured gallery image 1"
+      src: "/Gallery/GalleryImg1.jpg",
+      alt: "Featured gallery image 1",
     },
     {
-      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop", 
-      alt: "Featured gallery image 2"
+      src: "/Gallery/GalleryImg7.JPG",
+      alt: "Featured gallery image 2",
     },
     {
-      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      alt: "Featured gallery image 3"
-    }
+      src: "/Gallery/GalleryImg6.JPG",
+      alt: "Featured gallery image 3",
+    },
   ];
 
   // Gallery grid images
   const gridImages = [
-    { src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&h=150&fit=crop", alt: "Gallery image 1" },
-    { src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=150&fit=crop", alt: "Gallery image 2" },
-    { src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=200&h=150&fit=crop", alt: "Gallery image 3" },
-    { src: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=200&h=150&fit=crop", alt: "Gallery image 4" },
-    { src: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=150&fit=crop", alt: "Gallery image 5" },
-    { src: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=200&h=150&fit=crop", alt: "Gallery image 6" }
+    {
+      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&h=150&fit=crop",
+      alt: "Gallery image 1",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=150&fit=crop",
+      alt: "Gallery image 2",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=200&h=150&fit=crop",
+      alt: "Gallery image 3",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=200&h=150&fit=crop",
+      alt: "Gallery image 4",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=150&fit=crop",
+      alt: "Gallery image 5",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=200&h=150&fit=crop",
+      alt: "Gallery image 6",
+    },
   ];
 
   const [currentSlide1, setCurrentSlide1] = useState(0);
@@ -297,7 +312,7 @@ const ServicesList = () => {
   // Auto-advance carousel
   useEffect(() => {
     if (!isAutoPlaying) return;
-    
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % mainImages.length);
     }, 4000); // Change slide every 4 seconds
@@ -310,7 +325,9 @@ const ServicesList = () => {
   };
 
   const prevSlide1 = () => {
-    setCurrentSlide((prev) => (prev - 1 + mainImages.length) % mainImages.length);
+    setCurrentSlide(
+      (prev) => (prev - 1 + mainImages.length) % mainImages.length,
+    );
   };
 
   const goToSlide = (index) => {
@@ -362,107 +379,121 @@ const ServicesList = () => {
         ></div>
       </div>
       {services.map((service, index) => (
-  <div
-    key={index}
-    ref={index === 0 ? firstNodeRef : null}
-    className="flex w-full max-w-[67rem] justify-between items-center relative py-8"
-  >
-    <div className="w-[61%] text-right pr-52 flex items-center relative lg:pl-[53px] min-[1440px]:pl-[13px] md:pl-[28px]">
-      <span className="text-transparent bg-clip-text bg-gradient-to-b from-gray-400 to-black text-5xl font-extrabold mr-[1.5rem] -mt-[20px]">
-        {service.number}
-      </span>
-      <span className="text-white font-medium leading-tight relative inline-block pb-2 text-[1.25rem] max-[425px]:text-[1.25rem]">
-        {/* Title with Line Break at "&" */}
-        <div className="text-lg-custom text-start max-[375px]:text-[1rem] max-[320px]:text-[0.95rem] max-[425px]:text-[1.25rem] max-[425px]:leading-tight relative p-2">
-          {service.title === "IT & industrial automation training" ? (
-            <div className="group relative p-2">
-              <Link className="capitalize font-semibold" href='/services/IT-TRAINING-&-CERTIFICATION'>
-                IT & industrial
-                <br />
-                <span className="whitespace-nowrap">
-                  automation training 
-                </span>
-                <span
-                  className="absolute left-[-4rem] bottom-0 h-1 bg-gradient-to-l from-gray-500 to-transparent"
-                  style={{ width: "140%" }}
-                ></span>
-              </Link>
-              <div className="absolute opacity-0 group-hover:opacity-100 hidden sm:block transition-opacity duration-300 bg-zinc-800 font-thin text-white text-sm py-1 px-2 rounded -top-8 left-1/2 transform -translate-x-1/2 z-20 whitespace-nowrap">
-                Navigate to this page
+        <div
+          key={index}
+          ref={index === 0 ? firstNodeRef : null}
+          className="flex w-full max-w-[67rem] justify-between items-center relative py-8"
+        >
+          <div className="w-[61%] text-right pr-52 flex items-center relative lg:pl-[53px] min-[1440px]:pl-[13px] md:pl-[28px]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-gray-400 to-black text-5xl font-extrabold mr-[1.5rem] -mt-[20px]">
+              {service.number}
+            </span>
+            <span className="text-white font-medium leading-tight relative inline-block pb-2 text-[1.25rem] max-[425px]:text-[1.25rem]">
+              {/* Title with Line Break at "&" */}
+              <div className="text-lg-custom text-start max-[375px]:text-[1rem] max-[320px]:text-[0.95rem] max-[425px]:text-[1.25rem] max-[425px]:leading-tight relative p-2">
+                {service.title === "IT & industrial automation training" ? (
+                  <div className="group relative p-2">
+                    <Link
+                      className="capitalize font-semibold"
+                      href="/services/IT-TRAINING-&-CERTIFICATION"
+                    >
+                      IT & industrial
+                      <br />
+                      <span className="whitespace-nowrap">
+                        automation training
+                      </span>
+                      <span
+                        className="absolute left-[-4rem] bottom-0 h-1 bg-gradient-to-l from-gray-500 to-transparent"
+                        style={{ width: "140%" }}
+                      ></span>
+                    </Link>
+                    <div className="absolute opacity-0 group-hover:opacity-100 hidden sm:block transition-opacity duration-300 bg-zinc-800 font-thin text-white text-sm py-1 px-2 rounded -top-8 left-1/2 transform -translate-x-1/2 z-20 whitespace-nowrap">
+                      Navigate to this page
+                    </div>
+                  </div>
+                ) : service.title === "Corporate & industrial training" ? (
+                  <div className="group relative p-2">
+                    <Link
+                      className="capitalize font-semibold"
+                      href="/services/CORPORATE-&-INDUSTRIAL-TRAINING"
+                    >
+                      Corporate
+                      <br />
+                      <span className="whitespace-nowrap">
+                        industrial training
+                      </span>
+                      <span
+                        className="absolute left-[-4rem] bottom-0 h-1 bg-gradient-to-l from-gray-500 to-transparent"
+                        style={{ width: "143%" }}
+                      ></span>
+                    </Link>
+                    <div className="absolute opacity-0 group-hover:opacity-100 hidden sm:block transition-opacity duration-300 bg-zinc-800 font-thin text-white text-sm py-1 px-2 rounded -top-8 left-1/2 transform -translate-x-1/2 z-20 whitespace-nowrap">
+                      Navigate to this page
+                    </div>
+                  </div>
+                ) : service.title ===
+                  "Global education & study abroad programs" ? (
+                  <div className="group relative p-2">
+                    <Link
+                      className="capitalize font-semibold"
+                      href="/services/Study-Abroad"
+                    >
+                      {service.title}
+                      {/* Custom underline only for these specific titles */}
+                      <span
+                        className="absolute left-[-4rem] bottom-0 h-1 bg-gradient-to-l from-gray-500 to-transparent"
+                        style={{ width: "107%", right: "-2rem" }}
+                      ></span>
+                    </Link>
+                    <div className="absolute opacity-0 group-hover:opacity-100 hidden sm:block transition-opacity duration-300 bg-zinc-800 font-thin text-white text-sm py-1 px-2 rounded -top-8 left-1/2 transform -translate-x-1/2 z-20 whitespace-nowrap">
+                      Navigate to this page
+                    </div>
+                  </div>
+                ) : service.title ===
+                  "Software development &  export services" ? (
+                  <div className="group relative p-2">
+                    <Link
+                      className="capitalize font-semibold"
+                      href="/services/SOFTWARE-DEVELOPMENT-&-EXPORT-SERVICES"
+                    >
+                      {service.title}
+                      {/* Custom underline only for these specific titles */}
+                      <span
+                        className="absolute left-[-4rem] bottom-0 h-1 bg-gradient-to-l from-gray-500 to-transparent"
+                        style={{ width: "107%", right: "-2rem" }}
+                      ></span>
+                    </Link>
+                    <div className="absolute opacity-0 group-hover:opacity-100 hidden sm:block transition-opacity duration-300 bg-zinc-800 font-thin text-white text-sm py-1 px-2 rounded -top-8 left-1/2 transform -translate-x-1/2 z-20 whitespace-nowrap">
+                      Navigate to this page
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    {service.title.split(" & ").map((part, i) => (
+                      <React.Fragment key={i}>
+                        {part}
+                        {i < service.title.split(" & ").length - 1 && <br />}
+                        {i < service.title.split(" & ").length - 1 && " &"}
+                      </React.Fragment>
+                    ))}
+                    <span
+                      className="absolute left-0 bottom-0 h-1 bg-gradient-to-l from-gray-500 to-transparent"
+                      style={{ width: "auto", right: 0 }}
+                    ></span>
+                  </>
+                )}
               </div>
+            </span>
+            <div className="w-[57%] hidden min-[769px]:flex md:hidden">
+              <img
+                src={service.icon}
+                alt={service.title}
+                className="w-16 h-16 md:w-20 md:h-20 md:mx-auto"
+              />
             </div>
-          ) : service.title === "Corporate & industrial training" ? (
-            <div className="group relative p-2">
-              <Link className="capitalize font-semibold" href='/services/CORPORATE-&-INDUSTRIAL-TRAINING'>
-                Corporate
-                <br />
-                <span className="whitespace-nowrap">
-                  industrial training
-                </span>
-                <span
-                  className="absolute left-[-4rem] bottom-0 h-1 bg-gradient-to-l from-gray-500 to-transparent"
-                  style={{ width: "143%" }}
-                ></span>
-              </Link>
-              <div className="absolute opacity-0 group-hover:opacity-100 hidden sm:block transition-opacity duration-300 bg-zinc-800 font-thin text-white text-sm py-1 px-2 rounded -top-8 left-1/2 transform -translate-x-1/2 z-20 whitespace-nowrap">
-                Navigate to this page
-              </div>
-            </div>
-          ) : service.title === "Global education & study abroad programs" ? (
-            <div className="group relative p-2">
-              <Link className="capitalize font-semibold" href='/services/Study-Abroad'>
-                {service.title}
-                {/* Custom underline only for these specific titles */}
-                <span
-                  className="absolute left-[-4rem] bottom-0 h-1 bg-gradient-to-l from-gray-500 to-transparent"
-                  style={{ width: "107%", right: "-2rem" }}
-                ></span>
-              </Link>
-              <div className="absolute opacity-0 group-hover:opacity-100 hidden sm:block transition-opacity duration-300 bg-zinc-800 font-thin text-white text-sm py-1 px-2 rounded -top-8 left-1/2 transform -translate-x-1/2 z-20 whitespace-nowrap">
-                Navigate to this page
-              </div>
-            </div>
-          ) : service.title === "Software development &  export services" ? (
-            <div className="group relative p-2">
-              <Link className="capitalize font-semibold" href='/services/SOFTWARE-DEVELOPMENT-&-EXPORT-SERVICES'>
-                {service.title}
-                {/* Custom underline only for these specific titles */}
-                <span
-                  className="absolute left-[-4rem] bottom-0 h-1 bg-gradient-to-l from-gray-500 to-transparent"
-                  style={{ width: "107%", right: "-2rem" }}
-                ></span>
-              </Link>
-              <div className="absolute opacity-0 group-hover:opacity-100 hidden sm:block transition-opacity duration-300 bg-zinc-800 font-thin text-white text-sm py-1 px-2 rounded -top-8 left-1/2 transform -translate-x-1/2 z-20 whitespace-nowrap">
-                Navigate to this page
-              </div>
-            </div>
-          ) : (
-            <>
-              {service.title.split(" & ").map((part, i) => (
-                <React.Fragment key={i}>
-                  {part}
-                  {i < service.title.split(" & ").length - 1 && <br />}
-                  {i < service.title.split(" & ").length - 1 && " &"}
-                </React.Fragment>
-              ))}
-              <span
-                className="absolute left-0 bottom-0 h-1 bg-gradient-to-l from-gray-500 to-transparent"
-                style={{ width: "auto", right: 0 }}
-              ></span>
-            </>
-          )}
-        </div>
-      </span>
-      <div className="w-[57%] hidden min-[769px]:flex md:hidden">
-        <img
-          src={service.icon}
-          alt={service.title}
-          className="w-16 h-16 md:w-20 md:h-20 md:mx-auto"
-        />
-      </div>
-    </div>
-    <div
-      className="absolute w-6 h-6 bg-black border-2 border-white rounded-full
+          </div>
+          <div
+            className="absolute w-6 h-6 bg-black border-2 border-white rounded-full
       left-1/2
       max-[425px]:-translate-x-[-5%]
       sm:-translate-x-[200%]
@@ -474,24 +505,24 @@ const ServicesList = () => {
       sm:top-9
       flex items-center justify-center
       timeline-dot"
-      style={{
-        zIndex: 10,
-        boxShadow: "0 0 0 1px rgba(255,255,255,0.1)",
-      }}
-    >
-      {/* Optional: Add a small red dot in the center to enhance line alignment */}
-      <div className="w-2 h-2 bg-red-700 rounded-full"></div>
-    </div>
-    <div
-      ref={index === services.length - 1 ? lastDescriptionRef : null}
-      className="w-1/2 text-left pl-0 max-[425px]:pl-0 flex items-center lg:pl-0 md:w-[50%]"
-    >
-      <p className="text-white lg:text-[16px] md:pr-[25px]">
-        {service.description}
-      </p>
-    </div>
-  </div>
-))}
+            style={{
+              zIndex: 10,
+              boxShadow: "0 0 0 1px rgba(255,255,255,0.1)",
+            }}
+          >
+            {/* Optional: Add a small red dot in the center to enhance line alignment */}
+            <div className="w-2 h-2 bg-red-700 rounded-full"></div>
+          </div>
+          <div
+            ref={index === services.length - 1 ? lastDescriptionRef : null}
+            className="w-1/2 text-left pl-0 max-[425px]:pl-0 flex items-center lg:pl-0 md:w-[50%]"
+          >
+            <p className="text-white lg:text-[16px] md:pr-[25px]">
+              {service.description}
+            </p>
+          </div>
+        </div>
+      ))}
       {/* Our Gallery section starts from here */}
       {/* <div className="bg-black text-white py-10">
         <div className="px-4 sm:px-8 lg:px-16 space-y-10 w-full lg:w-[100%] p-20">
@@ -893,292 +924,327 @@ const ServicesList = () => {
       <section className="relative min-h-screen bg-gradient-to-br from-black via-gray-950 to-gray-700 px-6 py-16 lg:px-12">
         {/* <!-- Background decorative shapes --> */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 left-10 w-32 h-32 bg-gray-800 rounded-2xl opacity-40 transform rotate-12"></div>
-            <div className="absolute top-40 right-20 w-24 h-24 bg-gray-500 rounded-xl opacity-30 transform -rotate-6"></div>
-            <div className="absolute bottom-32 left-20 w-40 h-20 bg-gray-700 rounded-full opacity-35"></div>
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gray-800 rounded-2xl opacity-40 transform rotate-12"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-gray-500 rounded-xl opacity-30 transform -rotate-6"></div>
+          <div className="absolute bottom-32 left-20 w-40 h-20 bg-gray-700 rounded-full opacity-35"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto">
-            {/* <!-- Title Section --> */}
-            <div className="flex justify-end mb-12">
-                <div className="text-right">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-2 font-sans">Our Gallery</h2>
-                    <div className="w-24 h-0.5 bg-white ml-auto"></div>
+          {/* <!-- Title Section --> */}
+          <div className="flex justify-end mb-12">
+            <div className="text-right">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-2 font-sans">
+                Our Gallery
+              </h2>
+              <div className="w-24 h-0.5 bg-white ml-auto"></div>
+            </div>
+          </div>
+
+          {/* <!-- Main Content Grid --> */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* <!-- Left Side - Main Image --> */}
+            <div className="relative">
+              {/* Background shape for depth */}
+              <div className="absolute -inset-4 bg-gray-800 rounded-3xl opacity-50 transform rotate-1"></div>
+              <div className="absolute -inset-2 bg-gray-600 rounded-3xl opacity-40 transform -rotate-1"></div>
+
+              {/* Main Image Container */}
+              <div className="relative bg-gray-800 rounded-2xl p-2 shadow-2xl border border-gray-600 group">
+                <div className="relative overflow-hidden rounded-xl">
+                  <img
+                    src={mainImages[currentSlide].src}
+                    alt={mainImages[currentSlide].alt}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover transition-all duration-500 ease-in-out"
+                  />
+
+                  {/* Navigation arrows */}
+                  <button
+                    onClick={prevSlide1}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
+                  >
+                    <ChevronLeft size={20} />
+                  </button>
+                  <button
+                    onClick={nextSlide1}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
+                  >
+                    <ChevronRight size={20} />
+                  </button>
+
+                  {/* Auto-play toggle */}
+                  <button
+                    onClick={toggleAutoPlay}
+                    className="absolute top-4 right-4 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
+                  >
+                    {isAutoPlaying ? <Pause size={16} /> : <Play size={16} />}
+                  </button>
                 </div>
+              </div>
+
+              {/* Carousel Indicators */}
+              <div className="flex justify-center mt-6 space-x-2">
+                {mainImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 hover:scale-125 ${
+                      index === currentSlide
+                        ? "bg-white shadow-lg"
+                        : "bg-gray-500 hover:bg-gray-400"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {/* Progress indicator */}
+              {isAutoPlaying && (
+                <div className="mt-4 bg-gray-700 rounded-full h-1 overflow-hidden">
+                  <div
+                    className="h-full bg-white transition-all duration-100 ease-linear"
+                    style={{
+                      width: "100%",
+                      animation: "progress 4s linear infinite",
+                    }}
+                  />
+                </div>
+              )}
             </div>
 
-            {/* <!-- Main Content Grid --> */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                {/* <!-- Left Side - Main Image --> */}
-                <div className="relative">
-                  {/* Background shape for depth */}
-                  <div className="absolute -inset-4 bg-gray-800 rounded-3xl opacity-50 transform rotate-1"></div>
-                  <div className="absolute -inset-2 bg-gray-600 rounded-3xl opacity-40 transform -rotate-1"></div>
-                  
-                  {/* Main Image Container */}
-                  <div className="relative bg-gray-800 rounded-2xl p-2 shadow-2xl border border-gray-600 group">
-                    <div className="relative overflow-hidden rounded-xl">
-                      <img 
-                        src={mainImages[currentSlide].src}
-                        alt={mainImages[currentSlide].alt}
-                        className="w-full h-64 md:h-80 lg:h-96 object-cover transition-all duration-500 ease-in-out"
-                      />
-                      
-                      {/* Navigation arrows */}
-                      <button
-                        onClick={prevSlide1}
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
-                      >
-                        <ChevronLeft size={20} />
-                      </button>
-                      <button
-                        onClick={nextSlide1}
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
-                      >
-                        <ChevronRight size={20} />
-                      </button>
+            {/* <!-- Right Side - Description and Grid --> */}
+            <div className="space-y-8">
+              {/* <!-- Description --> */}
+              <p className="text-gray-300 text-lg font-sans leading-relaxed">
+                This is our gallery. Check it out.
+              </p>
 
-                      {/* Auto-play toggle */}
-                      <button
-                        onClick={toggleAutoPlay}
-                        className="absolute top-4 right-4 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
-                      >
-                        {isAutoPlaying ? <Pause size={16} /> : <Play size={16} />}
-                      </button>
-                    </div>
+              {/* <!-- Image Grid --> */}
+              <div className="relative">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
+                    <img
+                      src="/Gallery/GalleryImg1.jpg"
+                      alt="Gallery image 1"
+                      className="w-full h-20 md:h-24 object-cover rounded"
+                    />
                   </div>
-
-                  {/* Carousel Indicators */}
-                  <div className="flex justify-center mt-6 space-x-2">
-                    {mainImages.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => goToSlide(index)}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 hover:scale-125 ${
-                          index === currentSlide 
-                            ? 'bg-white shadow-lg' 
-                            : 'bg-gray-500 hover:bg-gray-400'
-                        }`}
-                      />
-                    ))}
+                  <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
+                    <img
+                      src="/Gallery/GalleryImg2.jpg"
+                      alt="Gallery image 2"
+                      className="w-full h-20 md:h-24 object-cover rounded"
+                    />
                   </div>
-
-                  {/* Progress indicator */}
-                  {isAutoPlaying && (
-                    <div className="mt-4 bg-gray-700 rounded-full h-1 overflow-hidden">
-                      <div 
-                        className="h-full bg-white transition-all duration-100 ease-linear"
-                        style={{
-                          width: '100%',
-                          animation: 'progress 4s linear infinite'
-                        }}
-                      />
-                    </div>
-                  )}
+                  <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
+                    <img
+                      src="/Gallery/GalleryImg3.jpg"
+                      alt="Gallery image 3"
+                      className="w-full h-20 md:h-24 object-cover rounded"
+                    />
+                  </div>
+                  <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
+                    <img
+                      src="/Gallery/GalleryImg4.JPG"
+                      alt="Gallery image 4"
+                      className="w-full h-20 md:h-24 object-cover rounded"
+                    />
+                  </div>
+                  <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
+                    <img
+                      src="/Gallery/GalleryImg5.JPG"
+                      alt="Gallery image 5"
+                      className="w-full h-20 md:h-24 object-cover rounded"
+                    />
+                  </div>
+                  <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
+                    <img
+                      src="/Gallery/GalleryImg6.JPG"
+                      alt="Gallery image 6"
+                      className="w-full h-20 md:h-24 object-cover rounded"
+                    />
+                  </div>
                 </div>
 
-                {/* <!-- Right Side - Description and Grid --> */}
-                <div className="space-y-8">
-                    {/* <!-- Description --> */}
-                    <p className="text-gray-300 text-lg font-sans leading-relaxed">
-                        This is our gallery. Check it out.
-                    </p>
-
-                    {/* <!-- Image Grid --> */}
-                    <div className="relative">
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&h=150&fit=crop" 
-                                    alt="Gallery image 1" 
-                                    className="w-full h-20 md:h-24 object-cover rounded"
-                                />
-                            </div>
-                            <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=150&fit=crop" 
-                                    alt="Gallery image 2" 
-                                    className="w-full h-20 md:h-24 object-cover rounded"
-                                />
-                            </div>
-                            <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=200&h=150&fit=crop" 
-                                    alt="Gallery image 3" 
-                                    className="w-full h-20 md:h-24 object-cover rounded"
-                                />
-                            </div>
-                            <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=200&h=150&fit=crop" 
-                                    alt="Gallery image 4" 
-                                    className="w-full h-20 md:h-24 object-cover rounded"
-                                />
-                            </div>
-                            <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=150&fit=crop" 
-                                    alt="Gallery image 5" 
-                                    className="w-full h-20 md:h-24 object-cover rounded"
-                                />
-                            </div>
-                            <div className="bg-gray-800 rounded-lg p-1 shadow-lg border border-gray-600 hover:border-gray-500 transition-colors">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=200&h=150&fit=crop" 
-                                    alt="Gallery image 6" 
-                                    className="w-full h-20 md:h-24 object-cover rounded"
-                                />
-                            </div>
-                        </div>
-
-                        {/* <!-- View All Button --> */}
-                        <div className="flex justify-end mt-6">
-                            <button className="px-6 py-3 bg-transparent border-2 border-gray-400 text-white font-sans font-medium rounded-full hover:border-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 ease-in-out transform hover:scale-105">
-                                View All
-                            </button>
-                        </div>
-                    </div>
+                {/* <!-- View All Button --> */}
+                <div className="flex justify-end mt-6">
+                  <Link href={"/gallery"}>
+                    {" "}
+                    <button className="px-6 py-3 bg-transparent border-2 border-gray-400 text-white font-sans font-medium rounded-full hover:border-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 ease-in-out transform hover:scale-105">
+                      View All
+                    </button>
+                  </Link>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
 
         {/* Additional decorative elements */}
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent opacity-50"></div>
       </section>
 
-        {/* Good Life Begins With a Good Company */}
-       <section id='goodCompany' className="relative bg-black px-4 lg:px-16 py-10">
+      {/* Good Life Begins With a Good Company */}
+      <section
+        id="goodCompany"
+        className="relative bg-black px-4 lg:px-16 py-10"
+      >
         {/* Main Hero Content  */}
         <div className="max-w-7xl mx-auto">
-            {/* Hero Layout - Flex container  */}
-            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 mb-10">
-                
-                 {/* Left Column - Image  */}
-                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-                    <div className="relative max-w-md w-full">
-                        <Image 
-                            src={'/mainHome/jobs.png'} 
-                            height={600}
-                            width={600}
-                            alt="Glowing microchip technology" 
-                            className="w-full md:h-auto object-contain rounded-2xl shadow-2xl border border-gray-800"
-                        />
-                         {/* Subtle glow effect  */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-2xl"></div>
-                    </div>
-                </div>
-
-                {/* Right Column - Text Content  */}
-                <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6">
-                    {/* Main Title  */}
-                    <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
-                        Good Life Begins With
-                        <br/>
-                        <span className="text-white">A Good Company</span>
-                    </h1>
-
-                    {/* Subtitle Paragraph  */}
-                    <p className="text-gray-300 text-base lg:text-base max-w-md mx-auto lg:mx-0 leading-relaxed">
-                        Discover opportunities that match your passion, skills, and ambitions. At Careertronic, we bridge the gap between top talent and leading companies around the world. Whether you're just starting your career or looking to take the next step, we help you land your ideal job.
-                    </p>
-
-                    {/* Buttons  */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <Link href={'https://resume-builder-three-rho.vercel.app/'} legacyBehavior>
-                          <a target='_blank' rel="noopener noreferrer" className="bg-red-600 hover:bg-red-800 text-white px-4 py-2 rounded ">
-                            Search Jobs
-                          </a>
-                        </Link>
-                        <Link href={'/internship'}>
-                          <button className="bg-red-600 hover:bg-red-800 text-white px-4 py-2 rounded ">
-                            Search Internships
-                          </button>
-                        </Link>
-                    </div>
-                </div>
+          {/* Hero Layout - Flex container  */}
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 mb-10">
+            {/* Left Column - Image  */}
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+              <div className="relative max-w-md w-full">
+                <Image
+                  src={"/mainHome/jobs.png"}
+                  height={600}
+                  width={600}
+                  alt="Glowing microchip technology"
+                  className="w-full md:h-auto object-contain rounded-2xl shadow-2xl border border-gray-800"
+                />
+                {/* Subtle glow effect  */}
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-2xl"></div>
+              </div>
             </div>
 
-            {/* Stats Section  */}
-            <div className="border-t border-dashed border-gray-700 pt-12">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                    
-                    {/* Stat 1 */}
-                    <div className="text-center lg:text-left space-y-2">
-                        <div className="text-red-600 text-3xl lg:text-4xl font-bold">12K+</div>
-                        <h3 className="text-white font-semibold text-lg">Clients worldwide</h3>
-                        <p className="text-sm text-gray-400 max-w-xs mx-auto lg:mx-0">
-                          We’ve helped thousands of companies around the globe find top-tier talent through our trusted hiring platform.
-                        </p>
-                    </div>
+            {/* Right Column - Text Content  */}
+            <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6">
+              {/* Main Title  */}
+              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+                Good Life Begins With
+                <br />
+                <span className="text-white">A Good Company</span>
+              </h1>
 
-                    {/* Stat 2  */}
-                    <div className="text-center lg:text-left space-y-2">
-                        <div className="text-red-600 text-3xl lg:text-4xl font-bold">20K+</div>
-                        <h3 className="text-white font-semibold text-lg">Active resume</h3>
-                        <p className="text-sm text-gray-400 max-w-xs mx-auto lg:mx-0">
-                            Our platform hosts over 20,000 up-to-date, professional resumes from qualified candidates across diverse industries.
-                        </p>
-                    </div>
+              {/* Subtitle Paragraph  */}
+              <p className="text-gray-300 text-base lg:text-base max-w-md mx-auto lg:mx-0 leading-relaxed">
+                Discover opportunities that match your passion, skills, and
+                ambitions. At Careertronic, we bridge the gap between top talent
+                and leading companies around the world. Whether you're just
+                starting your career or looking to take the next step, we help
+                you land your ideal job.
+              </p>
 
-                    {/* Stat 3  */}
-                    <div className="text-center lg:text-left space-y-2">
-                        <div className="text-red-600 text-3xl lg:text-4xl font-bold">18K+</div>
-                        <h3 className="text-white font-semibold text-lg">Companies</h3>
-                        <p className="text-sm text-gray-400 max-w-xs mx-auto lg:mx-0">
-                            Trusted by startups and Fortune 500 companies alike to connect with skilled professionals and fill critical roles.
-                        </p>
-                    </div>
-                </div>
+              {/* Buttons  */}
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <Link
+                  href={"https://resume-builder-three-rho.vercel.app/"}
+                  legacyBehavior
+                >
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-red-600 hover:bg-red-800 text-white px-4 py-2 rounded "
+                  >
+                    Search Jobs
+                  </a>
+                </Link>
+                <Link href={"/internship"}>
+                  <button className="bg-red-600 hover:bg-red-800 text-white px-4 py-2 rounded ">
+                    Search Internships
+                  </button>
+                </Link>
+              </div>
             </div>
+          </div>
+
+          {/* Stats Section  */}
+          <div className="border-t border-dashed border-gray-700 pt-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+              {/* Stat 1 */}
+              <div className="text-center lg:text-left space-y-2">
+                <div className="text-red-600 text-3xl lg:text-4xl font-bold">
+                  12K+
+                </div>
+                <h3 className="text-white font-semibold text-lg">
+                  Clients worldwide
+                </h3>
+                <p className="text-sm text-gray-400 max-w-xs mx-auto lg:mx-0">
+                  We’ve helped thousands of companies around the globe find
+                  top-tier talent through our trusted hiring platform.
+                </p>
+              </div>
+
+              {/* Stat 2  */}
+              <div className="text-center lg:text-left space-y-2">
+                <div className="text-red-600 text-3xl lg:text-4xl font-bold">
+                  20K+
+                </div>
+                <h3 className="text-white font-semibold text-lg">
+                  Active resume
+                </h3>
+                <p className="text-sm text-gray-400 max-w-xs mx-auto lg:mx-0">
+                  Our platform hosts over 20,000 up-to-date, professional
+                  resumes from qualified candidates across diverse industries.
+                </p>
+              </div>
+
+              {/* Stat 3  */}
+              <div className="text-center lg:text-left space-y-2">
+                <div className="text-red-600 text-3xl lg:text-4xl font-bold">
+                  18K+
+                </div>
+                <h3 className="text-white font-semibold text-lg">Companies</h3>
+                <p className="text-sm text-gray-400 max-w-xs mx-auto lg:mx-0">
+                  Trusted by startups and Fortune 500 companies alike to connect
+                  with skilled professionals and fill critical roles.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-            <div className="absolute top-20 right-10 w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-            <div className="absolute bottom-40 left-20 w-1 h-1 bg-red-400 rounded-full animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-red-300 rounded-full animate-pulse delay-500"></div>
+          <div className="absolute top-20 right-10 w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-40 left-20 w-1 h-1 bg-red-400 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-red-300 rounded-full animate-pulse delay-500"></div>
         </div>
       </section>
 
-       {/* Image Section */}
+      {/* Image Section */}
       <section className="relative h-screen w-full overflow-hidden">
         {/* Background Image  */}
         <div className="absolute inset-0 z-0">
-            <img 
-                src="/mainHome/7468d10cfa116929f0f6e9849b0e2cb9b9989823.png" 
-                alt="Video conference meeting on monitor" 
-                className="w-full h-full object-cover"
-            />
-             {/* Dark overlay for better text readability  */}
-            <div className="absolute inset-0 bg-black/30"></div>
+          <img
+            src="/mainHome/7468d10cfa116929f0f6e9849b0e2cb9b9989823.png"
+            alt="Video conference meeting on monitor"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for better text readability  */}
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
 
         {/* Content Container  */}
         <div className="relative z-10 h-full flex items-center justify-start px-6 md:px-12 lg:px-16">
-             {/* Glassmorphism CTA Box  */}
-            <div className="bg-black/40 backdrop-blur border border-white/20 rounded-2xl p-6 md:p-8 max-w-md shadow-2xl">
-                {/* Title  */}
-                <div className="mb-6">
-                    <h1 className="text-white text-2xl md:text-3xl font-bold leading-tight mb-2">
-                        Innovate with Purpose
-                    </h1>
-                    <h2 className="text-white text-xl md:text-2xl font-semibold leading-tight">
-                        Transforming Learning for the Next Generation
-                    </h2>
-                </div>
-
-                {/* Description  */}
-                <p className="text-sm text-gray-200 leading-relaxed mb-6 max-w-sm">
-                    We empower the future of education through innovative digital learning solutions. Our platform is designed to enhance engagement, inspire curiosity, and foster knowledge retention in learners of all ages. With a focus on creativity, adaptability, and results, we help educators and institutions build the skills of tomorrow, today.
-                </p>
-
-                {/* CTA Button  */}
-                <Link href={'/courses'}> 
-                  <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
-                      Start Growing
-                  </button>
-                </Link>
+          {/* Glassmorphism CTA Box  */}
+          <div className="bg-black/40 backdrop-blur border border-white/20 rounded-2xl p-6 md:p-8 max-w-md shadow-2xl">
+            {/* Title  */}
+            <div className="mb-6">
+              <h1 className="text-white text-2xl md:text-3xl font-bold leading-tight mb-2">
+                Innovate with Purpose
+              </h1>
+              <h2 className="text-white text-xl md:text-2xl font-semibold leading-tight">
+                Transforming Learning for the Next Generation
+              </h2>
             </div>
+
+            {/* Description  */}
+            <p className="text-sm text-gray-200 leading-relaxed mb-6 max-w-sm">
+              We empower the future of education through innovative digital
+              learning solutions. Our platform is designed to enhance
+              engagement, inspire curiosity, and foster knowledge retention in
+              learners of all ages. With a focus on creativity, adaptability,
+              and results, we help educators and institutions build the skills
+              of tomorrow, today.
+            </p>
+
+            {/* CTA Button  */}
+            <Link href={"/courses"}>
+              <button className="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                Start Growing
+              </button>
+            </Link>
+          </div>
         </div>
 
         {/* Additional decorative elements for depth */}
@@ -1194,10 +1260,12 @@ const ServicesList = () => {
             {/* Section Header */}
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Testimonials from <span className="text-red-700">Our</span> Customers
+                Testimonials from <span className="text-red-700">Our</span>{" "}
+                Customers
               </h2>
               <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
-               See how our clients are experiencing real success with our platform.
+                See how our clients are experiencing real success with our
+                platform.
               </p>
             </div>
 
@@ -1208,23 +1276,29 @@ const ServicesList = () => {
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-red-700 text-lg">★</span>
+                    <span key={i} className="text-red-700 text-lg">
+                      ★
+                    </span>
                   ))}
                 </div>
-                
+
                 {/* Title */}
-                <h3 className="text-white text-xl font-semibold mb-4">Amazing services</h3>
-                
+                <h3 className="text-white text-xl font-semibold mb-4">
+                  Amazing services
+                </h3>
+
                 {/* Review Text */}
                 <p className="text-gray-400 text-sm leading-relaxed mb-6 italic">
-                  “The platform exceeded my expectations. It's intuitive, efficient, and genuinely helped me connect with top opportunities.”
+                  “The platform exceeded my expectations. It's intuitive,
+                  efficient, and genuinely helped me connect with top
+                  opportunities.”
                 </p>
-                
+
                 {/* Quote Icon */}
                 <div className="absolute bottom-6 right-6">
                   <span className="text-red-700 text-4xl font-bold">"</span>
                 </div>
-                
+
                 {/* Client Info */}
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center">
@@ -1242,23 +1316,28 @@ const ServicesList = () => {
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-red-700 text-lg">★</span>
+                    <span key={i} className="text-red-700 text-lg">
+                      ★
+                    </span>
                   ))}
                 </div>
-                
+
                 {/* Title */}
-                <h3 className="text-white text-xl font-semibold mb-4">Everything simple</h3>
-                
+                <h3 className="text-white text-xl font-semibold mb-4">
+                  Everything simple
+                </h3>
+
                 {/* Review Text */}
                 <p className="text-gray-400 text-sm leading-relaxed mb-6 italic">
-                  “From start to finish, the process was seamless. I was able to get set up and start applying within minutes.”
+                  “From start to finish, the process was seamless. I was able to
+                  get set up and start applying within minutes.”
                 </p>
-                
+
                 {/* Quote Icon */}
                 <div className="absolute bottom-6 right-6">
                   <span className="text-red-700 text-4xl font-bold">"</span>
                 </div>
-                
+
                 {/* Client Info */}
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center">
@@ -1276,23 +1355,29 @@ const ServicesList = () => {
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-red-700 text-lg">★</span>
+                    <span key={i} className="text-red-700 text-lg">
+                      ★
+                    </span>
                   ))}
                 </div>
-                
+
                 {/* Title */}
-                <h3 className="text-white text-xl font-semibold mb-4">Awesome, thank you!</h3>
-                
+                <h3 className="text-white text-xl font-semibold mb-4">
+                  Awesome, thank you!
+                </h3>
+
                 {/* Review Text */}
                 <p className="text-gray-400 text-sm leading-relaxed mb-6 italic">
-                  “Outstanding support and an easy-to-use interface. This platform helped me land my current role faster than I imagined.”
+                  “Outstanding support and an easy-to-use interface. This
+                  platform helped me land my current role faster than I
+                  imagined.”
                 </p>
-                
+
                 {/* Quote Icon */}
                 <div className="absolute bottom-6 right-6">
                   <span className="text-red-700 text-4xl font-bold">"</span>
                 </div>
-                
+
                 {/* Client Info */}
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center">

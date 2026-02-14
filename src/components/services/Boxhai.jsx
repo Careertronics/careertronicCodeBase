@@ -7,8 +7,6 @@ import Servicesboxes from "@/components/UI/services/Servicesboxes";
 import ScrollReveal from "../ScrollReveal";
 import Robocourse from "../Robocourse";
 
-
-
 const head = () => {
   const companies = [
     { name: "ABB", logo: "/Marq/ABB.png" },
@@ -36,9 +34,8 @@ const head = () => {
 
   return (
     <>
+      <Robocourse />
 
-    <Robocourse />
-   
       <div className="h-full w-full">
         <div className="flex flex-col lg:flex-row relative">
           <div className="h-full w-full md:pt-0 sm:px-16 lg:px-0 px-6 justify-center flex flex-col gap-8">
@@ -66,16 +63,12 @@ const head = () => {
               >
                 {/*  */}
                 {/* spline */}
-                
-              
-                
 
                 {/* <img
                   src="/services/Removed.png"
                   alt="Removed"
                   className="float-right m-4 relative lg:-top-20 sm:w-[50%] md:w-[50%] lg:w-[500px] sm:block hidden"
                 /> */}
-                
               </ScrollReveal>
               <ScrollReveal
                 animation="slideRight"
@@ -99,14 +92,145 @@ const head = () => {
                   evolving digital landscape.
                 </p> */}
               </ScrollReveal>
-            
-             
-              
             </div>
-
-            {/* <div className=''></div> */}
           </div>
           {/* <div className='h-full lg:w-[50%] w-full py-10 px-16 flex items-center justify-center'></div> */}
+        </div>
+        {/* second  PART OF THE PAGE */}
+        <div className="h-auto w-full " id="services">
+          {/* <div className="flex justify-center my-24 mt-0"> */}
+          {/* <div className="w-[80%] h-[80px] bg-red-600 flex  justify-center align-middle rounded-full rounded-tl-md rounded-br-sm bg-gradient-to-r from-[#D31C1F] to-[#AD0003] ">
+            <h1 className="text-white sm:text-3xl flex items-center text-xl">
+              {" "}
+              Careertronic services
+            </h1>
+          </div> */}
+          {/* </div> */}
+          <div className="w-full mx-auto md:gap-[2rem] lg:gap-8 gap-12 py-16 px-4 flex flex-wrap justify-center lg:grid lg:grid-cols-3 lg:grid-rows-3">
+            <ScrollReveal
+              animation="slideLeft"
+              duration={800}
+              delay={200}
+              easing="smooth"
+            >
+              <Servicesboxes
+                title="SOFTWARE DEVELOPMENT & EXPORT SERVICES"
+                bgUrl="/services/services.png"
+                shifturl="/services/SOFTWARE-DEVELOPMENT-&-EXPORT-SERVICES"
+              />
+            </ScrollReveal>
+
+            <ScrollReveal
+              animation="slideUp"
+              duration={800}
+              delay={100}
+              easing="smooth"
+            >
+              <Servicesboxes
+                title="IT TRAINING & CERTIFICATION"
+                bgUrl="/services/div2.png"
+                shifturl="/services/IT-TRAINING-&-CERTIFICATION"
+              />
+            </ScrollReveal>
+
+            <ScrollReveal
+              animation="slideRight"
+              duration={800}
+              delay={200}
+              easing="smooth"
+            >
+              <Servicesboxes
+                title="INDUSTRIAL AUTOMATION TRAINING"
+                bgUrl="/services/div3.png"
+                shifturl="/services/INDUSTRIAL-AUTOMATION-TRAINING"
+              />
+            </ScrollReveal>
+
+            <ScrollReveal
+              animation="slideLeft"
+              duration={800}
+              delay={200}
+              easing="smooth"
+            >
+              <Servicesboxes
+                title="CORPORATE & INDUSTRIAL TRAINING"
+                bgUrl="/services/div4.png"
+                shifturl="/services/CORPORATE-&-INDUSTRIAL-TRAINING"
+              />
+            </ScrollReveal>
+
+            <ScrollReveal
+              animation="slideUp"
+              duration={800}
+              delay={100}
+              easing="smooth"
+            >
+              <Servicesboxes
+                title="Study Abroad"
+                bgUrl="/services/div5.png"
+                shifturl="/services/Study-Abroad"
+              />
+            </ScrollReveal>
+
+            <ScrollReveal
+              animation="slideRight"
+              duration={800}
+              delay={200}
+              easing="smooth"
+            >
+              <Servicesboxes
+                title="Work Abroad"
+                bgUrl="/services/div6.png"
+                shifturl="/services/Work-Abroad"
+              />
+            </ScrollReveal>
+
+            <ScrollReveal
+              animation="slideLeft"
+              duration={800}
+              delay={200}
+              easing="smooth"
+            >
+              <Servicesboxes
+                title="BUSSINESS OUTSOURCING SOLUTION "
+                bgUrl="/services/div7.png"
+                shifturl="/services/BUSSINESS-OUTSOURCING-SOLUTION "
+              />
+            </ScrollReveal>
+
+            <ScrollReveal
+              animation="slideUp"
+              duration={800}
+              delay={100}
+              easing="smooth"
+            >
+              <Servicesboxes
+                title="CAMPUS DRIVE MANAGEMENT"
+                bgUrl="/services/div8.png"
+                shifturl="/services/CAMPUS-DRIVE"
+              />
+            </ScrollReveal>
+
+            <ScrollReveal
+              animation="slideRight"
+              duration={800}
+              delay={200}
+              easing="smooth"
+            >
+              <Servicesboxes
+                title="RESUME BUILDER"
+                bgUrl="/services/div9.png"
+                shifturl="/services/RESUME-BUILDER"
+              />
+            </ScrollReveal>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <div className="w-[80%] h-[80px] bg-red-600 flex  justify-center align-middle rounded-full ">
+            <h1 className="text-white sm:text-3xl flex items-center text-xl">
+              Our Placement Network
+            </h1>
+          </div>
         </div>
         {/* Company Logos Marquee */}
         <div className="relative  overflow-hidden p-0">
@@ -124,7 +248,6 @@ const head = () => {
             </div>
           </div>
         </div>
-
         {/* Marquee Animation Style */}
         <style jsx>{`
           .marquee-container {
@@ -152,135 +275,6 @@ const head = () => {
             }
           }
         `}</style>
-      </div>
-      {/* SECONE PART OF THE PAGE  */}
-      <div className="h-auto w-full mt-28" id="services">
-        <div className="flex justify-center my-24 mt-0">
-          <div className="w-[80%] h-[80px] bg-red-600 flex  justify-center align-middle rounded-full rounded-tl-md rounded-br-sm bg-gradient-to-r from-[#D31C1F] to-[#AD0003] ">
-            <h1 className="text-white sm:text-3xl flex items-center text-xl">
-              {" "}
-              Careertronic services
-            </h1>
-          </div>
-        </div>
-        <div className="w-full mx-auto md:gap-[2rem] lg:gap-8 gap-12 py-16 px-4 flex flex-wrap justify-center lg:grid lg:grid-cols-3 lg:grid-rows-3">
-          <ScrollReveal
-            animation="slideLeft"
-            duration={800}
-            delay={200}
-            easing="smooth"
-          >
-            <Servicesboxes
-              title="SOFTWARE DEVELOPMENT & EXPORT SERVICES"
-              bgUrl="/services/image%2021.png"
-              shifturl="/services/SOFTWARE-DEVELOPMENT-&-EXPORT-SERVICES"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal
-            animation="slideUp"
-            duration={800}
-            delay={100}
-            easing="smooth"
-          >
-            <Servicesboxes
-              title="IT TRAINING & CERTIFICATION"
-              bgUrl="/services/div2.png"
-              shifturl="/services/IT-TRAINING-&-CERTIFICATION"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal
-            animation="slideRight"
-            duration={800}
-            delay={200}
-            easing="smooth"
-          >
-            <Servicesboxes
-              title="INDUSTRIAL AUTOMATION TRAINING"
-              bgUrl="/services/div3.png"
-              shifturl="/services/INDUSTRIAL-AUTOMATION-TRAINING"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal
-            animation="slideLeft"
-            duration={800}
-            delay={200}
-            easing="smooth"
-          >
-            <Servicesboxes
-              title="CORPORATE & INDUSTRIAL TRAINING"
-              bgUrl="/services/div4.png"
-              shifturl="/services/CORPORATE-&-INDUSTRIAL-TRAINING"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal
-            animation="slideUp"
-            duration={800}
-            delay={100}
-            easing="smooth"
-          >
-            <Servicesboxes
-              title="Study Abroad"
-              bgUrl="/services/div5.png"
-              shifturl="/services/Study-Abroad"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal
-            animation="slideRight"
-            duration={800}
-            delay={200}
-            easing="smooth"
-          >
-            <Servicesboxes
-              title="Work Abroad"
-              bgUrl="/services/div6.png"
-              shifturl="/services/Work-Abroad"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal
-            animation="slideLeft"
-            duration={800}
-            delay={200}
-            easing="smooth"
-          >
-            <Servicesboxes
-              title="BUSSINESS OUTSOURCING SOLUTION "
-              bgUrl="/services/div7.png"
-              shifturl="/services/BUSSINESS-OUTSOURCING-SOLUTION "
-            />
-          </ScrollReveal>
-
-          <ScrollReveal
-            animation="slideUp"
-            duration={800}
-            delay={100}
-            easing="smooth"
-          >
-            <Servicesboxes
-              title="CAMPUS DRIVE MANAGEMENT"
-              bgUrl="/services/div8.png"
-              shifturl="/services/CAMPUS-DRIVE"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal
-            animation="slideRight"
-            duration={800}
-            delay={200}
-            easing="smooth"
-          >
-            <Servicesboxes
-            title="RESUME BUILDER"
-            bgUrl="/services/div9.png"
-            shifturl="/services/RESUME-BUILDER"
-          />
-          </ScrollReveal>
-        </div>
       </div>
     </>
   );
