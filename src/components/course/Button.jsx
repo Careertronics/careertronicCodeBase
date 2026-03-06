@@ -1,23 +1,26 @@
-'use client'
-import React from 'react';
+"use client";
+import React from "react";
 const Button = (props) => {
   const { link, text, download = false } = props;
   const handleClick = () => {
     if (download) {
-      const anchor = document.createElement('a');
+      const anchor = document.createElement("a");
       anchor.href = link;
-      anchor.download = 'Brochure.pdf'; // Optional: you can set a filename like 'resume.pdf'
+      anchor.download = download; // Optional: you can set a filename like 'resume.pdf'
       document.body.appendChild(anchor);
       anchor.click();
       document.body.removeChild(anchor);
     } else {
       window.location.href = link;
     }
-  }
+  };
   return (
     <>
-      <button onClick={handleClick} className='btn-Comp'>{text}</button>
-      <style>{`
+      <button onClick={handleClick} className="btn-Comp">
+        {text}
+      </button>
+      <style>
+        {`
         .btn-Comp {
         position: relative;
         padding: 10px 20px;
@@ -90,10 +93,9 @@ const Button = (props) => {
         -moz-transition: box-shadow 0.2s ease-in;
         transition: box-shadow 0.2s ease-in;
         }`}
-        </style>
-      </>
+      </style>
+    </>
   );
-}
-
+};
 
 export default Button;
