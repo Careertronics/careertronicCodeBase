@@ -28,10 +28,9 @@ export default function GalleryClient({ images }) {
                        hover:scale-105 hover:border-white/20 transition duration-300"
             onClick={() => setSelectedIndex(index)}
           >
-            {/* Fixed aspect ratio box (prevents layout break) */}
             <div className="relative w-full aspect-[4/3]">
               <Image
-                src={`/Gallery/${img}`}
+                src={img}
                 alt={`Gallery ${index}`}
                 fill
                 className="object-cover"
@@ -51,10 +50,10 @@ export default function GalleryClient({ images }) {
         >
           <div
             className="relative max-w-6xl w-full p-4"
-            onClick={(e) => e.stopPropagation()} // prevent closing when clicking image
+            onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={`/Gallery/${images[selectedIndex]}`}
+              src={images[selectedIndex]}
               alt="Full Image"
               width={1400}
               height={900}
@@ -70,7 +69,7 @@ export default function GalleryClient({ images }) {
               ✕
             </button>
 
-            {/* Optional: image counter */}
+            {/* Image Counter */}
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-sm text-white/80">
               {selectedIndex + 1} / {images.length}
             </div>
