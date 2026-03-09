@@ -313,7 +313,7 @@ to-[#0e0e11]  relative"
               <div className="flex flex-col sm:flex-row w-full text-black gap-5">
                 <div className="h-full flex-1 px-3 gap-5 flex flex-row sm:flex-col shrink-0 justify-between sm:justify-around">
                   <div className="h-auto">
-                    <p className="text-base md:text-lg">Propgram Duration</p>
+                    <p className="text-base md:text-lg">Program Duration</p>
                   </div>
                   <div className="sm:border-r-4 flex items-center">
                     <p className="font-bold text-lg md:text-2xl">
