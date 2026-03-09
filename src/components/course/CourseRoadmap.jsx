@@ -15,9 +15,9 @@ const CourseCard = ({ title, duration, description, topics }) => {
       <div className="px-6 py-4 flex justify-between items-center bg-gradient-to-r from-[#960000] via-[#AF0000] to-[#960000] rounded p-10 mb-2 min-h-[5%]">
         <div className="h-full flex flex-col items-start gap-5">
           <h2 className="text-2xl font-bold">{title}</h2>
-          <div className="bg-white bg-opacity-20 px-2 py-1 rounded">
+          {/* <div className="bg-white bg-opacity-20 px-2 py-1 rounded">
             {duration}
-          </div>
+          </div> */}
         </div>
         <Image
           className="flex-shrink-0 hidden sm:block"
@@ -27,13 +27,13 @@ const CourseCard = ({ title, duration, description, topics }) => {
           width={100}
         />
       </div>
-      <div className="p-4 flex flex-col justify-center">
-        <h3 className="font-semibold mb-2">Why Learn This</h3>
+      {/* <div className="p-4 flex flex-col justify-center"> */}
+      {/* <h3 className="font-semibold mb-2">Why Learn This</h3>
         <p className="text-sm">{description}</p>
-      </div>
-      <div className="px-6 pb-4">
-        {/* Scrollable Section */}
-        <div
+      </div> */}
+      {/* <div className="px-6 pb-4"> */}
+      {/* Scrollable Section */}
+      {/* <div
           className={`mt-4 space-y-2 ${
             Object.keys(topics).length > 4 ? "max-h-72 overflow-y-auto" : ""
           }`}
@@ -72,28 +72,41 @@ const CourseCard = ({ title, duration, description, topics }) => {
               <span>Recommended Duration: 1-2 weeks</span>
               <span>Difficulty: Beginner</span>
             </div> */}
-              </div>
-              <div
+      {/* </div> */}
+      {/* <div
                 className={`
               transition-all duration-300 ease-in-out
               ${expandedTopic === index ? "font-bold" : ""}
             `}
               >
                 {key}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+              </div> */}
+      {/* </div> */}
+      {/* ))} */}
+      {/* </div>  */}
+      {/* </div> */}
     </div>
   );
 };
 
 const CoursesRoadmap = (props) => {
   return (
-    <div className="flex flex-col justify-center items-center h-auto border-dashed border-r-2 border-l-2 rounded-lg mb-6 sm:mb-8 md:mb-10 px-2 py-4 sm:px-4 md:px-6">
+    <div className="flex flex-col justify-center items-center h-auto border-dashed border-r-2 border-l-2 rounded-lg mb-6 sm:mb-8 md:mb-10 px-2 py-4 sm:px-4 md:px-6 max-w-7xl mx-auto">
       {/* Course Cards - Horizontal on large screens, vertical on small screens */}
-      <div className="flex flex-col lg:flex-row md:space-x-4 space-y-4 md:space-y-0 w-full">
+
+      <div
+        className="
+    grid 
+    grid-cols-1 
+    sm:grid-cols-2 
+    lg:grid-cols-3 
+    xl:grid-cols-4 
+    gap-8
+    max-w-6xl
+    mx-auto
+    justify-items-center
+  "
+      >
         {props.courses.map((course, index) => (
           <ScrollReveal
             key={index}
@@ -118,35 +131,35 @@ const CoursesRoadmap = (props) => {
       </div>
 
       {/* Bottom Banner */}
-      {props.show && (
-        <ScrollReveal
-          animation="slideUp"
-          duration={1300}
-          delay={600}
-          easing="bouncy"
-          className="w-full mt-8 md:mt-16"
-        >
-          <div className="bg-[#fff] w-full flex flex-col md:flex-row justify-between px-3 py-4 rounded-lg">
-            {/* Left Image - Hidden on small screens */}
-            <ScrollReveal
+      {/* {props.show && ( 
+        // <ScrollReveal
+        //   animation="slideUp"
+        //   duration={1300}
+        //   delay={600}
+        //   easing="bouncy"
+        //   className="w-full mt-8 md:mt-16"
+        // >
+          {/* <div className="bg-[#fff] w-full flex flex-col md:flex-row justify-between px-3 py-4 rounded-lg"> */}
+      {/* Left Image - Hidden on small screens */}
+      {/* <ScrollReveal
               animation="fadeSlideRight"
               duration={1200}
               delay={900}
               easing="spring"
               className="hidden md:block"
-            >
-              <Image
+            > */}
+      {/* <Image
                 src="/coursePage/infImg.png"
                 alt="..."
                 height={150}
                 width={180}
                 className="bg-[#000] rounded-full"
-              />
-            </ScrollReveal>
+              /> */}
+      {/* </ScrollReveal> */}
 
-            {/* Center Text */}
-            <div className="w-full text-center text-[#000] flex flex-col justify-center gap-2 md:gap-4 px-2">
-              <ScrollReveal
+      {/* Center Text */}
+      {/* <div className="w-full text-center text-[#000] flex flex-col justify-center gap-2 md:gap-4 px-2"> */}
+      {/* <ScrollReveal
                 animation="fadeIn"
                 duration={1200}
                 delay={1100}
@@ -155,9 +168,9 @@ const CoursesRoadmap = (props) => {
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
                   {props.texts?.heading || "Default Heading"}
                 </h1>
-              </ScrollReveal>
+              </ScrollReveal> */}
 
-              <ScrollReveal
+      {/* <ScrollReveal
                 animation="fadeIn"
                 duration={1200}
                 delay={1300}
@@ -166,11 +179,11 @@ const CoursesRoadmap = (props) => {
                 <h1 className="text-sm sm:text-base md:text-lg font-semibold">
                   {props.texts?.subHeading || "Default Sub-Heading"}
                 </h1>
-              </ScrollReveal>
-            </div>
+              </ScrollReveal> */}
+      {/* </div> */}
 
-            {/* Right Image - Hidden on small screens */}
-            <ScrollReveal
+      {/* Right Image - Hidden on small screens */}
+      {/* <ScrollReveal
               animation="fadeSlideLeft"
               duration={1800}
               delay={900}
@@ -184,10 +197,10 @@ const CoursesRoadmap = (props) => {
                 width={180}
                 className="bg-[#000] rounded-full"
               />
-            </ScrollReveal>
-          </div>
-        </ScrollReveal>
-      )}
+            </ScrollReveal> */}
+      {/* </div> */}
+      {/* </ScrollReveal>
+      )} */}
     </div>
   );
 };

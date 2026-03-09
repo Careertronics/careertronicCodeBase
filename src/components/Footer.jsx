@@ -157,9 +157,6 @@ const Footer = () => {
               <FaLinkedinIn size={20} />
             </a>
             <a href="#" className="text-gray-400 hover:text-white">
-              <FaTwitter size={20} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white">
               <FaFacebookF size={20} />
             </a>
             <a
@@ -168,9 +165,9 @@ const Footer = () => {
             >
               <FaInstagram size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            {/* <a href="#" className="text-gray-400 hover:text-white">
               <FaYoutube size={20} />
-            </a>
+            </a> */}
           </div>
           {/* Newsletter Subscription */}
           <div className="mt-4 md:mt-0">

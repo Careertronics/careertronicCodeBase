@@ -13,7 +13,7 @@ const StickyFranchiseButtons = () => {
       >
         <div className=" md:flex flex-col ">
           <a
-            href="/brochure/franchise.pdf"
+            href="/brochure/FRANCHISE BROCHURE.pdf"
             download
             className="bg-[#3b0f2a] text-white px-5 py-3 font-medium
                    hover:bg-[#5a1740] transition-all duration-300

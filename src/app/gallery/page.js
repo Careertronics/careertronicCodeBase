@@ -1,22 +1,34 @@
-import fs from "fs";
-import path from "path";
 import GalleryClient from "./GalleryClient";
 
-export default function GalleryPage() {
-  const galleryPath = path.join(process.cwd(), "public/Gallery");
-  const files = fs.readdirSync(galleryPath);
+export default async function GalleryPage() {
+  const res = await fetch(
+    "https://res.cloudinary.com/dxt1eap0l/image/list/galleryImg.json",
+    { cache: "no-store" },
+  );
 
-  const images = files.filter((file) =>
-    [".jpg", ".jpeg", ".png", ".webp", ".JPG", ".JPEG", ".PNG"].includes(
-      path.extname(file),
-    ),
+  if (!res.ok) {
+    console.error("Cloudinary fetch failed");
+    return <div>Error loading gallery</div>;
+  }
+
+  const text = await res.text();
+
+  if (!text) {
+    console.error("Empty response from Cloudinary");
+    return <div>No images found</div>;
+  }
+
+  const data = JSON.parse(text);
+
+  const images = data.resources.map(
+    (img) =>
+      `https://res.cloudinary.com/dxt1eap0l/image/upload/${img.public_id}`,
   );
 
   return (
     <div className="min-h-screen bg-[#0b1220] text-white p-10">
       <h1 className="text-3xl font-semibold mb-8 text-center">Our Gallery</h1>
 
-      {/* Pass images to client component */}
       <GalleryClient images={images} />
     </div>
   );
