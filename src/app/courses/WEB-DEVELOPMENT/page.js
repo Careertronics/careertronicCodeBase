@@ -1,5 +1,25 @@
 "use client";
 import React from "react";
+import Navbar from "@/components/Navbar";
+import Image from "next/image";
+import Form from "@/components/course/Forms";
+import Button from "@/components/course/Button";
+import DevOpsSkills from "@/components/course/DevOpsSkills";
+import CourseSection from "@/components/course/CourseSection";
+import CourseRoadmap from "@/components/course/CourseRoadmap";
+import FAQSection from "@/components/course/FAQSection";
+import FeeStructure from "@/components/course/FeeStructure";
+import {
+  FaStore,
+  FaTasks,
+  FaChartBar,
+  FaHospital,
+  FaHome,
+  FaGraduationCap,
+} from "react-icons/fa";
+import ScrollReveal from "@/components/ScrollReveal";
+("use client");
+import React from "react";
 
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
@@ -28,23 +48,28 @@ function page() {
         id: 1,
         question: " Who can take up this course?",
         answer:
-          "Anyone interested in learning App development—from absolute beginners to those wanting to upgrade from front-end to full-stack—can join this course. No prior coding experience is required; we start from scratch.",
+          "Anyone interested in learning web development—from absolute beginners to those wanting to upgrade from front-end to full-stack—can join this course. No prior coding experience is required; we start from scratch.",
       },
       {
         id: 2,
         question: "What is included in your course?",
         answer:
-          "This course covers everything from HTML, CSS, and JavaScript to advanced front-end frameworks (like React), back-end technologies (Node.js, Express), databases (MongoDB, MySQL), REST APIs, Next JS , version control with Git, deployment, and best practices for responsive and accessible web design.",
+          "This course covers everything from HTML, CSS, and JavaScript to advanced front-end frameworks (like React or Vue), back-end technologies (Node.js, Express), databases (MongoDB, MySQL), REST APIs, version control with Git, deployment, and best practices for responsive and accessible web design.",
       },
       {
         id: 3,
         question: "What will the student gain from your course?",
         answer:
-          "The course is project-based and industry-focused. You’ll build a full portfolio including real-world projects like e-commerce sites, blogs, dashboards, and portfolio websites. These hands-on experiences, along with GitHub repositories and resume assistance, make you job-ready for roles like Frontend Developer, Backend Developer, or Full-Stack Developer.",
+          "By the end of this course, students will be able to build modern, scalable web applications from scratch. You'll understand how the web works, write clean code, connect front-end and back-end systems, deploy apps to cloud platforms, and follow real-world development workflows using Git and GitHub.",
       },
-
       {
         id: 4,
+        question: "How is this course going to help a student get a job?",
+        answer:
+          "The course is project-based and industry-focused. You’ll build a full portfolio including real-world projects like e-commerce sites, blogs, dashboards, and portfolio websites. These hands-on experiences, along with GitHub repositories and resume assistance, make you job-ready for roles like Frontend Developer, Backend Developer, or Full-Stack Developer.",
+      },
+      {
+        id: 5,
         question: "What are the job opportunities in this field?",
         answer:
           "Web development continues to be one of the most in-demand skills in tech. Companies of all sizes—from startups to tech giants like Google, Meta, TCS, Infosys, and Wipro—are always looking for web developers skilled in modern technologies. Freelancing, remote work, and product development are also viable career paths.",
@@ -52,19 +77,18 @@ function page() {
     ],
     Pricing: [
       {
-        id: 5,
+        id: 4,
         question: "How much does it cost?",
-        answer:
-          "Our pricing varies depending on the program, duration, and specific requirements of the candidate. We offer multiple learning paths tailored to different goals, so the fees may differ accordingly. Please contact our team to get detailed information and find the best option for you.",
+        answer: "The course pricing starts at ₹35,000.",
       },
       {
-        id: 6,
+        id: 5,
         question: "Do you offer discounts?",
         answer:
           "Yes, we provide discounts for early registrations, group enrollments, students, and occasionally offer special seasonal promotions. Contact our support for the latest offers.",
       },
       {
-        id: 7,
+        id: 6,
         question: "What payment methods do you accept?",
         answer:
           "We accept UPI, credit/debit cards, net banking, and digital wallets. EMI options are available for certain payment gateways.",
@@ -72,14 +96,18 @@ function page() {
     ],
     Features: [
       {
-        id: 8,
-
+        id: 7,
         question:
-          "What software tools and technologies will I learn, and how relevant are they in the industry?",
+          "What software skills are you teaching and how well are these tools used in the industry?",
         answer:
-          "Our Full Stack Development program covers industry-standard technologies used by professional developers. You will learn frontend tools like HTML, CSS, JavaScript, React, Bootstrap, and Tailwind, along with backend development using Node.js, Express.js, and databases such as MongoDB and SQL. The course also includes Git, GitHub, Postman, authentication with JWT, testing basics, and deployment using modern cloud platforms. All tools and technologies taught are widely used in real-world projects, helping you build job-ready skills and a strong development portfolio.",
+          "You’ll master tools like VS Code, Git, GitHub, Chrome DevTools, Postman, and platforms like Netlify, Vercel, and Heroku. We also teach frameworks such as React, Bootstrap, and Tailwind, which are widely used in the industry for fast, responsive development.",
       },
-
+      {
+        id: 8,
+        question: "How will I access the softwares required for programming?",
+        answer:
+          "All tools used in the course are open-source or free to use. We guide you through downloading, installing, and setting them up on your own machine for hands-on practice.",
+      },
       {
         id: 9,
         question:
@@ -87,45 +115,78 @@ function page() {
         answer:
           "Every tool and concept taught is aligned with industry practices. You’ll learn how to build and deploy websites, create responsive designs, manage APIs, handle authentication, integrate databases, and set up DevOps workflows for modern web applications.",
       },
+      {
+        id: 10,
+        question:
+          "How is your course going to help a student's path to MS or PhD?",
+        answer:
+          "Strong knowledge of web technologies is essential for MS or research in fields like Human-Computer Interaction (HCI), Software Engineering, or Information Systems. This course helps you build a solid portfolio, understand full-stack systems, and prepare for technical interviews or research project development.",
+      },
     ],
     Support: [
       {
-        id: 10,
+        id: 11,
         question: "How can I contact support?",
         answer:
           "You can reach out via email, website chat, or WhatsApp. Our contact details are listed on the course page for quick assistance.",
       },
       {
-        id: 11,
+        id: 12,
         question: "What are your support hours?",
         answer:
           "Our support team is available Monday to Saturday, from 10:00 AM to 6:00 PM IST.",
       },
+      {
+        id: 13,
+        question: "Do you have documentation?",
+        answer:
+          "Yes, we provide complete documentation, reference guides, GitHub repositories, recorded lectures, and cheat sheets to support your learning process.",
+      },
+    ],
+    Security: [
+      {
+        id: 14,
+        question: "Is my data secure?",
+        answer:
+          "Absolutely. We take data privacy seriously and follow industry-standard security practices to protect your personal information.",
+      },
+      {
+        id: 15,
+        question: "Do you support 2FA?",
+        answer:
+          "Yes, we support two-factor authentication (2FA) to ensure secure access to your student portal and course materials.",
+      },
+      {
+        id: 16,
+        question: "What encryption do you use?",
+        answer:
+          "We use AES-256 encryption and enforce HTTPS across our platform to keep all user data safe during storage and transmission.",
+      },
     ],
   };
-  // const reviews = [
-  //   {
-  //     initials: "A",
-  //     name: "Aman Sharma",
-  //     review:
-  //       "This course is a must for anyone preparing for system design interviews! The real-world case studies on Uber, Netflix, and WhatsApp helped me understand how large-scale applications work. The explanations on microservices and database scaling were crystal clear. Highly recommended!.",
-  //     rating: 5,
-  //   },
-  //   {
-  //     initials: "P",
-  //     name: "Priya Desai",
-  //     review:
-  //       "Great content with detailed coverage of caching, message queues, and load balancing. The instructor explained concepts in a structured way, making them easy to grasp. I just wish there were more coding exercises to practice system design problems.",
-  //     rating: 4,
-  //   },
-  //   {
-  //     initials: "R",
-  //     name: "Rahul Verma",
-  //     review:
-  //       "As a backend developer, this course helped me improve my architectural thinking. Learning about CAP theorem, database sharding, and security best practices gave me a deeper understanding of system scalability. Definitely worth it!.",
-  //     rating: 5,
-  //   },
-  // ];
+  const reviews = [
+    {
+      initials: "A",
+      name: "Aman Sharma",
+      review:
+        "This course is a must for anyone preparing for system design interviews! The real-world case studies on Uber, Netflix, and WhatsApp helped me understand how large-scale applications work. The explanations on microservices and database scaling were crystal clear. Highly recommended!.",
+      rating: 5,
+    },
+    {
+      initials: "P",
+      name: "Priya Desai",
+      review:
+        "Great content with detailed coverage of caching, message queues, and load balancing. The instructor explained concepts in a structured way, making them easy to grasp. I just wish there were more coding exercises to practice system design problems.",
+      rating: 4,
+    },
+    {
+      initials: "R",
+      name: "Rahul Verma",
+      review:
+        "As a backend developer, this course helped me improve my architectural thinking. Learning about CAP theorem, database sharding, and security best practices gave me a deeper understanding of system scalability. Definitely worth it!.",
+      rating: 5,
+    },
+  ];
 
   const projects = [
     {
@@ -183,74 +244,223 @@ function page() {
         "Dive into sandboxed coding challenges, Git/GitHub workflows, and deployment using Netlify, Vercel & AWS. Strengthen your dev skills with hands-on practice from start to scale.",
     },
   ];
-  // ================= CURRICULUM DATA =================
-
-  // Category 1 — Full Stack Foundations
   const courses1 = [
     {
-      title: "Introduction to Full Stack Development (MERN & PERN)",
+      title: "INTRODUCTION TO FULL STACK DEVELOPMENT",
+      duration: "1 Week",
+      description:
+        "Full Stack Development is essential for creating modern web applications by integrating frontend, backend, and database technologies. Learning the MERN stack provides developers with the skills to build scalable, efficient web applications from end to end while understanding the complete development lifecycle.",
+      topics: {
+        "Overview of Full Stack Development":
+          "Role of full-stack developers in modern web development",
+        "Introduction to the MERN Stack":
+          "MongoDB, Express.js, React.js, Node.js ecosystem",
+        "Client-Server Architecture": "HTTP Protocol and RESTful services",
+        "Development Workflow": "Frontend, Backend, Database integration",
+        "Setting up a Development Environment":
+          "Node.js, MongoDB, VS Code, Git configuration",
+      },
     },
     {
-      title: "Web Development Fundamentals (Client–Server, HTTP, APIs)",
+      title: "NODE.JS & EXPRESS.JS",
+      duration: "1 Week",
+      description:
+        "Node.js and Express.js are fundamental technologies for backend development, enabling developers to build scalable server-side applications and RESTful APIs. Mastering these technologies allows for efficient database operations, server management, and the creation of robust web services essential for full-stack applications.",
+      topics: {
+        "Introduction to Node.js and NPM":
+          "Core concepts, event-driven architecture, package management",
+        "Basics of Express.js":
+          "Setting up routes, middleware, request-response cycle",
+        "RESTful API concepts":
+          "API design principles, endpoints, HTTP methods",
+        "Setting up a basic Express server":
+          "Configuration, environment variables, error handling",
+        "Connecting Node.js with MongoDB":
+          "Database integration and management",
+        "CRUD operations":
+          "Create, Read, Update, Delete functionality implementation",
+      },
     },
     {
-      title: "Development Tools & Environment Setup",
+      title: "MONGODB DATABASE",
+      duration: "1 Week",
+      description:
+        "MongoDB is a powerful NoSQL database solution that provides flexibility, scalability, and performance for modern web applications. Learning MongoDB enables developers to store and manage unstructured data efficiently, create complex data relationships, and seamlessly integrate database operations within full-stack applications.",
+      topics: {
+        "Introduction to MongoDB and NoSQL Databases":
+          "Document-oriented architecture, comparison with SQL databases",
+        "MongoDB Collections and Documents":
+          "Schema design, document structure, BSON format",
+        "Using MongoDB with Mongoose":
+          "Model Creation, Querying, Relationships",
+        "Basic MongoDB Commands": "insert, find, update, delete operations",
+        "Integrating MongoDB with Express":
+          "Connection setup, middleware integration",
+        "Handling Database Connections":
+          "Authentication, error handling, connection pooling",
+      },
     },
   ];
 
-  // Category 2 — Frontend Development
   const courses2 = [
     {
-      title: "HTML, CSS & Modern JavaScript (ES6+)",
+      title: "Authentication & Authorization",
+      duration: "1 Week",
+      description:
+        "Authentication and authorization are critical for securing modern applications. This course covers implementing user authentication systems, managing secure sessions, and controlling access based on user roles. Learn to protect APIs, implement token-based authentication, and follow security best practices to build robust and secure full stack applications.",
+      topics: {
+        "User Authentication":
+          "JWT implementation, Passport.js strategies, OAuth integration",
+        "Token-Based Authentication":
+          "Securing APIs, token validation, refresh tokens",
+        "Role-Based Authorization":
+          "Permission models, access control, policy enforcement",
+        "Session Management":
+          "Secure cookies, session storage, expiration policies",
+        "Security Best Practices":
+          "Password hashing, HTTPS, CSRF protection, input validation",
+      },
     },
     {
-      title: "Advanced JavaScript Concepts",
+      title: "REACT.JS",
+      duration: "1 Week",
+      description:
+        "Introduction to React.js - Objective: Learn the fundamentals of React.js for frontend development.",
+      topics: {
+        "Overview of React.js and Component-Based Architecture":
+          "History and principles of React, component philosophy, virtual DOM",
+        "Creating Functional and Class Components":
+          "Component syntax, lifecycle methods, hooks vs class components",
+        "JSX Syntax and Rendering Data":
+          "JavaScript XML syntax, expressions, conditional rendering, lists",
+        "Props and State":
+          "Component communication, one-way data flow, useState hook, state management",
+        "Event Handling in React":
+          "Synthetic events, handlers, binding, forms and controlled components",
+        "Introduction to React Router (Single Page Application routing)":
+          "Client-side routing setup, route parameters, navigation, nested routes",
+      },
     },
     {
-      title: "React.js Fundamentals",
-    },
-    {
-      title: "Advanced React.js (Hooks, Context, Performance)",
-    },
-    {
-      title: "Next.js & Modern Frontend Architecture",
-    },
-    {
-      title: "UI/UX, Styling & Responsive Design",
+      title: "Advanced React.js",
+      duration: "1 Week",
+      description:
+        "Advanced React.js Concepts - Objective: Dive deeper into React.js for building dynamic UIs.",
+      topics: {
+        "React Hooks (useState, useEffect, useContext)":
+          "Custom hooks, rules of hooks, optimizing performance",
+        "Component Lifecycle Methods":
+          "Mounting, updating, unmounting phases, deprecated methods",
+        "Managing State with Context API":
+          "Global state management, providers and consumers, context limitations",
+        "Form Handling and Validation":
+          "Form libraries, controlled vs uncontrolled components, validation techniques",
+        "Handling API Requests in React (Fetching Data)":
+          "Async operations, loading states, error handling, data caching",
+        "Error Boundaries and Debugging React Applications":
+          "React DevTools, error capture, fallback UIs, performance profiling",
+      },
     },
   ];
-
-  // Category 3 — Backend & Database
   const courses3 = [
     {
-      title: "Backend Engineering & RESTful API Architecture",
+      title: "Frontend + Backend Integration",
+      duration: "1 Week",
+      description:
+        "Building Full Stack Applications (Frontend + Backend Integration) - Objective: Learn how to integrate frontend (React) with backend (Node/Express).",
+      topics: {
+        "Sending and Receiving Data between React and Express":
+          "Request lifecycle, data formats, RESTful API design",
+        "Fetching Data from Backend using Axios or Fetch API":
+          "Promise handling, async/await, request configuration",
+        "Handling API Responses and Error States in React":
+          "Loading states, error handling, response processing",
+        "Managing State with Redux (Optional)":
+          "Action creators, reducers, store configuration, middleware",
+        "Setting up CORS for Frontend-Backend Communication":
+          "Security considerations, CORS policies, proxy configuration",
+      },
     },
     {
-      title: "Database Systems: MongoDB (NoSQL) & PostgreSQL (SQL)",
+      title: "Styling and Frontend Design",
+      duration: "1 Week",
+      description: "Objective: Improve the visual appeal of your frontend.",
+      topics: {
+        "CSS Flexbox and Grid Layout":
+          "Modern layout systems, responsive containers, alignment techniques",
+        "Styling React Components using CSS, SASS, and CSS Modules":
+          "Component-scoped styles, preprocessors, style organization",
+        "Introduction to Material-UI or Bootstrap":
+          "Component libraries, design systems, theming customization",
+        "Creating Responsive Web Designs (Media Queries)":
+          "Mobile-first approach, breakpoints, adaptive layouts",
+        "Integrating External APIs (e.g., Google Maps, Weather API)":
+          "API authentication, data visualization, third-party services",
+        "Creating Interactive UIs with React":
+          "Animations, transitions, user experience enhancements",
+      },
     },
     {
-      title:
-        "Authentication, Authorization & Application Security (JWT, OAuth)",
-    },
-    {
-      title:
-        "Full Stack Integration: Connecting Frontend with Backend Services",
+      title: "Deploying Full Stack Applications",
+      duration: "1 Week",
+      description:
+        "Objective: Learn how to deploy MERN applications to the cloud.",
+      topics: {
+        "Deployment options for MERN applications (Heroku, AWS, DigitalOcean)":
+          "Platform comparison, cost factors, scalability considerations",
+        "Preparing a Node.js App for Production":
+          "Performance optimization, security hardening, build processes",
+        "Setting up Environment Variables and Configurations":
+          "Secret management, configuration patterns, multi-environment setup",
+        "Deploying the Backend (Express.js API) to Heroku":
+          "Platform setup, continuous deployment, monitoring",
+        "Deploying the Frontend (React) to Netlify or Vercel":
+          "Static site hosting, build configurations, CDN distribution",
+        "Database Deployment with MongoDB Atlas":
+          "Cloud database setup, connection security, scaling options",
+      },
     },
   ];
-
-  // Category 4 — Deployment, Testing & Production
   const courses4 = [
     {
       title: "Testing Full Stack Applications",
+      duration: "1 Week",
+      description:
+        "Objective: Implement testing for both frontend and backend.",
+      topics: {
+        "Introduction to Testing in JavaScript (Jest, Mocha, Chai)":
+          "Testing frameworks, assertion libraries, test runners",
+        "Unit Testing Backend with Mocha/Chai":
+          "API endpoint testing, database testing, middleware testing",
+        "Testing React Components with Jest and Enzyme":
+          "Component rendering, state testing, snapshot testing",
+        "End-to-End Testing with Cypress or Puppeteer":
+          "User flow simulation, browser automation, test reporting",
+        "Mocking API Calls for Testing":
+          "Mock services, intercepting requests, stubbing responses",
+        "Debugging and Troubleshooting Techniques":
+          "Breakpoints, logging strategies, performance profiling",
+      },
     },
     {
-      title: "Deployment & Hosting (Production Setup)",
-    },
-    {
-      title: "Performance Optimization & Security Best Practices",
-    },
-    {
-      title: "Capstone Project — Real World Application",
+      title: "FINAL PROJECT AND BEST PRACTICES",
+      duration: "1 Week",
+      description:
+        "The final project provides an opportunity to demonstrate mastery of full-stack development by building and deploying a complete MERN application. This module focuses on applying best practices in code organization, version control, and performance optimization while delivering a professional-quality application.",
+      topics: {
+        "Guidelines for Final Project":
+          "Combining React, Node, Express, and MongoDB",
+        "Code Organization and Project Structure Best Practices":
+          "Folder structures, modular design, separation of concerns",
+        "Version Control with Git/GitHub":
+          "Branching strategies, collaborative workflows, CI/CD integration",
+        "Performance Optimization in MERN Stack Applications":
+          "Lazy loading, code splitting, caching strategies",
+        "Review of Advanced Features and Concepts":
+          "Authentication, state management, real-time features",
+        "Final Project Presentation and Peer Review":
+          "Deployment strategies, documentation, feedback incorporation",
+      },
     },
   ];
   const skills = [
@@ -296,13 +506,8 @@ function page() {
       {/* <Navbar /> */}
 
       {/* Hero Section */}
-      <div
-        className="min-h-[75vh] 2xl:min-h-[50vh] w-full bg-gradient-to-b
-from-[#000000]
-via-[#3b0f2a]
-to-[#0e0e11]  relative"
-      >
-        <div className="absolute h-[200px] w-[200px] top-32 left-48 rounded-full  blur-[180px]" />
+      <div className="min-h-[75vh] 2xl:min-h-[50vh] w-full bg-zinc-950 relative">
+        <div className="absolute h-[200px] w-[200px] top-32 left-48 rounded-full bg-[#1DD9FF] blur-[180px]" />
         <Image
           src="/coursePage/100.png"
           alt="#"
@@ -314,7 +519,7 @@ to-[#0e0e11]  relative"
           <div className="left h-fit xl:w-1/2 w-full xl:px-24 xl:py-20 p-4 flex flex-col gap-10 items-start">
             <ScrollReveal animation="slightRight" delay={100} easing="gentle">
               <div className="rounded-3xl border-2 sm:text-base text-xs border-white sm:w-max w-max sm:px-10 sm:py-2 p-2 font-bold bg-black uppercase">
-                ONLINE & OFFLINE FULL STACK DEVELOPMENT COURSE
+                ONLINE FULL STACK DEVELOPMENT COURSE
               </div>
             </ScrollReveal>
             <ScrollReveal animation="fadeIn" delay={300} easing="spring">
@@ -349,9 +554,8 @@ to-[#0e0e11]  relative"
             >
               <Button text="Enquire Now" link={"/contact"} />
               <Button
-                text="Download Brochure"
-                download="FULL STACK BROCHURE.pdf"
-                link="/brochure/FULL STACK BROCHURE.pdf"
+                text="Enroll Now"
+                link={"https://courses.careertronic.com/courses"}
               />
             </ScrollReveal>
           </div>
@@ -422,76 +626,176 @@ to-[#0e0e11]  relative"
           </div>
         </ScrollReveal>
       </div>
-      {/* Steps Section */}
-      <div
-        className="relative w-full py-24 overflow-hidden"
-        style={{
-          backgroundImage: "url('/coursePage/101.PNG')", // <-- replace with your new image path
-          backgroundSize: "cover",
-          backgroundPosition: "left center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-[#212121]/85"></div>
 
-        {/* Content Wrapper */}
-        <div className="relative z-10 flex flex-col justify-center items-center px-6 md:px-10 lg:px-16">
+      {/* Steps Secction */}
+      <div className="h-auto w-full bg-[#212121] relative flex lg:flex-row justify-around lg:pt-28 md:pt-20 sm:pt-40 pt-40 z-10">
+        {/* Image Section - Hidden on small screens, visible on medium and up */}
+        <div className="w-full lg:w-[40%] relative hidden lg:block">
+          <div className="relative h-full">
+            <Image
+              src="/coursePage/103.png"
+              alt="Image1"
+              width={450}
+              height={450}
+              className="absolute -bottom-1 left-0 w-auto h-auto max-w-full max-h-[60vh]"
+            />
+            <ScrollReveal
+              animation="fadeIn"
+              delay={700}
+              easing="spring"
+              className="relative h-full"
+            >
+              {/* <Image src='/coursePage/105.png' alt='Image2' width={300} height={300} className='absolute bottom-40 left-72 w-auto h-auto max-w-[80%] hidden lg:block'/> */}
+            </ScrollReveal>
+            <Image
+              src="/coursePage/101.png"
+              alt="Image3"
+              width={1000}
+              height={1000}
+              className="absolute -bottom-1 left-0 h-auto xl:max-w-full 2xl:w-[630px] w-full"
+            />
+          </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="w-full lg:w-[60%] flex p-4 sm:p-6 md:p-10 lg:p-16 flex-col justify-around relative">
           <ScrollReveal animation="fadeIn" delay={200} easing="smooth">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-white leading-tight capitalize mb-16">
-              How Can We Turn You Into an Expert in Web Development?
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center lg:text-left mb-6 sm:mb-10 lg:mb-0 text-white leading-tight capitalize">
+              How Can We Turn You Into an Expert in web development?
             </h1>
           </ScrollReveal>
 
-          {/* Steps */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-6 w-full max-w-6xl">
+          {/* Steps Section - Reorganizes on smaller screens */}
+          <div className="flex flex-col justify-evenly md:flex-row w-full p-2 md:p-4 gap-6 md:gap-2 lg:gap-4 xl:gap-8 mt-8 lg:mt-0">
             {/* Step 1 */}
             <ScrollReveal animation="scaleUp" delay={600} easing="spring">
-              <div className="flex flex-col items-center flex-1">
-                <div className="bg-gray-700/80 backdrop-blur-md w-20 h-20 lg:w-24 lg:h-24 rounded-xl flex items-center justify-center mb-4 shadow-lg">
-                  <span className="text-white text-3xl lg:text-5xl font-bold">
+              <div className="flex flex-col items-center mb-2 sm:mb-4 md:mb-0 flex-1">
+                <div className="bg-gray-600 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-lg flex items-center justify-center mb-2 sm:mb-4">
+                  <span className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                     1
                   </span>
                 </div>
-                <div className="text-white text-center font-semibold">
-                  <p>In-depth</p>
-                  <p>Knowledge</p>
+                <div className="text-white text-center">
+                  <p className="font-bold text-sm sm:text-base md:text-lg">
+                    In-depth
+                  </p>
+                  <p className="font-bold text-sm sm:text-base md:text-lg">
+                    Knowledge
+                  </p>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* Arrow */}
-            <div className="hidden md:block text-gray-400 text-3xl">→</div>
+            {/* Arrow 1 - Changes direction on mobile */}
+            <ScrollReveal
+              animation="fadeIn"
+              delay={900}
+              easing="gentle"
+              className="hidden md:flex items-center justify-center mx-0 sm:mx-1 lg:mx-2 xl:mx-4 relative self-center flex-shrink-0"
+            >
+              <Image
+                src="/coursePage/Vector.png"
+                alt="Arrow"
+                width={60}
+                height={60}
+                className="relative bottom-7 w-6 h-auto md:w-8 lg:w-10 xl:w-auto"
+              />
+            </ScrollReveal>
+            {/* Mobile down arrow instead of right arrow */}
+            <ScrollReveal
+              animation="fadeIn"
+              delay={900}
+              easing="gentle"
+              className="flex md:hidden items-center justify-center mb-2 sm:mb-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-gray-400"
+              >
+                <path d="M12 5v14M19 12l-7 7-7-7" />
+              </svg>
+            </ScrollReveal>
 
             {/* Step 2 */}
             <ScrollReveal animation="scaleUp" delay={800} easing="spring">
-              <div className="flex flex-col items-center flex-1">
-                <div className="bg-gray-700/80 backdrop-blur-md w-20 h-20 lg:w-24 lg:h-24 rounded-xl flex items-center justify-center mb-4 shadow-lg">
-                  <span className="text-white text-3xl lg:text-5xl font-bold">
+              <div className="flex flex-col items-center mb-2 sm:mb-4 md:mb-0 flex-1">
+                <div className="bg-gray-600 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-lg flex items-center justify-center mb-2 sm:mb-4">
+                  <span className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                     2
                   </span>
                 </div>
-                <div className="text-white text-center font-semibold">
-                  <p>Real World</p>
-                  <p>Simulations</p>
+                <div className="text-white text-center">
+                  <p className="font-bold text-sm sm:text-base md:text-lg">
+                    Real World
+                  </p>
+                  <p className="font-bold text-sm sm:text-base md:text-lg">
+                    Simulations
+                  </p>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* Arrow */}
-            <div className="hidden md:block text-gray-400 text-3xl">→</div>
+            {/* Arrow 2 - Changes direction on mobile */}
+            <ScrollReveal
+              animation="fadeIn"
+              delay={1100}
+              easing="gentle"
+              className="hidden md:flex items-center justify-center mx-0 sm:mx-1 lg:mx-2 xl:mx-4 relative self-center flex-shrink-0"
+            >
+              <Image
+                src="/coursePage/Vector.png"
+                alt="Arrow"
+                width={60}
+                height={60}
+                className="relative bottom-7 w-6 h-auto md:w-8 lg:w-10 xl:w-auto"
+              />
+            </ScrollReveal>
+            {/* Mobile down arrow instead of right arrow */}
+            <ScrollReveal
+              animation="fadeIn"
+              delay={1100}
+              easing="gentle"
+              className="flex md:hidden items-center justify-center mb-2 sm:mb-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-gray-400"
+              >
+                <path d="M12 5v14M19 12l-7 7-7-7" />
+              </svg>
+            </ScrollReveal>
 
             {/* Step 3 */}
             <ScrollReveal animation="scaleUp" delay={1000} easing="spring">
               <div className="flex flex-col items-center flex-1">
-                <div className="bg-gray-700/80 backdrop-blur-md w-20 h-20 lg:w-24 lg:h-24 rounded-xl flex items-center justify-center mb-4 shadow-lg">
-                  <span className="text-white text-3xl lg:text-5xl font-bold">
+                <div className="bg-gray-600 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-lg flex items-center justify-center mb-2 sm:mb-4">
+                  <span className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                     3
                   </span>
                 </div>
-                <div className="text-white text-center font-semibold">
-                  <p>Placement</p>
-                  <p>Assistance</p>
+                <div className="text-white text-center">
+                  <p className="font-bold text-sm sm:text-base md:text-lg">
+                    Placement
+                  </p>
+                  <p className="font-bold text-sm sm:text-base md:text-lg">
+                    Assistance
+                  </p>
                 </div>
               </div>
             </ScrollReveal>
@@ -508,7 +812,7 @@ to-[#0e0e11]  relative"
           </ScrollReveal>
           <ScrollReveal animation="fadeIn" delay={500} easing="smooth">
             <h1 className="text-3xl md:text-6xl font-bold text-black mb-10">
-              Top In-Demand Skills
+              What Tech Companies search for?
             </h1>
           </ScrollReveal>
           <ScrollReveal animation="scaleUp" delay={800} easing="spring">
@@ -582,15 +886,11 @@ to-[#0e0e11]  relative"
             </ScrollReveal>
             <ScrollReveal
               animation="slideUp"
-              duration={1200}
-              delay={500}
+              duration={1400}
+              delay={900}
               easing="bouncy"
             >
-              <Button
-                text="Download Brochure"
-                download="FULL STACK BROCHURE.pdf"
-                link="/brochure/FULL STACK BROCHURE.pdf"
-              />
+              <Button text="Download Brochure" />
             </ScrollReveal>
           </div>
         </div>
@@ -635,10 +935,7 @@ to-[#0e0e11]  relative"
                   >
                     <div
                       key={index}
-                      className="p-6 rounded-xl bg-gradient-to-br
-from-[#0e0e11]
-via-[#3b0f2a]
-to-[#000000] shadow-lg text-white flex flex-col items-start h-64"
+                      className="p-6 rounded-xl bg-gradient-to-br from-black via-gray-900 to-gray-800 shadow-lg text-white flex flex-col items-start h-64"
                     >
                       <div className="mb-4">{project.icon}</div>
                       <h3 className="text-xl font-bold">{project.title}</h3>
@@ -652,6 +949,7 @@ to-[#000000] shadow-lg text-white flex flex-col items-start h-64"
             </div>
           </div>
 
+          {/* DevOps & Cloud Computing Curriculum Section */}
           <div className="min-h-screen bg-black text-white p-6 md:p-12">
             <div className="container mx-auto max-w-7xl">
               <ScrollReveal
@@ -716,7 +1014,7 @@ to-[#000000] shadow-lg text-white flex flex-col items-start h-64"
                     </div>
                   </ScrollReveal>
 
-                  {/* Pick Your Mentor Card - Increased Width
+                  {/* Pick Your Mentor Card - Increased Width */}
                   <ScrollReveal
                     animation="fadeIn"
                     duration={800}
@@ -732,7 +1030,7 @@ to-[#000000] shadow-lg text-white flex flex-col items-start h-64"
                         insights to boost your career.
                       </p>
                     </div>
-                  </ScrollReveal> */}
+                  </ScrollReveal>
 
                   {/* Learning Coordinator Card */}
                   <ScrollReveal
@@ -749,15 +1047,12 @@ to-[#000000] shadow-lg text-white flex flex-col items-start h-64"
                         }}
                       ></div>
                       <div className="relative p-6 flex flex-col justify-end h-full bg-black bg-opacity-50">
-                        <a href="/contact">
-                          {" "}
-                          <h3 className="text-lg font-bold text-white">
-                            Connect with a{" "}
-                            <span className="text-blue-400">
-                              Learning Coordinator
-                            </span>
-                          </h3>{" "}
-                        </a>
+                        <h3 className="text-lg font-bold text-white">
+                          Connect with a{" "}
+                          <span className="text-blue-400">
+                            Learning Coordinator
+                          </span>
+                        </h3>
                       </div>
                     </div>
                   </ScrollReveal>
@@ -1368,8 +1663,8 @@ to-[#000000] shadow-lg text-white flex flex-col items-start h-64"
                 </ScrollReveal>
               </div>
             </div>
-            {/* *MENTORS AND TRAINERS WITH REVIEW */}
-            {/* <div className="bg-white text-black py-16 px-4 rounded-s-2xl rounded-e-2xl w-full h-auto">
+            {/**MENTORS AND TRAINERS WITH REVIEW */}
+            <div className="bg-white text-black py-16 px-4 rounded-s-2xl rounded-e-2xl w-full h-auto">
               <div className="container mx-auto max-w-7xl">
                 <ScrollReveal
                   animation="slideUp"
@@ -1383,9 +1678,62 @@ to-[#000000] shadow-lg text-white flex flex-col items-start h-64"
                   <h1 className="text-4xl font-bold text-center mb-12 capitalize">
                     Tap into the wisdom of web development Experts
                   </h1>
-                </ScrollReveal> */}
-            {/* Reviews Section */}
-            {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                </ScrollReveal>
+
+                {/* Mentors Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                  {/* Mentor Card Template */}
+                  {[
+                    {
+                      name: "Anshuman Singh",
+                      role: "Teacher1",
+                      img: "/coursePage/teacher1.jpg",
+                    },
+                    {
+                      name: "Naman Balla",
+                      role: "Teacher3",
+                      img: "/coursePage/teacher3.jpg",
+                    },
+                    {
+                      name: "Anshuman Singh",
+                      role: "Teacher2",
+                      img: "/coursePage/teacher2.jpg",
+                    },
+                    {
+                      name: "Anshuman Singh",
+                      role: "Teacher4",
+                      img: "/coursePage/teacher4.jpg",
+                    },
+                  ].map((mentor, index) => (
+                    <div
+                      key={index}
+                      className="bg-black shadow-lg rounded-lg overflow-hidden transform transition hover:scale-105"
+                    >
+                      <ScrollReveal
+                        animation="fadeIn"
+                        duration={1200}
+                        delay={200}
+                        easing="smooth"
+                      >
+                        <div
+                          className="w-full h-64 flex items-center justify-center bg-cover"
+                          style={{ backgroundImage: `url(${mentor.img})` }}
+                        >
+                          {/* <span className="text-gray-400">Mentor Image</span> */}
+                        </div>
+                        <div className="p-4 text-center">
+                          <h3 className="font-semibold text-white">
+                            {mentor.name}
+                          </h3>
+                          {/* <p className="text-gray-400 text-sm">{mentor.role}</p> */}
+                        </div>
+                      </ScrollReveal>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Reviews Section */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {reviews.map((review, index) => (
                     <div
                       key={index}
@@ -1420,9 +1768,9 @@ to-[#000000] shadow-lg text-white flex flex-col items-start h-64"
                       </ScrollReveal>
                     </div>
                   ))}
-                </div> */}
-            {/* </div>
-            </div> */}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         {/* Fee Structure */}
