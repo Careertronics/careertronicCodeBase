@@ -361,15 +361,16 @@ to-[#0e0e11]  relative"
       <div
         className="relative w-full py-24 overflow-hidden"
         style={{
-          backgroundImage: "url('/coursePage/101.PNG')", // <-- replace with your new image path
+          backgroundImage:
+            "url('https://res.cloudinary.com/dxt1eap0l/image/upload/v1773050967/101_w7kvsh.png')",
           backgroundSize: "cover",
           backgroundPosition: "left center",
           backgroundRepeat: "no-repeat",
         }}
       >
+        {" "}
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-[#212121]/85"></div>
-
         {/* Content Wrapper */}
         <div className="relative z-10 flex flex-col justify-center items-center px-6 md:px-10 lg:px-16">
           <ScrollReveal animation="fadeIn" delay={200} easing="smooth">

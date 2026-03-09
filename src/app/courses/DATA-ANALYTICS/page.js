@@ -290,7 +290,7 @@ relative"
               <div className="flex flex-col sm:flex-row w-full text-black gap-5">
                 <div className="h-full flex-1 px-3 gap-5 flex flex-row sm:flex-col shrink-0 justify-between sm:justify-around">
                   <div className="h-auto">
-                    <p className="text-base md:text-lg">Propgram Duration</p>
+                    <p className="text-base md:text-lg">Program Duration</p>
                   </div>
                   <div className="sm:border-r-4 flex items-center">
                     <p className="font-bold text-lg md:text-2xl">
@@ -338,7 +338,8 @@ relative"
       <div
         className="relative w-full py-24 overflow-hidden"
         style={{
-          backgroundImage: "url('/coursePage/101.PNG')", // <-- replace with your new image path
+          backgroundImage:
+            "url('https://res.cloudinary.com/dxt1eap0l/image/upload/v1773050967/101_w7kvsh.png')",
           backgroundSize: "cover",
           backgroundPosition: "left center",
           backgroundRepeat: "no-repeat",
