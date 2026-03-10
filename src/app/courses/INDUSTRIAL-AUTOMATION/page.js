@@ -170,6 +170,23 @@ function page() {
     },
   ];
 
+  const skills = [
+    "PLC Programming",
+    "SCADA",
+    "HMI",
+    "Ladder Logic",
+    "Industrial IoT",
+    "Automation Studio",
+    "Sensors & Actuators",
+    "PID Control",
+    "Siemens TIA Portal",
+    "Allen-Bradley",
+    "Control Systems",
+    "Modbus",
+    "Ethernet/IP",
+    "Robotics",
+    "Industrial Safety",
+  ];
   const faqData = {
     General: [
       {
@@ -248,25 +265,22 @@ function page() {
           "Yes, students receive structured documentation, reference materials, lab guides, and recorded sessions to support continuous learning.",
       },
     ],
-  };
-  const skills = [
-    "PLC Programming",
-    "SCADA",
-    "HMI",
-    "Ladder Logic",
-    "Industrial IoT",
-    "Automation Studio",
-    "Sensors & Actuators",
-    "PID Control",
-    "Siemens TIA Portal",
-    "Allen-Bradley",
-    "Control Systems",
-    "Modbus",
-    "Ethernet/IP",
-    "Robotics",
-    "Industrial Safety",
-  ];
 
+    Security: [
+      {
+        id: 12,
+        question: "Is my personal data secure on the platform?",
+        answer:
+          "Yes. We follow industry-standard security practices to ensure that your personal information and learning data are protected at all times.",
+      },
+      {
+        id: 13,
+        question: "Do you use secure connections for learning platforms?",
+        answer:
+          "Yes. Our platform uses encrypted HTTPS connections and secure authentication methods to ensure safe access to course materials and student accounts.",
+      },
+    ],
+  };
   return (
     <div className="h-auto w-full">
       <Navbar />
@@ -523,8 +537,8 @@ to-[#000000]
                 "Covering all modules above makes you ready to apply for industrial automation roles",
             }}
           />
-          <CourseRoadmap courses={courses3} show={false} />
-          <CourseRoadmap courses={courses4} show={false} />
+          <CourseRoadmap courses={courses3} show={true} />
+          <CourseRoadmap courses={courses4} show={true} />
           <CourseRoadmap
             courses={courses5}
             show={true}
@@ -534,7 +548,7 @@ to-[#000000]
                 "Covering all modules above makes you ready to apply for industrial automation roles",
             }}
           />
-
+          <CourseRoadmap courses={courses6} show={true} />
           {/* Download Brochure Section */}
           <div className="w-full bg-white p-4 sm:p-6 md:p-8 rounded-lg flex flex-col items-start gap-3 sm:gap-4 md:gap-7">
             <ScrollReveal

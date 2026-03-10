@@ -98,6 +98,22 @@ function page() {
           "Yes, we provide structured documentation, datasets, practice exercises, and recorded sessions to ensure continuous learning support.",
       },
     ],
+
+    Security: [
+      {
+        id: 12,
+        question: "Is my personal data secure on the platform?",
+        answer:
+          "Yes. We follow industry-standard security practices to ensure that your personal information and learning data remain protected.",
+      },
+      {
+        id: 13,
+        question:
+          "Do you use secure systems for data access and training platforms?",
+        answer:
+          "Yes. Our platform uses encrypted HTTPS connections and secure authentication systems to ensure safe access to course materials and datasets.",
+      },
+    ],
   };
   const projects = [
     {

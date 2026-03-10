@@ -78,15 +78,30 @@ function page() {
       },
     ],
 
-    Support: [
+    Security: [
       {
         id: 10,
+        question: "Will I learn about app security and authentication?",
+        answer:
+          "Yes, the course covers authentication systems such as JWT, secure login flows, user authorization, and best practices for protecting user data in modern applications.",
+      },
+      {
+        id: 11,
+        question: "Are secure APIs and data protection covered?",
+        answer:
+          "You will learn how to build and consume secure APIs, handle tokens, implement role-based access control, and protect application data using industry-standard security practices.",
+      },
+    ],
+
+    Support: [
+      {
+        id: 12,
         question: "How can I contact support?",
         answer:
           "You can reach us via email, website chat, or WhatsApp. All contact details are available on the course page for quick assistance.",
       },
       {
-        id: 11,
+        id: 13,
         question: "What are your support hours?",
         answer:
           "Our support team is available Monday to Saturday, 10:00 AM to 6:00 PM IST.",

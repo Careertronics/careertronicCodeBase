@@ -91,6 +91,21 @@ function page() {
           "Yes, we provide structured documentation, reference materials, recorded sessions, and practical lab resources to support continuous learning.",
       },
     ],
+
+    Security: [
+      {
+        id: 12,
+        question: "Is my personal information secure on the platform?",
+        answer:
+          "Yes. We follow industry-standard cybersecurity practices to ensure that your personal information and learning data remain protected at all times.",
+      },
+      {
+        id: 13,
+        question: "Do you use secure systems for labs and learning platforms?",
+        answer:
+          "Yes. All training environments use secure cloud infrastructure, encrypted connections, and controlled lab networks to ensure safe access to course materials and cybersecurity practice environments.",
+      },
+    ],
   };
   const projects = [
     {

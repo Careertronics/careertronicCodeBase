@@ -26,77 +26,96 @@ function page() {
         id: 1,
         question: "Who can take up this course?",
         answer:
-          "Anyone interested in learning web development—from beginners to professionals wanting to upgrade to full-stack development—can join. No prior coding experience is required; the course starts from the basics.",
+          "Anyone interested in learning web development—from beginners to professionals looking to upgrade to full-stack development—can join this course. No prior coding experience is required.",
       },
       {
         id: 2,
-        question: "What is included in the course?",
+        question: "What does the course cover?",
         answer:
-          "The course covers HTML, CSS, JavaScript, modern frameworks like React, backend development with Node.js and Express, databases such as MongoDB and MySQL, REST APIs, Git version control, deployment, and best practices for responsive web development.",
+          "The program covers modern web development technologies including HTML, CSS, JavaScript, React, Next.js, Node.js, Express, databases like MongoDB and PostgreSQL, API development, authentication, and deployment.",
       },
       {
         id: 3,
-        question: "What will students gain from this course?",
+        question: "What skills will students gain?",
         answer:
-          "Students will learn how to build modern, scalable web applications from scratch. By the end of the course, you will be able to design responsive interfaces, connect front-end and back-end systems, manage databases, and deploy applications to the web.",
+          "Students will learn how to build responsive web interfaces, develop backend APIs, manage databases, integrate frontend and backend systems, and deploy production-ready full stack applications.",
       },
       {
         id: 4,
-        question: "How does this course help in getting a job?",
+        question:
+          "What career opportunities are available after completing the course?",
         answer:
-          "The course focuses on real-world projects such as portfolio websites, dashboards, and full-stack applications. Students build a strong GitHub portfolio and receive guidance on resumes and interviews for roles like Frontend, Backend, or Full-Stack Developer.",
-      },
-      {
-        id: 5,
-        question: "What are the career opportunities after this course?",
-        answer:
-          "Web development skills are in high demand across startups, product companies, and IT firms. Graduates can work as Frontend Developers, Backend Developers, Full-Stack Developers, or pursue freelance and remote opportunities.",
+          "Graduates can pursue roles such as Frontend Developer, Backend Developer, Full Stack Developer, Web Application Engineer, or freelance web development opportunities.",
       },
     ],
 
     Pricing: [
       {
-        id: 6,
+        id: 5,
         question: "How much does the course cost?",
         answer:
-          "Course fees vary depending on the learning format and available offers. Contact our team for the latest pricing and enrollment details.",
+          "Course pricing varies depending on the learning format and current offers. Please contact our admissions team for the latest pricing details.",
       },
       {
-        id: 7,
-        question: "Do you offer discounts?",
+        id: 6,
+        question: "What payment methods are accepted?",
         answer:
-          "Yes, we occasionally provide early-bird offers, student discounts, and seasonal promotions. Please reach out to our support team to know about current offers.",
+          "We accept UPI, credit/debit cards, net banking, and digital wallets. EMI options may also be available through supported payment partners.",
       },
     ],
 
     Features: [
       {
-        id: 8,
-        question: "What tools and technologies will I learn?",
+        id: 7,
+        question: "Which technologies will I learn?",
         answer:
-          "You will learn industry-standard tools such as VS Code, Git, GitHub, Chrome DevTools, Postman, and frameworks like React, Bootstrap, and Tailwind. These tools are widely used by professional web developers.",
+          "You will learn technologies such as React, Next.js, Redux Toolkit, Node.js, Express, MongoDB, MySQL, PostgreSQL, Git, and modern deployment platforms like Vercel and Netlify.",
+      },
+      {
+        id: 8,
+        question: "Will I work on real-world projects?",
+        answer:
+          "Yes. Students build practical projects including full stack applications, dashboards, and API-driven platforms that can be showcased in professional portfolios.",
       },
       {
         id: 9,
-        question: "How will I access the required software?",
+        question: "Do I need to install any software?",
         answer:
-          "All tools used in the course are free or open-source. Step-by-step guidance is provided to install and configure them on your system for hands-on practice.",
+          "Yes. Students will install development tools such as VS Code, Node.js, Git, and database tools. Our instructors provide guidance for the complete setup process.",
       },
+    ],
+
+    Support: [
       {
         id: 10,
-        question: "What real-world applications will I build?",
+        question: "How can I contact support?",
         answer:
-          "Students work on real projects such as portfolio websites, e-commerce interfaces, dashboards, and API-driven web applications. These projects simulate real industry workflows and help build a strong developer portfolio.",
+          "You can contact our team through email, website chat, or WhatsApp for any academic or technical assistance.",
       },
       {
         id: 11,
-        question:
-          "Will this course help with higher studies like MS or research?",
+        question: "Do you provide learning resources?",
         answer:
-          "Yes. A strong foundation in web technologies is useful for fields like Software Engineering, Human-Computer Interaction, and Information Systems. The course helps students build technical projects that strengthen applications for higher studies.",
+          "Yes. Students receive documentation, code repositories, project resources, and recorded sessions to support their learning journey.",
+      },
+    ],
+
+    Security: [
+      {
+        id: 12,
+        question: "Is my personal data secure?",
+        answer:
+          "Yes. We follow industry-standard security practices to protect user information and learning data.",
+      },
+      {
+        id: 13,
+        question: "Do you support two-factor authentication?",
+        answer:
+          "Yes. Two-factor authentication (2FA) is supported to ensure secure access to your student portal.",
       },
     ],
   };
+
   const courses1 = [
     { title: "Introduction to Web & Full Stack Development" },
     { title: "Development Environment Setup (Git, VS Code, Node.js)" },

@@ -77,22 +77,42 @@ function page() {
       },
     ],
 
-    Support: [
+    Security: [
       {
         id: 10,
+        question: "Does the course cover AWS security best practices?",
+        answer:
+          "Yes, the program includes AWS security concepts such as Identity and Access Management (IAM), security groups, network ACLs, encryption, and secure cloud architecture design.",
+      },
+      {
+        id: 11,
+        question: "Will I learn how to secure AWS infrastructure?",
+        answer:
+          "You will learn how to configure IAM roles and policies, implement secure networking with VPC, manage secrets securely, and monitor security events using AWS security and monitoring tools.",
+      },
+      {
+        id: 12,
+        question: "Is DevSecOps covered in the course?",
+        answer:
+          "Yes, the course introduces DevSecOps practices by integrating security into CI/CD pipelines, managing secure container deployments, and implementing infrastructure security checks.",
+      },
+    ],
+
+    Support: [
+      {
+        id: 13,
         question: "How can I contact support?",
         answer:
           "You can reach our support team via email, WhatsApp, or through the website chat. All contact details are available on the course page.",
       },
       {
-        id: 11,
+        id: 14,
         question: "Do you provide study materials and recordings?",
         answer:
           "Yes, we provide structured documentation, reference materials, GitHub repositories, recorded sessions, and project resources to support your learning journey.",
       },
     ],
-  };
-  // const reviews = [
+  }; // const reviews = [
   //   {
   //     initials: "A",
   //     name: "Aman Sharma",

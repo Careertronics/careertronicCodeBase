@@ -78,15 +78,36 @@ function page() {
       },
     ],
 
-    Support: [
+    Security: [
       {
         id: 10,
+        question: "Does the course cover cloud security practices?",
+        answer:
+          "Yes, the course includes key cloud security concepts such as identity and access management (IAM), network security, encryption, compliance standards, and best practices to secure cloud infrastructure and applications.",
+      },
+      {
+        id: 11,
+        question: "Will I learn how to secure cloud deployments?",
+        answer:
+          "You will learn practical techniques for securing cloud resources including configuring firewalls, managing access policies, implementing encryption, and monitoring threats using cloud security tools.",
+      },
+      {
+        id: 12,
+        question: "Are security best practices included in the projects?",
+        answer:
+          "Yes, all deployment projects include security considerations such as role-based access control, secure networking, data protection, and monitoring to simulate real-world enterprise cloud environments.",
+      },
+    ],
+
+    Support: [
+      {
+        id: 13,
         question: "How can I contact support?",
         answer:
           "You can reach our support team via email, WhatsApp, or website chat. All contact details are available on the course page.",
       },
       {
-        id: 11,
+        id: 14,
         question: "Do you provide study materials and recordings?",
         answer:
           "Yes, we provide structured documentation, reference guides, recorded sessions, and project resources to ensure continuous learning support.",
