@@ -156,7 +156,10 @@ const Footer = () => {
             >
               <FaLinkedinIn size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a
+              href="https://www.facebook.com/people/Careertronicedu/61574982901953/"
+              className="text-gray-400 hover:text-white"
+            >
               <FaFacebookF size={20} />
             </a>
             <a
