@@ -39,9 +39,10 @@ const Navbar = () => {
     { title: "Courses", link: "/courses" },
     { title: "Become a Franchise", link: "/Franchise" },
     { title: "Business Consulting", link: "/consulting" },
-    { title: "Contact Us", link: "/contact" },
+
     { title: "Our Blogs", link: "/blog" },
     { title: "Careers", link: "/careers" },
+    { title: "Contact Us", link: "/contact" },
   ];
   return (
     <nav
