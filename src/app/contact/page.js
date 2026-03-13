@@ -655,7 +655,7 @@ export default function ContactPage() {
                   </div> */}
 
                   <a
-                    href="#"
+                    href="https://www.facebook.com/people/Careertronicedu/61574982901953/"
                     className="h-12 w-full rounded-lg bg-gray-800/50 border border-gray-700 flex items-center justify-center text-white transition-all duration-300 hover:bg-red-600/20 hover:border-red-500/30 hover:shadow-lg hover:shadow-red-900/20"
                   >
                     <svg

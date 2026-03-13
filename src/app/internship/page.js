@@ -217,7 +217,7 @@ export default function CareertroniccInternshipPage() {
       listing.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       listing.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
       listing.skills.some((skill) =>
-        skill.toLowerCase().includes(searchTerm.toLowerCase())
+        skill.toLowerCase().includes(searchTerm.toLowerCase()),
       );
     const matchesIndustry =
       selectedIndustry === "All" || listing.industry === selectedIndustry;
@@ -267,72 +267,52 @@ export default function CareertroniccInternshipPage() {
       icon: <Users className="w-8 h-8" />,
       title: "Real-World Experience",
       description:
-        "Apply your academic knowledge to live projects and get a taste of what the competitive job market. Our internships offer you a chance to showcase your skills on-the-job training that will set you apart.",
+        "Apply your academic knowledge to real-world projects and gain hands-on experience. Work on practical tasks that mirror industry challenges and understand how professional teams build, collaborate, and deliver impactful solutions.",
     },
     {
       icon: <Target className="w-8 h-8" />,
       title: "Leading Companies",
       description:
-        "Work with some of the most respected companies across various industries. Get an insider's view into top employers and understand what it really like to work in your chosen field.",
+        "Get exposure to how leading organizations operate across different industries. Learn professional workflows, understand workplace expectations, and experience the culture and standards followed by successful companies.",
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Skill Development",
       description:
-        "Hone both your technical and soft skills. Whether it's mastering industry-specific tools, learning business strategies, or improving communication and leadership skills.",
+        "Strengthen both technical and professional skills during your internship. Improve problem-solving, communication, teamwork, and practical knowledge while working with modern tools and real business scenarios.",
     },
     {
       icon: <Award className="w-8 h-8" />,
       title: "Mentorship Opportunities",
       description:
-        "Receive guidance from experienced professionals dedicated to helping you grow. Learn from their expertise and gain insights that will guide your career for years to come.",
+        "Learn directly from experienced professionals who guide you throughout your journey. Receive valuable feedback, industry insights, and practical advice that can help shape your career path.",
     },
     {
       icon: <Network className="w-8 h-8" />,
       title: "Networking",
       description:
-        "Build meaningful connections with professionals, mentors, and potential future employers. Your internship can be the foundation of a valuable network that opens doors throughout your career.",
+        "Connect with professionals, mentors, and fellow interns who share similar career interests. These relationships can lead to collaborations, recommendations, and valuable opportunities in the future.",
     },
     {
       icon: <Briefcase className="w-8 h-8" />,
       title: "Career Conversion",
       description:
-        "Many companies use internships as a talent pipeline. Performing well could open the door to future career opportunities and full-time job offers.",
-    },
-  ];
-
-  const industriesSection = [
-    {
-      icon: <Code className="w-12 h-12" />,
-      title: "IT & Software Development",
-      description:
-        "Work with cutting-edge technologies and open-source frameworks and gain practical coding, programming, and system design experience.",
-      tags: ["Python", "JavaScript", "React", "Node.js"],
-    },
-    {
-      icon: <Megaphone className="w-12 h-12" />,
-      title: "Marketing & Digital Media",
-      description:
-        "Contribute to impactful marketing campaigns, content creation, and social media strategies. Learn about SEO, digital marketing, and consumer behavior insights.",
-      tags: ["SEO", "Social Media", "Content Strategy", "Analytics"],
-    },
-    {
-      icon: <BarChart3 className="w-12 h-12" />,
-      title: "Data Science & Analytics",
-      description:
-        "Dive into data analysis, machine learning, and predictive modeling. Gain hands-on experience with decision-making and business intelligence.",
-      tags: ["Python", "Machine Learning", "SQL", "Tableau"],
+        "Many organizations view internships as a pathway to full-time roles. By demonstrating your skills, dedication, and growth, you may unlock opportunities for long-term employment with the company.",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white">
+    <div className="min-h-screen  text-white">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-transparent"></div>
+      <section
+        className="pt-32 pb-20 px-6 relative  bg-gradient-to-b
+from-[#000000]
+via-[#3b0f2a]
+to-[#0e0e11] overflow-hidden"
+      >
+        <div className="absolute inset-0 "></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            
             {/* Left Content Section */}
             <div className="lg:w-1/2">
               <ScrollReveal
@@ -374,11 +354,7 @@ export default function CareertroniccInternshipPage() {
                 </p>
               </ScrollReveal>
 
-              <ScrollReveal
-                animation="fadeSlideUp"
-                duration={600}
-                delay={600}
-              >
+              <ScrollReveal animation="fadeSlideUp" duration={600} delay={600}>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105 shadow-lg hover:shadow-red-500/25 flex items-center gap-2">
                     Explore Internships
@@ -401,12 +377,7 @@ export default function CareertroniccInternshipPage() {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-2xl blur-xl"></div>
                   <div className="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
-                    
-                    <ScrollReveal
-                      animation="fadeIn"
-                      duration={600}
-                      delay={700}
-                    >
+                    <ScrollReveal animation="fadeIn" duration={600} delay={700}>
                       <div className="text-center mb-8">
                         <h3 className="text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-blue-500">
                           Your Journey to Success
@@ -500,205 +471,6 @@ export default function CareertroniccInternshipPage() {
       </section>
 
       {/* Internship Listings Section */}
-      <section className="py-20 px-6 bg-gray-900/30">
-        <div className="max-w-7xl mx-auto">
-          {/* Header Section */}
-          <div className="text-center mb-12">
-            <ScrollReveal animation="fadeSlideUp" duration={600} delay={100}>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-                <span className="text-red-500">Featured</span> Internship
-                Opportunities
-              </h2>
-            </ScrollReveal>
-
-            <ScrollReveal animation="fadeSlideUp" duration={600} delay={200}>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover exciting internship opportunities from top companies.
-                Filter by industry, location, or search for specific roles.
-              </p>
-            </ScrollReveal>
-          </div>
-
-          {/* Search and Filter Bar */}
-          <ScrollReveal animation="fadeSlideDown" duration={700} delay={300}>
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-gray-700/50">
-              <div className="flex flex-col lg:flex-row gap-4">
-                <div className="flex-1 relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="text"
-                    placeholder="Search internships, companies, or skills..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-red-500 focus:outline-none text-white placeholder-gray-400"
-                  />
-                </div>
-                <div className="flex gap-4">
-                  <select
-                    value={selectedIndustry}
-                    onChange={(e) => setSelectedIndustry(e.target.value)}
-                    className="px-4 py-3 w-1/2 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-red-500 focus:outline-none text-white"
-                  >
-                    {industries.map((industry) => (
-                      <option key={industry} value={industry}>
-                        {industry}
-                      </option>
-                    ))}
-                  </select>
-                  <select
-                    value={selectedLocation}
-                    onChange={(e) => setSelectedLocation(e.target.value)}
-                    className="px-4 py-3 w-1/2 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-red-500 focus:outline-none text-white"
-                  >
-                    {locations.map((location) => (
-                      <option key={location} value={location}>
-                        {location}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Results Count */}
-          <ScrollReveal animation="slightRight" duration={500} delay={300}>
-            <div className="mb-6">
-              <p className="text-gray-400">
-                Showing{" "}
-                <span className="text-white font-semibold">
-                  {filteredListings.length}
-                </span>{" "}
-                internship opportunities
-              </p>
-            </div>
-          </ScrollReveal>
-
-          {/* Internship Cards Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredListings.map((listing, index) => (
-              <ScrollReveal
-                key={listing.id}
-                animation="fadeSlideUp"
-                duration={600}
-                delay={500 + index * 100}
-                stagger={100}
-                index={index}
-              >
-                <div
-                  className={`relative bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border transition-all duration-300 hover:scale-105 hover:bg-gray-700/50 group ${
-                    listing.featured
-                      ? "border-red-500/50 shadow-lg shadow-red-500/10"
-                      : "border-gray-700/50 hover:border-red-500/30"
-                  }`}
-                >
-                  {listing.featured && (
-                    <div className="absolute -top-3 left-6">
-                      <span className="bg-gradient-to-r from-red-600 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                        ⭐ FEATURED
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg flex items-center justify-center text-2xl">
-                        {listing.logo}
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-lg text-white group-hover:text-red-400 transition-colors">
-                          {listing.title}
-                        </h3>
-                        <p className="text-gray-400 text-sm">
-                          {listing.company}
-                        </p>
-                      </div>
-                    </div>
-                    <button className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 hover:bg-red-500/20 rounded-full">
-                      <BookmarkPlus className="w-5 h-5 text-gray-400 hover:text-red-400" />
-                    </button>
-                  </div>
-
-                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                    {listing.description}
-                  </p>
-
-                  <div className="space-y-3 mb-4">
-                    <div className="flex items-center gap-2 text-sm text-gray-400">
-                      <MapPin className="w-4 h-4" />
-                      <span>{listing.location}</span>
-                      <span className="text-red-400">•</span>
-                      <span
-                        className={`px-2 py-1 rounded-full text-xs ${
-                          listing.type === "Remote"
-                            ? "bg-green-500/20 text-green-400"
-                            : listing.type === "Hybrid"
-                            ? "bg-blue-500/20 text-blue-400"
-                            : "bg-purple-500/20 text-purple-400"
-                        }`}
-                      >
-                        {listing.type}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-400">
-                      <Clock className="w-4 h-4" />
-                      <span>{listing.duration}</span>
-                      <span className="text-red-400">•</span>
-                      <span className="text-green-400 font-semibold">
-                        {listing.stipend}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-400">
-                      <Calendar className="w-4 h-4" />
-                      <span>Posted {listing.posted}</span>
-                      <span className="text-red-400">•</span>
-                      <span>{listing.applicants} applicants</span>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {listing.skills.slice(0, 3).map((skill, index) => (
-                      <span
-                        key={index}
-                        className="bg-red-600/20 text-red-400 px-2 py-1 rounded-full text-xs font-medium"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                    {listing.skills.length > 3 && (
-                      <span className="bg-gray-600/20 text-gray-400 px-2 py-1 rounded-full text-xs">
-                        +{listing.skills.length - 3} more
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-700/50">
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span className="text-sm font-semibold text-gray-300">
-                        {listing.rating}
-                      </span>
-                    </div>
-                    <button className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-sm font-semibold transition-all hover:scale-105 flex items-center gap-2">
-                      Apply Now
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          {/* Load More Button */}
-          <ScrollReveal animation="fadeSlideUp" duration={600} delay={500}>
-            <div className="text-center mt-12">
-              <button className="bg-gray-800/50 hover:bg-red-600 border border-gray-600 hover:border-red-500 px-8 py-3 rounded-lg font-semibold transition-all hover:scale-105">
-                Load More Opportunities
-              </button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
 
       {/* Why Choose Section */}
       <section className="py-20 px-6">
@@ -741,16 +513,16 @@ export default function CareertroniccInternshipPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 px-6 bg-gray-900/50">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Heading Animation */}
           <ScrollReveal animation="slideUp" duration={700} easing="spring">
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-                How <span className="text-red-500">Careertronic</span> Internship
-                Program Works
+              <h2 className="text-4xl text-black lg:text-5xl font-bold mb-4">
+                How <span className="text-red-500">Careertronic</span>{" "}
+                Internship Program Works
               </h2>
-              <p className="text-xl text-gray-300">
+              <p className="text-xl text-black">
                 A simple, streamlined process designed to connect you with the
                 perfect internship opportunity.
               </p>
@@ -773,8 +545,12 @@ export default function CareertroniccInternshipPage() {
                   <div className="w-16 h-16 bg-gradient-to-r from-red-600 to-red-500 rounded-full flex items-center justify-center font-bold text-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     {step.number}
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{step.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{step.description}</p>
+                  <h3 className="text-xl text-black font-bold mb-4">
+                    {step.title}
+                  </h3>
+                  <p className="text-black leading-relaxed">
+                    {step.description}
+                  </p>
                   {index < steps.length - 1 && (
                     <ChevronRight className="w-6 h-6 text-red-500 mt-8 hidden lg:block absolute right-[-2rem] opacity-50" />
                   )}
@@ -785,102 +561,25 @@ export default function CareertroniccInternshipPage() {
         </div>
       </section>
 
-      {/* Industries Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-red-500">Internship Opportunities</span>{" "}
-              Across Industries
-            </h2>
-            <p className="text-xl text-gray-300">
-              Discover exciting internship opportunities across diverse
-              industries and find the perfect match for your career aspirations.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industriesSection.map((industry, index) => (
-              <div
-                key={index}
-                className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl hover:bg-gray-700/50 transition-all duration-300 hover:scale-105 group border border-gray-700/50 hover:border-red-500/30"
-              >
-                <div className="text-red-500 mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {industry.icon}
-                </div>
-                <h3 className="text-2xl font-bold mb-4">{industry.title}</h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  {industry.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {industry.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="bg-red-600/20 text-red-400 px-3 py-1 rounded-full text-sm font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Success Stories */}
-      <section id="testimonials" className="py-16 px-6 bg-gray-900/30">
-        <div className="max-w-7xl mx-auto">
-          {/* Animated Heading */}
-          <ScrollReveal animation="fadeSlideUp" duration={700} easing="spring">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-red-500 to-white bg-clip-text text-transparent">
-              Success Stories
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[...Array(2)].map((_, index) => (
-              <ScrollReveal
-                key={index}
-                animation="slideUp"
-                duration={800}
-                easing="bouncy"
-                index={index}
-                stagger={150}
-              >
-                <div className="bg-gray-900/50 backdrop-blur-sm border-l-4 border-red-500 rounded-r-xl p-8 hover:bg-gray-800/50 transition-all duration-300 hover:transform hover:scale-105">
-                  <blockquote className="text-lg italic mb-4 text-gray-300">
-                    {index === 0
-                      ? `"The internship I secured through Careertronic was the perfect start to my career in digital marketing. The hands-on experience, combined with the mentorship I received, helped me land a full-time position with the same company."`
-                      : `"Careertronic helped me find an engineering internship with a leading firm. The process was simple, and I got the chance to work on real projects that I can now proudly add to my portfolio."`}
-                  </blockquote>
-                  <cite className="text-red-400 font-semibold">
-                    {index === 0
-                      ? "— Neha P., Digital Marketing Intern"
-                      : "— Ravi K., Engineering Intern"}
-                  </cite>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-16 px-6 bg-gradient-to-r from-black via-red-900/20 to-black"
+        className="py-16 px-6 bg-gradient-to-br
+from-[#000000]
+via-[#3b0f2a]
+to-[#0e0e11] "
       >
         <div className="max-w-7xl mx-auto text-center">
           <ScrollReveal animation="fadeSlideUp" duration={700}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-red-500 to-white bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8  bg-clip-text text-white">
               Ready to Start Your Journey?
             </h2>
           </ScrollReveal>
 
           <ScrollReveal animation="fadeSlideUp" duration={700} delay={100}>
             <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-              Join Careertronic's Internship Program today and take the first step
-              toward a successful and fulfilling future!
+              Join Careertronic's Internship Program today and take the first
+              step toward a successful and fulfilling future!
             </p>
           </ScrollReveal>
 
@@ -894,7 +593,7 @@ export default function CareertroniccInternshipPage() {
               {
                 icon: <Phone className="w-8 h-8 text-red-500 mx-auto mb-4" />,
                 title: "Call Us",
-                text: "+1 (800) 123-4567",
+                text: "+91 93432 02785",
               },
               {
                 icon: <Globe className="w-8 h-8 text-red-500 mx-auto mb-4" />,
@@ -912,42 +611,25 @@ export default function CareertroniccInternshipPage() {
               >
                 <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl p-6 hover:bg-gray-800/50 transition-all duration-300 hover:transform hover:scale-105 border border-gray-700/50">
                   {card.icon}
-                  <h3 className="text-lg font-semibold mb-2 text-red-400">{card.title}</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-red-600">
+                    {card.title}
+                  </h3>
                   <p className="text-gray-300">{card.text}</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
 
-          <ScrollReveal animation="fadeSlideUp" duration={600} delay={300}>
-            <div className="flex justify-center space-x-6 mb-8">
-              {[Linkedin, Facebook, Twitter].map((Icon, idx) => (
-                <a
-                  key={idx}
-                  href="#"
-                  className="bg-gray-900/50 p-4 rounded-full hover:bg-red-600 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-red-500/25 border border-gray-700/50"
-                >
-                  <Icon size={24} />
-                </a>
-              ))}
-            </div>
-          </ScrollReveal>
-
           <ScrollReveal animation="zoomIn" duration={500} delay={500}>
-            <button className="bg-gradient-to-r from-red-600 to-red-700 px-12 py-4 rounded-full text-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-red-500/25">
-              Get Started Now
-            </button>
+            <a href="/contact">
+              {" "}
+              <button className="bg-gradient-to-r from-red-600 to-red-700 px-12 py-4 rounded-full text-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-red-500/25">
+                Get Started Now
+              </button>
+            </a>
           </ScrollReveal>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-8 px-6 border-t border-red-900/30 text-center text-gray-400">
-        <p>
-          &copy; 2025 Careertronic. All rights reserved. Building careers, one
-          internship at a time.
-        </p>
-      </footer>
     </div>
   );
 }
